@@ -1,0 +1,637 @@
+<!DOCTYPE html>
+<html lang="en" data-bs-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>All Courses & Language Programs | Lingua Academy</title>
+    <meta name="description" content="Explore Spoken English, French, German, Spanish, Japanese, IELTS prep, public speaking, and kids communication programs with flexible online and offline batches.">
+
+        <!-- Favicon (Save Icon) -->
+    <link rel="icon" type="image/png" href="favicon.png">
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+    <link rel="apple-touch-icon" href="favicon.png">
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@500;600;700;800&display=swap" rel="stylesheet">
+
+    <!-- Bootstrap 5 CSS & Icons -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" rel="stylesheet">
+
+    <!-- Custom CSS -->
+    <link href="assets/css/style.css" rel="stylesheet">
+    <link href="assets/css/animations.css" rel="stylesheet">
+</head>
+<body>
+
+    <!-- TOP BAR -->
+    <div class="top-bar d-none d-md-block">
+        <div class="container">
+            <div class="d-flex justify-content-between align-items-center">
+                <div class="d-flex align-items-center gap-4">
+                    <span><i class="bi bi-telephone-fill me-2 text-orange"></i>+1 (800) 555-LANG</span>
+                    <span><i class="bi bi-envelope-fill me-2 text-orange"></i>info@linguaacademy.com</span>
+                </div>
+                <div class="d-flex align-items-center gap-3">
+                    <button class="btn btn-sm btn-link text-light p-0 theme-toggle-btn" title="Toggle Theme"><i class="bi bi-moon-stars-fill"></i></button>
+                    <button class="btn btn-sm btn-link text-light p-0 rtl-toggle-btn" title="Toggle RTL"><i class="bi bi-save"></i> RTL</button>
+                    <a href="login.html" class="small ms-2"><i class="bi bi-person-lock me-1"></i> Student Portal</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- MAIN NAVBAR -->
+    <nav class="navbar navbar-expand-lg navbar-main">
+        <div class="container">
+            <a class="navbar-brand navbar-brand-logo" href="index.html">
+                <div class="brand-icon-wrap"><i class="bi bi-chat-quote-fill"></i></div>
+                <span>Lingua<span class="text-orange">Academy</span></span>
+            </a>
+
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarMainContent">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="navbarMainContent">
+                <ul class="navbar-menu nav ms-auto align-items-lg-center">
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown">Home</a>
+                        <ul class="dropdown-menu shadow-sm">
+                            <li><a class="dropdown-item" href="index.html"><i class="bi bi-house-door me-2"></i> General Academy Landing</a></li>
+                            <li><a class="dropdown-item" href="home-corporate.html"><i class="bi bi-building me-2"></i> Corporate Communication</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item"><a class="nav-link" href="about.html">About Us</a></li>
+                    <li class="nav-item"><a class="nav-link active" href="courses.html">Courses</a></li>
+                    <li class="nav-item"><a class="nav-link" href="faculty.html">Faculty</a></li>
+                    <li class="nav-item"><a class="nav-link" href="schedule.html">Schedule</a></li>
+                    <li class="nav-item"><a class="nav-link" href="fees.html">Fees</a></li>
+                    <li class="nav-item"><a class="nav-link" href="pricing.html">Pricing</a></li>
+                    <li class="nav-item"><a class="nav-link" href="blog.html">Blog</a></li>
+                    <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+                </ul>
+
+                <div class="d-flex align-items-center gap-2 ms-lg-3 mt-3 mt-lg-0 auth-nav-container">
+                    <button class="btn btn-primary-theme btn-sm" data-bs-toggle="modal" data-bs-target="#demoClassModal">
+                        Book Free Demo
+                    </button>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- BREADCRUMB HERO -->
+    <section class="py-5 bg-surface border-bottom">
+        <div class="container py-3">
+            <nav aria-label="breadcrumb">
+                <ol class="breadcrumb mb-2">
+                    <li class="breadcrumb-item"><a href="index.html">Home</a></li>
+                    <li class="breadcrumb-item active">Course Catalog</li>
+                </ol>
+            </nav>
+            <h1 class="display-5 font-heading">Explore All Language & Skill Programs</h1>
+            <p class="lead text-muted mb-0">Filtered by CEFR difficulty level, mode of study, language, and age group.</p>
+        </div>
+    </section>
+
+    <!-- FILTER TOOLBAR -->
+    <section class="py-4 bg-alt border-bottom sticky-top" style="top: 70px; z-index: 1020;">
+        <div class="container">
+            <div class="row g-2 align-items-center">
+                <!-- Search -->
+                <div class="col-lg-3 col-md-6">
+                    <div class="input-group input-group-sm">
+                        <span class="input-group-text bg-surface"><i class="bi bi-search text-muted"></i></span>
+                        <input type="text" id="courseSearchInput" class="form-control" placeholder="Search course keyword...">
+                    </div>
+                </div>
+
+                <!-- Language Filter -->
+                <div class="col-lg-2 col-6">
+                    <select id="languageFilter" class="form-select form-select-sm">
+                        <option value="all">Language: All</option>
+                        <option value="english">English</option>
+                        <option value="french">French</option>
+                        <option value="german">German</option>
+                        <option value="spanish">Spanish</option>
+                        <option value="japanese">Japanese</option>
+                        <option value="skills">Communication Skills</option>
+                    </select>
+                </div>
+
+                <!-- Level Filter -->
+                <div class="col-lg-2 col-6">
+                    <select id="levelFilter" class="form-select form-select-sm">
+                        <option value="all">Level: All</option>
+                        <option value="beginner">Beginner</option>
+                        <option value="intermediate">Intermediate</option>
+                        <option value="advanced">Advanced</option>
+                        <option value="examprep">Exam Prep</option>
+                    </select>
+                </div>
+
+                <!-- Mode Filter -->
+                <div class="col-lg-2 col-6">
+                    <select id="modeFilter" class="form-select form-select-sm">
+                        <option value="all">Mode: All</option>
+                        <option value="online">Live Online</option>
+                        <option value="offline">In-Person Centre</option>
+                        <option value="hybrid">Hybrid Track</option>
+                    </select>
+                </div>
+
+                <!-- Age Filter -->
+                <div class="col-lg-2 col-6">
+                    <select id="ageFilter" class="form-select form-select-sm">
+                        <option value="all">Age: All Groups</option>
+                        <option value="kids">Kids (6 - 15 yrs)</option>
+                        <option value="adults">Adults & Pros</option>
+                    </select>
+                </div>
+
+                <!-- View Toggle -->
+                <div class="col-lg-1 d-none d-lg-flex justify-content-end">
+                    <div class="btn-group btn-group-sm">
+                        <button id="viewGridBtn" class="btn btn-primary-theme active" title="Grid View"><i class="bi bi-grid-fill"></i></button>
+                        <button id="viewListBtn" class="btn btn-outline-theme" title="List View"><i class="bi bi-list-ul"></i></button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- COURSES CATALOG GRID -->
+    <section class="py-5">
+        <div class="container py-3">
+            <div id="noCoursesFound" class="alert alert-warning text-center my-4" style="display: none;">
+                <i class="bi bi-exclamation-circle-fill me-2"></i> No courses match your exact filter criteria. Try clearing search keywords or selecting "All".
+            </div>
+
+            <div id="coursesContainer" class="row g-4">
+
+                <!-- Course 1 -->
+                <div class="col-md-6 col-lg-4">
+                    <div class="custom-card course-item-card" data-title="Spoken English Conversational Mastery" data-language="english" data-level="beginner" data-mode="hybrid" data-age="adults">
+                        <div class="card-img-wrap">
+                            <img src="assets/images/course-english.jpg" alt="Spoken English" loading="lazy">
+                            <span class="badge-tag badge-orange card-badge-top">English</span>
+                            <button class="card-favorite-btn" data-course-id="c1"><i class="bi bi-heart"></i></button>
+                        </div>
+                        <div class="card-content">
+                            <div class="card-meta-list">
+                                <span><i class="bi bi-bar-chart-fill text-orange"></i> Beginner - Adv</span>
+                                <span><i class="bi bi-clock-fill"></i> 12 Weeks</span>
+                                <span><i class="bi bi-people-fill"></i> Adults</span>
+                            </div>
+                            <h5 class="font-heading mb-2"><a href="course-spoken-english.html">Spoken English & Conversational Mastery</a></h5>
+                            <p class="small text-muted mb-3">Build flawless grammar, rich vocabulary, and unshakeable speaking confidence for daily interactions.</p>
+                            <div class="mt-auto d-flex align-items-center justify-content-between pt-3 border-top">
+                                <div>
+                                    <span class="small text-muted">Tuition</span>
+                                    <div class="fw-bold font-heading text-orange fs-5">$199</div>
+                                </div>
+                                <div class="d-flex gap-2">
+                                    <a href="course-spoken-english.html" class="btn btn-sm btn-outline-theme">Details</a>
+                                    <button class="btn btn-sm btn-primary-theme" data-bs-toggle="modal" data-bs-target="#enrollModal" data-course-name="Spoken English & Conversational Mastery">Enroll</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Course 2 -->
+                <div class="col-md-6 col-lg-4">
+                    <div class="custom-card course-item-card" data-title="Business English Corporate Communication" data-language="english" data-level="intermediate" data-mode="online" data-age="adults">
+                        <div class="card-img-wrap">
+                            <img src="assets/images/course-business.jpg" alt="Business English" loading="lazy">
+                            <span class="badge-tag badge-teal card-badge-top">Corporate</span>
+                            <button class="card-favorite-btn" data-course-id="c2"><i class="bi bi-heart"></i></button>
+                        </div>
+                        <div class="card-content">
+                            <div class="card-meta-list">
+                                <span><i class="bi bi-bar-chart-fill text-teal"></i> Intermediate</span>
+                                <span><i class="bi bi-clock-fill"></i> 8 Weeks</span>
+                                <span><i class="bi bi-laptop"></i> Online</span>
+                            </div>
+                            <h5 class="font-heading mb-2"><a href="course-business-english.html">Business English & Corporate Communication</a></h5>
+                            <p class="small text-muted mb-3">Master boardroom presentations, crisp technical email writing, negotiations, and global stakeholder calls.</p>
+                            <div class="mt-auto d-flex align-items-center justify-content-between pt-3 border-top">
+                                <div>
+                                    <span class="small text-muted">Tuition</span>
+                                    <div class="fw-bold font-heading text-orange fs-5">$279</div>
+                                </div>
+                                <div class="d-flex gap-2">
+                                    <a href="course-business-english.html" class="btn btn-sm btn-outline-theme">Details</a>
+                                    <button class="btn btn-sm btn-primary-theme" data-bs-toggle="modal" data-bs-target="#enrollModal" data-course-name="Business English & Corporate Communication">Enroll</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Course 3 -->
+                <div class="col-md-6 col-lg-4">
+                    <div class="custom-card course-item-card" data-title="IELTS Academic General Exam Preparation" data-language="english" data-level="examprep" data-mode="hybrid" data-age="adults">
+                        <div class="card-img-wrap">
+                            <img src="assets/images/course-ielts.jpg" alt="IELTS Exam" loading="lazy">
+                            <span class="badge-tag badge-purple card-badge-top">Exam Prep</span>
+                            <button class="card-favorite-btn" data-course-id="c3"><i class="bi bi-heart"></i></button>
+                        </div>
+                        <div class="card-content">
+                            <div class="card-meta-list">
+                                <span><i class="bi bi-bar-chart-fill text-purple"></i> Band 8.0 Target</span>
+                                <span><i class="bi bi-clock-fill"></i> 10 Weeks</span>
+                                <span><i class="bi bi-journal-check"></i> 10 Mocks</span>
+                            </div>
+                            <h5 class="font-heading mb-2"><a href="course-ielts.html">IELTS Academic & General Prep</a></h5>
+                            <p class="small text-muted mb-3">Rigorous coaching across all 4 IELTS modules: Listening, Reading, Writing Task 1/2, and 1-on-1 Speaking.</p>
+                            <div class="mt-auto d-flex align-items-center justify-content-between pt-3 border-top">
+                                <div>
+                                    <span class="small text-muted">Tuition</span>
+                                    <div class="fw-bold font-heading text-orange fs-5">$299</div>
+                                </div>
+                                <div class="d-flex gap-2">
+                                    <a href="course-ielts.html" class="btn btn-sm btn-outline-theme">Details</a>
+                                    <button class="btn btn-sm btn-primary-theme" data-bs-toggle="modal" data-bs-target="#enrollModal" data-course-name="IELTS Academic & General Prep">Enroll</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Course 4 -->
+                <div class="col-md-6 col-lg-4">
+                    <div class="custom-card course-item-card" data-title="French Language Immersion DELF DALF A1 C1" data-language="french" data-level="beginner" data-mode="offline" data-age="adults">
+                        <div class="card-img-wrap">
+                            <img src="assets/images/course-french.jpg" alt="French Language" loading="lazy">
+                            <span class="badge-tag badge-blue card-badge-top">French</span>
+                            <button class="card-favorite-btn" data-course-id="c4"><i class="bi bi-heart"></i></button>
+                        </div>
+                        <div class="card-content">
+                            <div class="card-meta-list">
+                                <span><i class="bi bi-bar-chart-fill text-blue"></i> CEFR A1 - C1</span>
+                                <span><i class="bi bi-clock-fill"></i> 14 Weeks</span>
+                                <span><i class="bi bi-building"></i> In-Person</span>
+                            </div>
+                            <h5 class="font-heading mb-2"><a href="course-french.html">French Language Immersion (DELF/DALF)</a></h5>
+                            <p class="small text-muted mb-3">Learn authentic French conversation, grammar, phonetics, and DELF international exam preparation.</p>
+                            <div class="mt-auto d-flex align-items-center justify-content-between pt-3 border-top">
+                                <div>
+                                    <span class="small text-muted">Tuition</span>
+                                    <div class="fw-bold font-heading text-orange fs-5">$249</div>
+                                </div>
+                                <div class="d-flex gap-2">
+                                    <a href="course-french.html" class="btn btn-sm btn-outline-theme">Details</a>
+                                    <button class="btn btn-sm btn-primary-theme" data-bs-toggle="modal" data-bs-target="#enrollModal" data-course-name="French Language Immersion (DELF/DALF)">Enroll</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Course 5 -->
+                <div class="col-md-6 col-lg-4">
+                    <div class="custom-card course-item-card" data-title="German Language Goethe Zertifikat A1 C1" data-language="german" data-level="intermediate" data-mode="online" data-age="adults">
+                        <div class="card-img-wrap">
+                            <img src="assets/images/course-german.jpg" alt="German Course" loading="lazy">
+                            <span class="badge-tag badge-teal card-badge-top">German</span>
+                            <button class="card-favorite-btn" data-course-id="c5"><i class="bi bi-heart"></i></button>
+                        </div>
+                        <div class="card-content">
+                            <div class="card-meta-list">
+                                <span><i class="bi bi-bar-chart-fill text-teal"></i> Goethe A1 - C1</span>
+                                <span><i class="bi bi-clock-fill"></i> 16 Weeks</span>
+                                <span><i class="bi bi-laptop"></i> Online</span>
+                            </div>
+                            <h5 class="font-heading mb-2"><a href="course-german.html">German Language (Goethe Prep)</a></h5>
+                            <p class="small text-muted mb-3">Structured German training for students and working professionals migrating to Germany or Austria.</p>
+                            <div class="mt-auto d-flex align-items-center justify-content-between pt-3 border-top">
+                                <div>
+                                    <span class="small text-muted">Tuition</span>
+                                    <div class="fw-bold font-heading text-orange fs-5">$269</div>
+                                </div>
+                                <div class="d-flex gap-2">
+                                    <a href="course-german.html" class="btn btn-sm btn-outline-theme">Details</a>
+                                    <button class="btn btn-sm btn-primary-theme" data-bs-toggle="modal" data-bs-target="#enrollModal" data-course-name="German Language (Goethe Prep)">Enroll</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Course 6 -->
+                <div class="col-md-6 col-lg-4">
+                    <div class="custom-card course-item-card" data-title="Spanish Language Conversational Mastery" data-language="spanish" data-level="beginner" data-mode="hybrid" data-age="adults">
+                        <div class="card-img-wrap">
+                            <img src="assets/images/course-spanish.jpg" alt="Spanish Course" loading="lazy">
+                            <span class="badge-tag badge-orange card-badge-top">Spanish</span>
+                            <button class="card-favorite-btn" data-course-id="c6"><i class="bi bi-heart"></i></button>
+                        </div>
+                        <div class="card-content">
+                            <div class="card-meta-list">
+                                <span><i class="bi bi-bar-chart-fill text-orange"></i> A1 - B2 DELE</span>
+                                <span><i class="bi bi-clock-fill"></i> 12 Weeks</span>
+                                <span><i class="bi bi-diagram-3"></i> Hybrid</span>
+                            </div>
+                            <h5 class="font-heading mb-2"><a href="course-spanish.html">Spanish Conversational Mastery (DELE)</a></h5>
+                            <p class="small text-muted mb-3">Learn Spanish vocabulary, sentence structures, and Latin American/Castilian cultural nuances.</p>
+                            <div class="mt-auto d-flex align-items-center justify-content-between pt-3 border-top">
+                                <div>
+                                    <span class="small text-muted">Tuition</span>
+                                    <div class="fw-bold font-heading text-orange fs-5">$219</div>
+                                </div>
+                                <div class="d-flex gap-2">
+                                    <a href="course-spanish.html" class="btn btn-sm btn-outline-theme">Details</a>
+                                    <button class="btn btn-sm btn-primary-theme" data-bs-toggle="modal" data-bs-target="#enrollModal" data-course-name="Spanish Conversational Mastery (DELE)">Enroll</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Course 7 -->
+                <div class="col-md-6 col-lg-4">
+                    <div class="custom-card course-item-card" data-title="Japanese Language JLPT N5 N1" data-language="japanese" data-level="intermediate" data-mode="online" data-age="adults">
+                        <div class="card-img-wrap">
+                            <img src="assets/images/course-japanese.jpg" alt="Japanese Course" loading="lazy">
+                            <span class="badge-tag badge-purple card-badge-top">Japanese</span>
+                            <button class="card-favorite-btn" data-course-id="c7"><i class="bi bi-heart"></i></button>
+                        </div>
+                        <div class="card-content">
+                            <div class="card-meta-list">
+                                <span><i class="bi bi-bar-chart-fill text-purple"></i> JLPT N5 to N1</span>
+                                <span><i class="bi bi-clock-fill"></i> 16 Weeks</span>
+                                <span><i class="bi bi-laptop"></i> Online</span>
+                            </div>
+                            <h5 class="font-heading mb-2"><a href="course-japanese.html">Japanese Language (JLPT Track)</a></h5>
+                            <p class="small text-muted mb-3">Hiragana, Katakana, Kanji mastery, and native business conversation for Japan career opportunities.</p>
+                            <div class="mt-auto d-flex align-items-center justify-content-between pt-3 border-top">
+                                <div>
+                                    <span class="small text-muted">Tuition</span>
+                                    <div class="fw-bold font-heading text-orange fs-5">$289</div>
+                                </div>
+                                <div class="d-flex gap-2">
+                                    <a href="course-japanese.html" class="btn btn-sm btn-outline-theme">Details</a>
+                                    <button class="btn btn-sm btn-primary-theme" data-bs-toggle="modal" data-bs-target="#enrollModal" data-course-name="Japanese Language (JLPT Track)">Enroll</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Course 8 -->
+                <div class="col-md-6 col-lg-4">
+                    <div class="custom-card course-item-card" data-title="Public Speaking Stage Presentation Skills" data-language="skills" data-level="advanced" data-mode="offline" data-age="adults">
+                        <div class="card-img-wrap">
+                            <img src="assets/images/course-speaking.jpg" alt="Public Speaking" loading="lazy">
+                            <span class="badge-tag badge-orange card-badge-top">Public Speaking</span>
+                            <button class="card-favorite-btn" data-course-id="c8"><i class="bi bi-heart"></i></button>
+                        </div>
+                        <div class="card-content">
+                            <div class="card-meta-list">
+                                <span><i class="bi bi-bar-chart-fill text-orange"></i> All Levels</span>
+                                <span><i class="bi bi-clock-fill"></i> 6 Weeks</span>
+                                <span><i class="bi bi-mic"></i> Stage Lab</span>
+                            </div>
+                            <h5 class="font-heading mb-2"><a href="course-public-speaking.html">Public Speaking & Presentation Skills</a></h5>
+                            <p class="small text-muted mb-3">Conquer stage fright, master body language, voice modulation, and storytelling for keynote talks.</p>
+                            <div class="mt-auto d-flex align-items-center justify-content-between pt-3 border-top">
+                                <div>
+                                    <span class="small text-muted">Tuition</span>
+                                    <div class="fw-bold font-heading text-orange fs-5">$189</div>
+                                </div>
+                                <div class="d-flex gap-2">
+                                    <a href="course-public-speaking.html" class="btn btn-sm btn-outline-theme">Details</a>
+                                    <button class="btn btn-sm btn-primary-theme" data-bs-toggle="modal" data-bs-target="#enrollModal" data-course-name="Public Speaking & Presentation Skills">Enroll</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Course 9 -->
+                <div class="col-md-6 col-lg-4">
+                    <div class="custom-card course-item-card" data-title="Kids Communication & Confidence Building" data-language="english" data-level="beginner" data-mode="hybrid" data-age="kids">
+                        <div class="card-img-wrap">
+                            <img src="assets/images/course-kids.jpg" alt="Kids Communication" loading="lazy">
+                            <span class="badge-tag badge-teal card-badge-top">Kids Program</span>
+                            <button class="card-favorite-btn" data-course-id="c9"><i class="bi bi-heart"></i></button>
+                        </div>
+                        <div class="card-content">
+                            <div class="card-meta-list">
+                                <span><i class="bi bi-bar-chart-fill text-teal"></i> Ages 6 - 14</span>
+                                <span><i class="bi bi-clock-fill"></i> 8 Weeks</span>
+                                <span><i class="bi bi-star"></i> Fun & Games</span>
+                            </div>
+                            <h5 class="font-heading mb-2"><a href="course-kids.html">Kids' Communication & Confidence Building</a></h5>
+                            <p class="small text-muted mb-3">Fun storytelling, roleplay games, phonetics, and creative speaking activities designed for young learners.</p>
+                            <div class="mt-auto d-flex align-items-center justify-content-between pt-3 border-top">
+                                <div>
+                                    <span class="small text-muted">Tuition</span>
+                                    <div class="fw-bold font-heading text-orange fs-5">$169</div>
+                                </div>
+                                <div class="d-flex gap-2">
+                                    <a href="course-kids.html" class="btn btn-sm btn-outline-theme">Details</a>
+                                    <button class="btn btn-sm btn-primary-theme" data-bs-toggle="modal" data-bs-target="#enrollModal" data-course-name="Kids' Communication & Confidence Building">Enroll</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+        <!-- FOOTER -->
+    <footer class="footer-main">
+        <div class="container">
+            <div class="row g-4 g-lg-5">
+                <!-- Column 1: Brand & Contact Info -->
+                <div class="col-lg-4 col-md-6">
+                    <a class="navbar-brand navbar-brand-logo mb-3 d-inline-flex align-items-center" href="index.html">
+                        <div class="brand-icon-wrap me-2">
+                            <i class="bi bi-chat-quote-fill"></i>
+                        </div>
+                        <span class="text-white">Lingua<span class="text-orange">Academy</span></span>
+                    </a>
+                    <p class="small text-muted mb-4">Empowering students, working professionals, and global organizations with certified language fluency, accent neutralization, and executive communication coaching since 2014.</p>
+                    
+                    <!-- Direct Contact Details -->
+                    <div class="footer-contact-info mb-4">
+                        <div class="d-flex align-items-center gap-2 mb-2 small text-light">
+                            <i class="bi bi-telephone-fill text-orange"></i>
+                            <span>Admissions Desk: <a href="tel:+18005555264" class="text-light fw-semibold">+1 (800) 555-LANG</a></span>
+                        </div>
+                        <div class="d-flex align-items-center gap-2 mb-2 small text-light">
+                            <i class="bi bi-envelope-fill text-orange"></i>
+                            <span>Email: <a href="mailto:info@linguaacademy.com" class="text-light">info@linguaacademy.com</a></span>
+                        </div>
+                        <div class="d-flex align-items-center gap-2 small text-light">
+                            <i class="bi bi-geo-alt-fill text-orange"></i>
+                            <span>104 Knowledge Boulevard, Downtown Campus & Virtual Labs</span>
+                        </div>
+                    </div>
+
+                    <!-- Social Media Links -->
+                    <div class="d-flex gap-2">
+                        <a href="https://www.facebook.com" target="_blank" rel="noopener noreferrer" class="btn btn-sm btn-outline-secondary rounded-circle text-light footer-social-btn" title="Facebook" aria-label="Facebook"><i class="bi bi-facebook"></i></a>
+                        <a href="https://x.com" target="_blank" rel="noopener noreferrer" class="btn btn-sm btn-outline-secondary rounded-circle text-light footer-social-btn" title="X (Twitter)" aria-label="X (Twitter)"><i class="bi bi-twitter-x"></i></a>
+                        <a href="https://www.linkedin.com" target="_blank" rel="noopener noreferrer" class="btn btn-sm btn-outline-secondary rounded-circle text-light footer-social-btn" title="LinkedIn" aria-label="LinkedIn"><i class="bi bi-linkedin"></i></a>
+                        <a href="https://www.youtube.com" target="_blank" rel="noopener noreferrer" class="btn btn-sm btn-outline-secondary rounded-circle text-light footer-social-btn" title="YouTube" aria-label="YouTube"><i class="bi bi-youtube"></i></a>
+                        <a href="https://www.instagram.com" target="_blank" rel="noopener noreferrer" class="btn btn-sm btn-outline-secondary rounded-circle text-light footer-social-btn" title="Instagram" aria-label="Instagram"><i class="bi bi-instagram"></i></a>
+                    </div>
+                </div>
+
+                <!-- Column 2: Quick Links -->
+                <div class="col-6 col-lg-2 col-md-3">
+                    <h5>Navigation</h5>
+                    <ul class="footer-links">
+                        <li><a href="about.html"><i class="bi bi-chevron-right small text-orange me-1"></i> About Us</a></li>
+                        <li><a href="courses.html"><i class="bi bi-chevron-right small text-orange me-1"></i> All Courses</a></li>
+                        <li><a href="faculty.html"><i class="bi bi-chevron-right small text-orange me-1"></i> Certified Faculty</a></li>
+                        <li><a href="schedule.html"><i class="bi bi-chevron-right small text-orange me-1"></i> Batch Schedule</a></li>
+                        <li><a href="fees.html"><i class="bi bi-chevron-right small text-orange me-1"></i> Tuition & Fees</a></li>
+                        <li><a href="pricing.html"><i class="bi bi-chevron-right small text-orange me-1"></i> Membership Plans</a></li>
+                        <li><a href="blog.html"><i class="bi bi-chevron-right small text-orange me-1"></i> Language Blog</a></li>
+                        <li><a href="contact.html"><i class="bi bi-chevron-right small text-orange me-1"></i> Contact & Centers</a></li>
+                    </ul>
+                </div>
+
+                <!-- Column 3: Language Programs -->
+                <div class="col-6 col-lg-2 col-md-3">
+                    <h5>Our Programs</h5>
+                    <ul class="footer-links">
+                        <li><a href="course-spoken-english.html"><i class="bi bi-chevron-right small text-orange me-1"></i> Spoken English</a></li>
+                        <li><a href="course-ielts.html"><i class="bi bi-chevron-right small text-orange me-1"></i> IELTS (Band 8.0+)</a></li>
+                        <li><a href="course-french.html"><i class="bi bi-chevron-right small text-orange me-1"></i> French (DELF/DALF)</a></li>
+                        <li><a href="course-german.html"><i class="bi bi-chevron-right small text-orange me-1"></i> German (Goethe Prep)</a></li>
+                        <li><a href="course-spanish.html"><i class="bi bi-chevron-right small text-orange me-1"></i> Spanish (DELE Track)</a></li>
+                        <li><a href="course-public-speaking.html"><i class="bi bi-chevron-right small text-orange me-1"></i> Public Speaking</a></li>
+                        <li><a href="home-corporate.html"><i class="bi bi-chevron-right small text-orange me-1"></i> Corporate Training</a></li>
+                        <li><a href="course-kids.html"><i class="bi bi-chevron-right small text-orange me-1"></i> Kids' Fluency Club</a></li>
+                    </ul>
+                </div>
+
+                <!-- Column 4: Newsletter & Accreditation -->
+                <div class="col-lg-4 col-md-12">
+                    <h5>Newsletter & Updates</h5>
+                    <p class="small text-muted mb-3">Subscribe to receive free weekly vocabulary flashcards, grammar hacks, and early-bird batch discount tokens.</p>
+                    
+                    <form id="newsletterForm" class="d-flex gap-2 mb-4" onsubmit="event.preventDefault(); LinguaApp.showToast('Thank you for subscribing! Check your inbox for your welcome vocabulary pack.', 'Newsletter Subscribed'); this.reset();">
+                        <input type="email" class="form-control form-control-sm bg-dark text-white border-secondary" placeholder="Enter your email address" required>
+                        <button type="submit" class="btn btn-primary-theme btn-sm text-nowrap">Subscribe</button>
+                    </form>
+
+                    <!-- Trust & Accreditation Badges -->
+                    <div class="footer-badges p-3 rounded-3 border border-secondary border-opacity-25 bg-surface bg-opacity-10">
+                        <div class="d-flex align-items-center gap-2 mb-2">
+                            <i class="bi bi-patch-check-fill text-orange fs-4"></i>
+                            <div>
+                                <strong class="d-block text-white small font-heading">CEFR Aligned & Accredited</strong>
+                                <span class="small text-muted" style="font-size: 0.75rem;">Recognized by foreign universities & Fortune 500 corporate employers</span>
+                            </div>
+                        </div>
+                        <div class="d-flex flex-wrap gap-2 pt-1">
+                            <span class="badge bg-dark border border-secondary text-light fw-normal" style="font-size: 0.7rem;"><i class="bi bi-award text-teal me-1"></i> British Council Aligned</span>
+                            <span class="badge bg-dark border border-secondary text-light fw-normal" style="font-size: 0.7rem;"><i class="bi bi-award text-blue me-1"></i> Cambridge English</span>
+                            <span class="badge bg-dark border border-secondary text-light fw-normal" style="font-size: 0.7rem;"><i class="bi bi-award text-purple me-1"></i> Goethe Zertifikat</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Footer Bottom Bar -->
+            <div class="footer-bottom text-center text-md-start d-md-flex justify-content-between align-items-center">
+                <p class="mb-0">&copy; 2026 Lingua Academy. All rights reserved. Professional Language & Communication Training Institute.</p>
+                <div class="d-flex gap-3 justify-content-center mt-3 mt-md-0">
+                    <a href="about.html" class="small text-muted">Privacy Policy</a>
+                    <a href="about.html" class="small text-muted">Terms of Service</a>
+                    <a href="fees.html" class="small text-muted">Refund Policy</a>
+                    <a href="login.html" class="small text-orange fw-semibold"><i class="bi bi-person-lock me-1"></i> Student Portal</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Modals -->
+    <div class="modal fade" id="demoClassModal" tabindex="-1">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title font-heading"><i class="bi bi-camera-video-fill text-orange me-2"></i> Book a Free Demo Class</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                </div>
+                <form id="demoClassForm">
+                    <div class="modal-body">
+                        <div class="mb-3">
+                            <label class="form-label small fw-bold">Full Name</label>
+                            <input type="text" class="form-control" name="name" required>
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label small fw-bold">Email Address</label>
+                            <input type="email" class="form-control" name="email" required>
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label small fw-bold">Select Language / Course</label>
+                            <select class="form-select" name="course" required>
+                                <option value="Spoken English">Spoken English</option>
+                                <option value="French">French</option>
+                                <option value="German">German</option>
+                                <option value="IELTS">IELTS Prep</option>
+                                <option value="Public Speaking">Public Speaking</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="submit" class="btn btn-primary-theme">Schedule Demo</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal fade" id="enrollModal" tabindex="-1">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title font-heading"><i class="bi bi-pencil-square text-orange me-2"></i> Quick Course Enrollment</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                </div>
+                <form id="enrollForm">
+                    <div class="modal-body">
+                        <div class="alert alert-info py-2 px-3 small">
+                            Course: <strong class="selected-course-title text-orange">Selected Program</strong>
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label small fw-bold">Full Name</label>
+                            <input type="text" class="form-control" name="name" required>
+                        </div>
+                        <div class="row g-2 mb-3">
+                            <div class="col-md-6">
+                                <label class="form-label small fw-bold">Phone</label>
+                                <input type="tel" class="form-control" name="phone" required>
+                            </div>
+                            <div class="col-md-6">
+                                <label class="form-label small fw-bold">Email</label>
+                                <input type="email" class="form-control" name="email" required>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="submit" class="btn btn-primary-theme">Submit Enrollment</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <!-- Scripts -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="assets/js/main.js"></script>
+    <script src="assets/js/courses.js"></script>
+</body>
+</html>

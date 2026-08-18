@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en" data-bs-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Portal Login | Lingua Academy</title>
+    <meta name="description" content="Secure administrative access for Lingua Academy management, faculty assignments, and enrollment control.">
+
+        <!-- Favicon (Save Icon) -->
+    <link rel="icon" type="image/png" href="favicon.png">
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+    <link rel="apple-touch-icon" href="favicon.png">
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@500;600;700;800&display=swap" rel="stylesheet">
+
+    <!-- Bootstrap 5 CSS & Icons -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" rel="stylesheet">
+
+    <!-- Custom CSS -->
+    <link href="assets/css/style.css" rel="stylesheet">
+    <link href="assets/css/animations.css" rel="stylesheet">
+</head>
+<body class="bg-alt min-vh-100 d-flex flex-column justify-content-between">
+
+    <!-- NAVBAR SIMPLE (NO BACK TO WEBSITE, WITH RTL BUTTON) -->
+    <nav class="navbar navbar-main">
+        <div class="container">
+            <a class="navbar-brand navbar-brand-logo" href="index.html">
+                <div class="brand-icon-wrap bg-dark text-orange border border-secondary border-opacity-25"><i class="bi bi-shield-lock-fill"></i></div>
+                <span>Lingua<span class="text-orange">Admin</span></span>
+            </a>
+            <div class="d-flex align-items-center gap-3">
+                <button class="btn btn-sm btn-link text-main p-0 theme-toggle-btn" title="Toggle Theme"><i class="bi bi-moon-stars-fill"></i></button>
+                <button class="btn btn-sm btn-link text-main p-0 rtl-toggle-btn" title="Toggle RTL"><i class="bi bi-save"></i> RTL</button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- ADMIN LOGIN CARD SECTION -->
+    <div class="container py-5">
+        <div class="row justify-content-center">
+            <div class="col-md-8 col-lg-5">
+                <div class="card p-4 p-sm-5 bg-surface border-0 rounded-4 shadow-lg">
+                    <div class="text-center mb-4">
+                        <div class="brand-icon-wrap mx-auto mb-3 fs-3 bg-dark text-orange border border-secondary border-opacity-25" style="width: 60px; height: 60px;">
+                            <i class="bi bi-shield-lock"></i>
+                        </div>
+                        <h3 class="font-heading mb-1">Administrative Access</h3>
+                        <p class="small text-muted">Authorized Personnel & Faculty Management Only</p>
+                    </div>
+
+                    <div class="alert alert-secondary py-2 px-3 small mb-4 d-flex align-items-center gap-2">
+                        <i class="bi bi-shield-check text-orange fs-5"></i>
+                        <span class="small text-muted" style="font-size: 0.8rem;">Tier-1 End-to-End Encrypted Session. All administrative actions are logged.</span>
+                    </div>
+
+                    <form id="adminLoginForm">
+                        <div class="mb-3">
+                            <label class="form-label small fw-bold">Administrator Email / ID</label>
+                            <div class="input-group">
+                                <span class="input-group-text bg-alt"><i class="bi bi-person-badge"></i></span>
+                                <input type="email" id="adminEmail" class="form-control" placeholder="admin@linguaacademy.com" required>
+                            </div>
+                        </div>
+
+                        <div class="mb-3">
+                            <div class="d-flex justify-content-between align-items-center mb-1">
+                                <label class="form-label small fw-bold mb-0">Master Password</label>
+                                <a href="#" class="small text-orange" onclick="LinguaApp.showToast('Contact Senior IT Administrator for credential recovery.', 'Security Policy'); return false;">Recovery</a>
+                            </div>
+                            <div class="input-group">
+                                <span class="input-group-text bg-alt"><i class="bi bi-key-fill"></i></span>
+                                <input type="password" id="adminPassword" class="form-control" placeholder="••••••••••••" required>
+                                <button type="button" class="btn btn-outline-secondary toggle-password-btn"><i class="bi bi-eye-fill"></i></button>
+                            </div>
+                        </div>
+
+                        <div class="mb-4">
+                            <label class="form-label small fw-bold">2FA Security PIN (6 Digits)</label>
+                            <div class="input-group">
+                                <span class="input-group-text bg-alt"><i class="bi bi-shield-shaded"></i></span>
+                                <input type="text" id="adminPin" class="form-control" placeholder="849201" maxlength="6" pattern="[0-9]{6}">
+                            </div>
+                        </div>
+
+                        <button type="submit" class="btn btn-dark btn-lg w-100 mb-3 border border-secondary border-opacity-50">
+                            <i class="bi bi-shield-lock-fill text-orange me-2"></i> Authenticate & Enter Portal
+                        </button>
+
+                        <div class="text-center pt-3 border-top">
+                            <a href="login.html" class="small text-orange fw-semibold text-decoration-none">
+                                <i class="bi bi-person-circle me-1"></i> Switch to Student Portal Sign In
+                            </a>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- FOOTER SIMPLE -->
+    <footer class="py-4 text-center small text-muted bg-surface border-top">
+        <div class="container d-flex flex-column flex-md-row justify-content-between align-items-center gap-2">
+            <span>&copy; 2026 Lingua Academy. Internal Management & Administration Suite.</span>
+            <div class="d-flex gap-3">
+                <a href="login.html" class="text-muted text-decoration-none">Student Portal</a>
+                <a href="contact.html" class="text-muted text-decoration-none">IT Support</a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="assets/js/main.js"></script>
+    <script src="assets/js/auth.js"></script>
+</body>
+</html>

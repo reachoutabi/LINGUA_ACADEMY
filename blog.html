@@ -1,0 +1,665 @@
+<!DOCTYPE html>
+<html lang="en" data-bs-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Language & Communication Blog | Lingua Academy</title>
+    <meta name="description" content="Read expert insights on overcoming speaking hesitation, IELTS band 8 tips, French phonetics, accent training, and interview preparation.">
+
+        <!-- Favicon (Save Icon) -->
+    <link rel="icon" type="image/png" href="favicon.png">
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+    <link rel="apple-touch-icon" href="favicon.png">
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@500;600;700;800&display=swap" rel="stylesheet">
+
+    <!-- Bootstrap 5 CSS & Icons -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" rel="stylesheet">
+
+    <!-- Custom CSS -->
+    <link href="assets/css/style.css" rel="stylesheet">
+    <link href="assets/css/animations.css" rel="stylesheet">
+</head>
+<body>
+
+    <!-- TOP BAR -->
+    <div class="top-bar d-none d-md-block">
+        <div class="container">
+            <div class="d-flex justify-content-between align-items-center">
+                <div class="d-flex align-items-center gap-4">
+                    <span><i class="bi bi-telephone-fill me-2 text-orange"></i>+1 (800) 555-LANG</span>
+                    <span><i class="bi bi-envelope-fill me-2 text-orange"></i>info@linguaacademy.com</span>
+                </div>
+                <div class="d-flex align-items-center gap-3">
+                    <button class="btn btn-sm btn-link text-light p-0 theme-toggle-btn" title="Toggle Theme"><i class="bi bi-moon-stars-fill"></i></button>
+                    <button class="btn btn-sm btn-link text-light p-0 rtl-toggle-btn" title="Toggle RTL"><i class="bi bi-save"></i> RTL</button>
+                    <a href="login.html" class="small ms-2"><i class="bi bi-person-lock me-1"></i> Student Portal</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- MAIN NAVBAR -->
+    <nav class="navbar navbar-expand-lg navbar-main">
+        <div class="container">
+            <a class="navbar-brand navbar-brand-logo" href="index.html">
+                <div class="brand-icon-wrap"><i class="bi bi-chat-quote-fill"></i></div>
+                <span>Lingua<span class="text-orange">Academy</span></span>
+            </a>
+
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarMainContent">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="navbarMainContent">
+                <ul class="navbar-menu nav ms-auto align-items-lg-center">
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown">Home</a>
+                        <ul class="dropdown-menu shadow-sm">
+                            <li><a class="dropdown-item" href="index.html"><i class="bi bi-house-door me-2"></i> General Academy Landing</a></li>
+                            <li><a class="dropdown-item" href="home-corporate.html"><i class="bi bi-building me-2"></i> Corporate Communication</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item"><a class="nav-link" href="about.html">About Us</a></li>
+                    <li class="nav-item"><a class="nav-link" href="courses.html">Courses</a></li>
+                    <li class="nav-item"><a class="nav-link" href="faculty.html">Faculty</a></li>
+                    <li class="nav-item"><a class="nav-link" href="schedule.html">Schedule</a></li>
+                    <li class="nav-item"><a class="nav-link" href="fees.html">Fees</a></li>
+                    <li class="nav-item"><a class="nav-link" href="pricing.html">Pricing</a></li>
+                    <li class="nav-item"><a class="nav-link active" href="blog.html">Blog</a></li>
+                    <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+                </ul>
+
+                <div class="d-flex align-items-center gap-2 ms-lg-3 mt-3 mt-lg-0 auth-nav-container">
+                    <button class="btn btn-primary-theme btn-sm" data-bs-toggle="modal" data-bs-target="#demoClassModal">
+                        Book Free Demo
+                    </button>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- BREADCRUMB HERO -->
+    <section class="py-5 bg-surface border-bottom">
+        <div class="container py-3 text-center max-w-700 mx-auto">
+            <span class="badge-tag badge-orange mb-2">Insights & Guides</span>
+            <h1 class="display-5 font-heading">The Fluent Mind Blog</h1>
+            <p class="lead text-muted mb-0">Practical guides, pronunciation breakdowns, and career communication strategies written by our certified faculty.</p>
+        </div>
+    </section>
+
+    <!-- FEATURED ARTICLE SPOTLIGHT -->
+    <section class="py-5 bg-alt border-bottom">
+        <div class="container py-2">
+            <div class="card p-0 border-0 rounded-4 shadow-md overflow-hidden bg-surface">
+                <div class="row g-0 align-items-center">
+                    <div class="col-lg-6">
+                        <img src="https://images.unsplash.com/photo-1475721027785-f74eccf877e2?auto=format&fit=crop&w=800&q=80" alt="Public speaking spotlight" class="img-fluid h-100" style="object-fit: cover; min-height: 320px;">
+                    </div>
+                    <div class="col-lg-6 p-4 p-lg-5">
+                        <span class="badge-tag badge-orange mb-3">Featured Article</span>
+                        <h2 class="font-heading mb-3"><a href="blog-details.html" class="text-heading">10 Psychological Hacks to Overcome Vocal Hesitation and Stage Fright</a></h2>
+                        <p class="text-muted mb-4">Discover practical breathing techniques, cognitive reframing, and sentence anchoring to speak confidently in high-stakes meetings.</p>
+                        <div class="d-flex align-items-center justify-content-between pt-3 border-top">
+                            <div class="d-flex align-items-center gap-2">
+                                <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&w=100&q=80" class="rounded-circle" width="36" height="36" alt="Author">
+                                <span class="small fw-semibold">Sarah Jenkins</span>
+                            </div>
+                            <span class="small text-muted"><i class="bi bi-clock me-1"></i> 6 Min Read</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- BLOG LISTING & SIDEBAR -->
+    <section class="py-5" id="blogListingSection">
+        <div class="container py-3">
+            <div class="row g-5">
+
+                <!-- Articles Grid Container -->
+                <div class="col-lg-8">
+                    <!-- Page 1 Articles -->
+                    <div class="row g-4 blog-page-container" id="blogPage1">
+                        <!-- Article 1 -->
+                        <div class="col-md-6 blog-article-card" data-category="IELTS & Exam Prep">
+                            <div class="custom-card">
+                                <div class="card-img-wrap">
+                                    <img src="https://images.unsplash.com/photo-1434030216411-0b793f4b4173?auto=format&fit=crop&w=600&q=80" alt="IELTS Prep">
+                                    <span class="badge-tag badge-purple card-badge-top">Exam Strategy</span>
+                                </div>
+                                <div class="card-content">
+                                    <div class="card-meta-list">
+                                        <span><i class="bi bi-calendar3 me-1"></i> Aug 12, 2026</span>
+                                        <span><i class="bi bi-clock me-1"></i> 5 min read</span>
+                                    </div>
+                                    <h5 class="font-heading mb-2"><a href="blog-details.html">How to Score Band 8.0+ in IELTS Speaking Task 2</a></h5>
+                                    <p class="small text-muted mb-3">Master structural cue card organization, idiomatic range, and self-correction during your speaking interview.</p>
+                                    <a href="blog-details.html" class="small fw-bold text-orange mt-auto">Read Full Article <i class="bi bi-arrow-right"></i></a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Article 2 -->
+                        <div class="col-md-6 blog-article-card" data-category="Language Tips">
+                            <div class="custom-card">
+                                <div class="card-img-wrap">
+                                    <img src="https://images.unsplash.com/photo-1523240795612-9a054b0db644?auto=format&fit=crop&w=600&q=80" alt="French Pronunciation">
+                                    <span class="badge-tag badge-blue card-badge-top">French Tips</span>
+                                </div>
+                                <div class="card-content">
+                                    <div class="card-meta-list">
+                                        <span><i class="bi bi-calendar3 me-1"></i> Aug 10, 2026</span>
+                                        <span><i class="bi bi-clock me-1"></i> 4 min read</span>
+                                    </div>
+                                    <h5 class="font-heading mb-2"><a href="blog-details.html">Mastering French Nasal Vowels without Confusion</a></h5>
+                                    <p class="small text-muted mb-3">A clear phonetic breakdown of 'an', 'in', 'on', and 'un' with native sound exercises for beginners.</p>
+                                    <a href="blog-details.html" class="small fw-bold text-blue mt-auto">Read Full Article <i class="bi bi-arrow-right"></i></a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Article 3 -->
+                        <div class="col-md-6 blog-article-card" data-category="Corporate Communication">
+                            <div class="custom-card">
+                                <div class="card-img-wrap">
+                                    <img src="https://images.unsplash.com/photo-1551836022-d5d88e9218df?auto=format&fit=crop&w=600&q=80" alt="Business English">
+                                    <span class="badge-tag badge-teal card-badge-top">Corporate English</span>
+                                </div>
+                                <div class="card-content">
+                                    <div class="card-meta-list">
+                                        <span><i class="bi bi-calendar3 me-1"></i> Aug 05, 2026</span>
+                                        <span><i class="bi bi-clock me-1"></i> 7 min read</span>
+                                    </div>
+                                    <h5 class="font-heading mb-2"><a href="blog-details.html">25 Diplomatic Phrases for Global Executive Meetings</a></h5>
+                                    <p class="small text-muted mb-3">How to disagree politely, interrupt gracefully, and summarize action points without sounding abrasive.</p>
+                                    <a href="blog-details.html" class="small fw-bold text-teal mt-auto">Read Full Article <i class="bi bi-arrow-right"></i></a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Article 4 -->
+                        <div class="col-md-6 blog-article-card" data-category="Kids Communication">
+                            <div class="custom-card">
+                                <div class="card-img-wrap">
+                                    <img src="https://images.unsplash.com/photo-1509062522246-3755977927d7?auto=format&fit=crop&w=600&q=80" alt="Kids Communication">
+                                    <span class="badge-tag badge-orange card-badge-top">Parenting & Kids</span>
+                                </div>
+                                <div class="card-content">
+                                    <div class="card-meta-list">
+                                        <span><i class="bi bi-calendar3 me-1"></i> Jul 28, 2026</span>
+                                        <span><i class="bi bi-clock me-1"></i> 4 min read</span>
+                                    </div>
+                                    <h5 class="font-heading mb-2"><a href="blog-details.html">5 Fun Games to Build Your Child's Vocabulary at Home</a></h5>
+                                    <p class="small text-muted mb-3">Simple 15-minute daily interactive storytelling games that inspire children to express themselves confidently.</p>
+                                    <a href="blog-details.html" class="small fw-bold text-orange mt-auto">Read Full Article <i class="bi bi-arrow-right"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Page 2 Articles (Hidden by default) -->
+                    <div class="row g-4 blog-page-container d-none" id="blogPage2">
+                        <!-- Article 5 -->
+                        <div class="col-md-6 blog-article-card" data-category="Language Tips">
+                            <div class="custom-card">
+                                <div class="card-img-wrap">
+                                    <img src="assets/images/course-german.jpg" alt="German Articles">
+                                    <span class="badge-tag badge-teal card-badge-top">German Grammar</span>
+                                </div>
+                                <div class="card-content">
+                                    <div class="card-meta-list">
+                                        <span><i class="bi bi-calendar3 me-1"></i> Jul 20, 2026</span>
+                                        <span><i class="bi bi-clock me-1"></i> 6 min read</span>
+                                    </div>
+                                    <h5 class="font-heading mb-2"><a href="blog-details.html">German Declensions Simplified: Der, Die, Das Demystified</a></h5>
+                                    <p class="small text-muted mb-3">Learn mnemonic patterns and noun-ending rules to master German grammatical gender accurately.</p>
+                                    <a href="blog-details.html" class="small fw-bold text-teal mt-auto">Read Full Article <i class="bi bi-arrow-right"></i></a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Article 6 -->
+                        <div class="col-md-6 blog-article-card" data-category="Public Speaking">
+                            <div class="custom-card">
+                                <div class="card-img-wrap">
+                                    <img src="assets/images/course-speaking.jpg" alt="Accent Reduction">
+                                    <span class="badge-tag badge-purple card-badge-top">Speech Lab</span>
+                                </div>
+                                <div class="card-content">
+                                    <div class="card-meta-list">
+                                        <span><i class="bi bi-calendar3 me-1"></i> Jul 15, 2026</span>
+                                        <span><i class="bi bi-clock me-1"></i> 5 min read</span>
+                                    </div>
+                                    <h5 class="font-heading mb-2"><a href="blog-details.html">10 Daily Pronunciation Drills for Accent Neutralization</a></h5>
+                                    <p class="small text-muted mb-3">Vocal warmups, intonation shadowing exercises, and tongue placement diagrams for international clarity.</p>
+                                    <a href="blog-details.html" class="small fw-bold text-purple mt-auto">Read Full Article <i class="bi bi-arrow-right"></i></a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Article 7 -->
+                        <div class="col-md-6 blog-article-card" data-category="Public Speaking">
+                            <div class="custom-card">
+                                <div class="card-img-wrap">
+                                    <img src="https://images.unsplash.com/photo-1544531585-9847b68c8c86?auto=format&fit=crop&w=600&q=80" alt="Impromptu Speech">
+                                    <span class="badge-tag badge-orange card-badge-top">Confidence</span>
+                                </div>
+                                <div class="card-content">
+                                    <div class="card-meta-list">
+                                        <span><i class="bi bi-calendar3 me-1"></i> Jul 10, 2026</span>
+                                        <span><i class="bi bi-clock me-1"></i> 8 min read</span>
+                                    </div>
+                                    <h5 class="font-heading mb-2"><a href="blog-details.html">How to Structure an Impromptu Speech in 30 Seconds</a></h5>
+                                    <p class="small text-muted mb-3">Use the PREP framework (Point, Reason, Example, Point) to nail unscripted meetings and Q&A sessions.</p>
+                                    <a href="blog-details.html" class="small fw-bold text-orange mt-auto">Read Full Article <i class="bi bi-arrow-right"></i></a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Article 8 -->
+                        <div class="col-md-6 blog-article-card" data-category="Language Tips">
+                            <div class="custom-card">
+                                <div class="card-img-wrap">
+                                    <img src="assets/images/course-spanish.jpg" alt="Spanish Subjunctive">
+                                    <span class="badge-tag badge-blue card-badge-top">Spanish Mastery</span>
+                                </div>
+                                <div class="card-content">
+                                    <div class="card-meta-list">
+                                        <span><i class="bi bi-calendar3 me-1"></i> Jul 02, 2026</span>
+                                        <span><i class="bi bi-clock me-1"></i> 6 min read</span>
+                                    </div>
+                                    <h5 class="font-heading mb-2"><a href="blog-details.html">Spanish Subjunctive Mood: When and How to Use It</a></h5>
+                                    <p class="small text-muted mb-3">Say goodbye to subjunctive anxiety with our WEIRDO rule checklist and common conversational triggers.</p>
+                                    <a href="blog-details.html" class="small fw-bold text-blue mt-auto">Read Full Article <i class="bi bi-arrow-right"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Page 3 Articles (Hidden by default) -->
+                    <div class="row g-4 blog-page-container d-none" id="blogPage3">
+                        <!-- Article 9 -->
+                        <div class="col-md-6 blog-article-card" data-category="Language Tips">
+                            <div class="custom-card">
+                                <div class="card-img-wrap">
+                                    <img src="assets/images/course-japanese.jpg" alt="Japanese Kanji">
+                                    <span class="badge-tag badge-purple card-badge-top">Japanese JLPT</span>
+                                </div>
+                                <div class="card-content">
+                                    <div class="card-meta-list">
+                                        <span><i class="bi bi-calendar3 me-1"></i> Jun 25, 2026</span>
+                                        <span><i class="bi bi-clock me-1"></i> 7 min read</span>
+                                    </div>
+                                    <h5 class="font-heading mb-2"><a href="blog-details.html">Kanji Radical Breakdown: Learn 100 Characters in 7 Days</a></h5>
+                                    <p class="small text-muted mb-3">Deconstruct compound kanji into visual components for effortless JLPT N5 and N4 retention.</p>
+                                    <a href="blog-details.html" class="small fw-bold text-purple mt-auto">Read Full Article <i class="bi bi-arrow-right"></i></a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Article 10 -->
+                        <div class="col-md-6 blog-article-card" data-category="Corporate Communication">
+                            <div class="custom-card">
+                                <div class="card-img-wrap">
+                                    <img src="assets/images/course-business.jpg" alt="Executive Pitching">
+                                    <span class="badge-tag badge-teal card-badge-top">Executive Pitch</span>
+                                </div>
+                                <div class="card-content">
+                                    <div class="card-meta-list">
+                                        <span><i class="bi bi-calendar3 me-1"></i> Jun 18, 2026</span>
+                                        <span><i class="bi bi-clock me-1"></i> 6 min read</span>
+                                    </div>
+                                    <h5 class="font-heading mb-2"><a href="blog-details.html">Executive Pitching: Tone Modulation for Multi-Million Deals</a></h5>
+                                    <p class="small text-muted mb-3">Master downward inflections and purposeful pauses to command attention from venture partners and boards.</p>
+                                    <a href="blog-details.html" class="small fw-bold text-teal mt-auto">Read Full Article <i class="bi bi-arrow-right"></i></a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Article 11 -->
+                        <div class="col-md-6 blog-article-card" data-category="IELTS & Exam Prep">
+                            <div class="custom-card">
+                                <div class="card-img-wrap">
+                                    <img src="assets/images/course-ielts.jpg" alt="TOEFL vs IELTS">
+                                    <span class="badge-tag badge-orange card-badge-top">Exam Comparison</span>
+                                </div>
+                                <div class="card-content">
+                                    <div class="card-meta-list">
+                                        <span><i class="bi bi-calendar3 me-1"></i> Jun 12, 2026</span>
+                                        <span><i class="bi bi-clock me-1"></i> 5 min read</span>
+                                    </div>
+                                    <h5 class="font-heading mb-2"><a href="blog-details.html">TOEFL iBT vs IELTS Academic: Which Exam Should You Pick?</a></h5>
+                                    <p class="small text-muted mb-3">A thorough comparison of scoring criteria, computer vs human interviews, and university acceptance rates.</p>
+                                    <a href="blog-details.html" class="small fw-bold text-orange mt-auto">Read Full Article <i class="bi bi-arrow-right"></i></a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Article 12 -->
+                        <div class="col-md-6 blog-article-card" data-category="Corporate Communication">
+                            <div class="custom-card">
+                                <div class="card-img-wrap">
+                                    <img src="assets/images/centre-roundtable.jpg" alt="Cross Cultural">
+                                    <span class="badge-tag badge-blue card-badge-top">Cultural EQ</span>
+                                </div>
+                                <div class="card-content">
+                                    <div class="card-meta-list">
+                                        <span><i class="bi bi-calendar3 me-1"></i> Jun 05, 2026</span>
+                                        <span><i class="bi bi-clock me-1"></i> 9 min read</span>
+                                    </div>
+                                    <h5 class="font-heading mb-2"><a href="blog-details.html">Cross-Cultural Communication Hacks for Multinational Teams</a></h5>
+                                    <p class="small text-muted mb-3">Navigating direct vs indirect feedback, high-context cultures, and virtual asynchronous etiquette.</p>
+                                    <a href="blog-details.html" class="small fw-bold text-blue mt-auto">Read Full Article <i class="bi bi-arrow-right"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Interactive Pagination -->
+                    <nav class="mt-5" aria-label="Blog articles pagination">
+                        <ul class="pagination justify-content-center" id="blogPagination">
+                            <li class="page-item disabled" id="blogPrevPage"><button class="page-link" onclick="goToBlogPage(currentBlogPage - 1)">Previous</button></li>
+                            <li class="page-item active" id="blogPageBtn1"><button class="page-link" onclick="goToBlogPage(1)">1</button></li>
+                            <li class="page-item" id="blogPageBtn2"><button class="page-link" onclick="goToBlogPage(2)">2</button></li>
+                            <li class="page-item" id="blogPageBtn3"><button class="page-link" onclick="goToBlogPage(3)">3</button></li>
+                            <li class="page-item" id="blogNextPage"><button class="page-link" onclick="goToBlogPage(currentBlogPage + 1)">Next</button></li>
+                        </ul>
+                    </nav>
+                </div>
+
+                <!-- Sidebar -->
+                <div class="col-lg-4">
+                    <!-- Search Widget -->
+                    <div class="card p-4 bg-surface border rounded-4 mb-4">
+                        <h5 class="font-heading mb-3">Search Articles</h5>
+                        <div class="input-group">
+                            <input type="text" class="form-control" placeholder="Search blog...">
+                            <button class="btn btn-primary-theme"><i class="bi bi-search"></i></button>
+                        </div>
+                    </div>
+
+                    <!-- Categories Widget -->
+                    <div class="card p-4 bg-surface border rounded-4 mb-4">
+                        <h5 class="font-heading mb-3">Categories</h5>
+                        <ul class="list-unstyled mb-0" id="blogCategoryList">
+                            <li class="d-flex justify-content-between py-2 border-bottom"><a href="javascript:void(0)" onclick="filterBlogByCategory('all')" class="text-main fw-semibold text-orange"><i class="bi bi-grid me-2"></i> All Categories</a> <span class="badge bg-secondary-subtle text-muted">12</span></li>
+                            <li class="d-flex justify-content-between py-2 border-bottom"><a href="javascript:void(0)" onclick="filterBlogByCategory('Language Tips')" class="text-main"><i class="bi bi-translate me-2 text-orange"></i> Language Tips</a> <span class="badge bg-secondary-subtle text-muted">4</span></li>
+                            <li class="d-flex justify-content-between py-2 border-bottom"><a href="javascript:void(0)" onclick="filterBlogByCategory('IELTS & Exam Prep')" class="text-main"><i class="bi bi-award me-2 text-purple"></i> IELTS & Exam Prep</a> <span class="badge bg-secondary-subtle text-muted">2</span></li>
+                            <li class="d-flex justify-content-between py-2 border-bottom"><a href="javascript:void(0)" onclick="filterBlogByCategory('Public Speaking')" class="text-main"><i class="bi bi-mic me-2 text-teal"></i> Public Speaking</a> <span class="badge bg-secondary-subtle text-muted">2</span></li>
+                            <li class="d-flex justify-content-between py-2 border-bottom"><a href="javascript:void(0)" onclick="filterBlogByCategory('Corporate Communication')" class="text-main"><i class="bi bi-building me-2 text-blue"></i> Corporate Communication</a> <span class="badge bg-secondary-subtle text-muted">3</span></li>
+                            <li class="d-flex justify-content-between py-2"><a href="javascript:void(0)" onclick="filterBlogByCategory('Kids Communication')" class="text-main"><i class="bi bi-stars me-2 text-orange"></i> Kids Communication</a> <span class="badge bg-secondary-subtle text-muted">1</span></li>
+                        </ul>
+                    </div>
+
+                    <!-- Course Promo Widget -->
+                    <div class="card p-4 bg-dark text-white rounded-4 text-center">
+                        <i class="bi bi-camera-video-fill text-orange fs-1 mb-2"></i>
+                        <h5 class="font-heading text-white">Free Demo Class</h5>
+                        <p class="small text-light mb-3">Experience our interactive teaching methodology live before enrolling.</p>
+                        <button class="btn btn-primary-theme btn-sm w-100" data-bs-toggle="modal" data-bs-target="#demoClassModal">Book Slot Now</button>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+        <!-- FOOTER -->
+    <footer class="footer-main">
+        <div class="container">
+            <div class="row g-4 g-lg-5">
+                <!-- Column 1: Brand & Contact Info -->
+                <div class="col-lg-4 col-md-6">
+                    <a class="navbar-brand navbar-brand-logo mb-3 d-inline-flex align-items-center" href="index.html">
+                        <div class="brand-icon-wrap me-2">
+                            <i class="bi bi-chat-quote-fill"></i>
+                        </div>
+                        <span class="text-white">Lingua<span class="text-orange">Academy</span></span>
+                    </a>
+                    <p class="small text-muted mb-4">Empowering students, working professionals, and global organizations with certified language fluency, accent neutralization, and executive communication coaching since 2014.</p>
+                    
+                    <!-- Direct Contact Details -->
+                    <div class="footer-contact-info mb-4">
+                        <div class="d-flex align-items-center gap-2 mb-2 small text-light">
+                            <i class="bi bi-telephone-fill text-orange"></i>
+                            <span>Admissions Desk: <a href="tel:+18005555264" class="text-light fw-semibold">+1 (800) 555-LANG</a></span>
+                        </div>
+                        <div class="d-flex align-items-center gap-2 mb-2 small text-light">
+                            <i class="bi bi-envelope-fill text-orange"></i>
+                            <span>Email: <a href="mailto:info@linguaacademy.com" class="text-light">info@linguaacademy.com</a></span>
+                        </div>
+                        <div class="d-flex align-items-center gap-2 small text-light">
+                            <i class="bi bi-geo-alt-fill text-orange"></i>
+                            <span>104 Knowledge Boulevard, Downtown Campus & Virtual Labs</span>
+                        </div>
+                    </div>
+
+                    <!-- Social Media Links -->
+                    <div class="d-flex gap-2">
+                        <a href="https://www.facebook.com" target="_blank" rel="noopener noreferrer" class="btn btn-sm btn-outline-secondary rounded-circle text-light footer-social-btn" title="Facebook" aria-label="Facebook"><i class="bi bi-facebook"></i></a>
+                        <a href="https://x.com" target="_blank" rel="noopener noreferrer" class="btn btn-sm btn-outline-secondary rounded-circle text-light footer-social-btn" title="X (Twitter)" aria-label="X (Twitter)"><i class="bi bi-twitter-x"></i></a>
+                        <a href="https://www.linkedin.com" target="_blank" rel="noopener noreferrer" class="btn btn-sm btn-outline-secondary rounded-circle text-light footer-social-btn" title="LinkedIn" aria-label="LinkedIn"><i class="bi bi-linkedin"></i></a>
+                        <a href="https://www.youtube.com" target="_blank" rel="noopener noreferrer" class="btn btn-sm btn-outline-secondary rounded-circle text-light footer-social-btn" title="YouTube" aria-label="YouTube"><i class="bi bi-youtube"></i></a>
+                        <a href="https://www.instagram.com" target="_blank" rel="noopener noreferrer" class="btn btn-sm btn-outline-secondary rounded-circle text-light footer-social-btn" title="Instagram" aria-label="Instagram"><i class="bi bi-instagram"></i></a>
+                    </div>
+                </div>
+
+                <!-- Column 2: Quick Links -->
+                <div class="col-6 col-lg-2 col-md-3">
+                    <h5>Navigation</h5>
+                    <ul class="footer-links">
+                        <li><a href="about.html"><i class="bi bi-chevron-right small text-orange me-1"></i> About Us</a></li>
+                        <li><a href="courses.html"><i class="bi bi-chevron-right small text-orange me-1"></i> All Courses</a></li>
+                        <li><a href="faculty.html"><i class="bi bi-chevron-right small text-orange me-1"></i> Certified Faculty</a></li>
+                        <li><a href="schedule.html"><i class="bi bi-chevron-right small text-orange me-1"></i> Batch Schedule</a></li>
+                        <li><a href="fees.html"><i class="bi bi-chevron-right small text-orange me-1"></i> Tuition & Fees</a></li>
+                        <li><a href="pricing.html"><i class="bi bi-chevron-right small text-orange me-1"></i> Membership Plans</a></li>
+                        <li><a href="blog.html"><i class="bi bi-chevron-right small text-orange me-1"></i> Language Blog</a></li>
+                        <li><a href="contact.html"><i class="bi bi-chevron-right small text-orange me-1"></i> Contact & Centers</a></li>
+                    </ul>
+                </div>
+
+                <!-- Column 3: Language Programs -->
+                <div class="col-6 col-lg-2 col-md-3">
+                    <h5>Our Programs</h5>
+                    <ul class="footer-links">
+                        <li><a href="course-spoken-english.html"><i class="bi bi-chevron-right small text-orange me-1"></i> Spoken English</a></li>
+                        <li><a href="course-ielts.html"><i class="bi bi-chevron-right small text-orange me-1"></i> IELTS (Band 8.0+)</a></li>
+                        <li><a href="course-french.html"><i class="bi bi-chevron-right small text-orange me-1"></i> French (DELF/DALF)</a></li>
+                        <li><a href="course-german.html"><i class="bi bi-chevron-right small text-orange me-1"></i> German (Goethe Prep)</a></li>
+                        <li><a href="course-spanish.html"><i class="bi bi-chevron-right small text-orange me-1"></i> Spanish (DELE Track)</a></li>
+                        <li><a href="course-public-speaking.html"><i class="bi bi-chevron-right small text-orange me-1"></i> Public Speaking</a></li>
+                        <li><a href="home-corporate.html"><i class="bi bi-chevron-right small text-orange me-1"></i> Corporate Training</a></li>
+                        <li><a href="course-kids.html"><i class="bi bi-chevron-right small text-orange me-1"></i> Kids' Fluency Club</a></li>
+                    </ul>
+                </div>
+
+                <!-- Column 4: Newsletter & Accreditation -->
+                <div class="col-lg-4 col-md-12">
+                    <h5>Newsletter & Updates</h5>
+                    <p class="small text-muted mb-3">Subscribe to receive free weekly vocabulary flashcards, grammar hacks, and early-bird batch discount tokens.</p>
+                    
+                    <form id="newsletterForm" class="d-flex gap-2 mb-4" onsubmit="event.preventDefault(); LinguaApp.showToast('Thank you for subscribing! Check your inbox for your welcome vocabulary pack.', 'Newsletter Subscribed'); this.reset();">
+                        <input type="email" class="form-control form-control-sm bg-dark text-white border-secondary" placeholder="Enter your email address" required>
+                        <button type="submit" class="btn btn-primary-theme btn-sm text-nowrap">Subscribe</button>
+                    </form>
+
+                    <!-- Trust & Accreditation Badges -->
+                    <div class="footer-badges p-3 rounded-3 border border-secondary border-opacity-25 bg-surface bg-opacity-10">
+                        <div class="d-flex align-items-center gap-2 mb-2">
+                            <i class="bi bi-patch-check-fill text-orange fs-4"></i>
+                            <div>
+                                <strong class="d-block text-white small font-heading">CEFR Aligned & Accredited</strong>
+                                <span class="small text-muted" style="font-size: 0.75rem;">Recognized by foreign universities & Fortune 500 corporate employers</span>
+                            </div>
+                        </div>
+                        <div class="d-flex flex-wrap gap-2 pt-1">
+                            <span class="badge bg-dark border border-secondary text-light fw-normal" style="font-size: 0.7rem;"><i class="bi bi-award text-teal me-1"></i> British Council Aligned</span>
+                            <span class="badge bg-dark border border-secondary text-light fw-normal" style="font-size: 0.7rem;"><i class="bi bi-award text-blue me-1"></i> Cambridge English</span>
+                            <span class="badge bg-dark border border-secondary text-light fw-normal" style="font-size: 0.7rem;"><i class="bi bi-award text-purple me-1"></i> Goethe Zertifikat</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Footer Bottom Bar -->
+            <div class="footer-bottom text-center text-md-start d-md-flex justify-content-between align-items-center">
+                <p class="mb-0">&copy; 2026 Lingua Academy. All rights reserved. Professional Language & Communication Training Institute.</p>
+                <div class="d-flex gap-3 justify-content-center mt-3 mt-md-0">
+                    <a href="about.html" class="small text-muted">Privacy Policy</a>
+                    <a href="about.html" class="small text-muted">Terms of Service</a>
+                    <a href="fees.html" class="small text-muted">Refund Policy</a>
+                    <a href="login.html" class="small text-orange fw-semibold"><i class="bi bi-person-lock me-1"></i> Student Portal</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Demo Modal -->
+    <div class="modal fade" id="demoClassModal" tabindex="-1">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title font-heading"><i class="bi bi-camera-video-fill text-orange me-2"></i> Book Free Demo Class</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                </div>
+                <form id="demoClassForm">
+                    <div class="modal-body">
+                        <div class="mb-3">
+                            <label class="form-label small fw-bold">Full Name</label>
+                            <input type="text" class="form-control" name="name" required>
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label small fw-bold">Email</label>
+                            <input type="email" class="form-control" name="email" required>
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="submit" class="btn btn-primary-theme">Schedule Demo</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <!-- Scripts -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="assets/js/main.js"></script>
+
+    <!-- Blog Interactive Pagination & Category Filter Script -->
+    <script>
+        let currentBlogPage = 1;
+        const totalBlogPages = 3;
+
+        function goToBlogPage(pageNum) {
+            if (pageNum < 1 || pageNum > totalBlogPages) return;
+            currentBlogPage = pageNum;
+
+            // Toggle pages
+            for (let i = 1; i <= totalBlogPages; i++) {
+                const pageEl = document.getElementById('blogPage' + i);
+                const btnEl = document.getElementById('blogPageBtn' + i);
+                if (pageEl) {
+                    if (i === pageNum) {
+                        pageEl.classList.remove('d-none');
+                    } else {
+                        pageEl.classList.add('d-none');
+                    }
+                }
+                if (btnEl) {
+                    if (i === pageNum) {
+                        btnEl.classList.add('active');
+                    } else {
+                        btnEl.classList.remove('active');
+                    }
+                }
+            }
+
+            // Update Prev / Next buttons
+            const prevEl = document.getElementById('blogPrevPage');
+            const nextEl = document.getElementById('blogNextPage');
+            if (prevEl) {
+                if (pageNum === 1) prevEl.classList.add('disabled');
+                else prevEl.classList.remove('disabled');
+            }
+            if (nextEl) {
+                if (pageNum === totalBlogPages) nextEl.classList.add('disabled');
+                else nextEl.classList.remove('disabled');
+            }
+
+            // Smooth scroll to top of blog section
+            const section = document.getElementById('blogListingSection');
+            if (section) {
+                section.scrollIntoView({ behavior: 'smooth', block: 'start' });
+            }
+        }
+
+        function filterBlogByCategory(category) {
+            const allCards = document.querySelectorAll('.blog-article-card');
+            const allPages = document.querySelectorAll('.blog-page-container');
+            const pagination = document.getElementById('blogPagination');
+
+            if (category === 'all') {
+                // Show pagination and reset to page 1
+                if (pagination) pagination.classList.remove('d-none');
+                goToBlogPage(1);
+                allCards.forEach(card => card.classList.remove('d-none'));
+            } else {
+                // In category filter mode, show all pages container and filter individual cards
+                allPages.forEach(p => p.classList.remove('d-none'));
+                if (pagination) pagination.classList.add('d-none');
+                
+                allCards.forEach(card => {
+                    if (card.getAttribute('data-category') === category) {
+                        card.classList.remove('d-none');
+                    } else {
+                        card.classList.add('d-none');
+                    }
+                });
+
+                const section = document.getElementById('blogListingSection');
+                if (section) section.scrollIntoView({ behavior: 'smooth', block: 'start' });
+            }
+        }
+
+        // Live Search Filter
+        document.addEventListener('DOMContentLoaded', () => {
+            const searchInput = document.querySelector('input[placeholder="Search blog..."]');
+            if (searchInput) {
+                searchInput.addEventListener('input', (e) => {
+                    const query = e.target.value.toLowerCase().trim();
+                    const allCards = document.querySelectorAll('.blog-article-card');
+                    const allPages = document.querySelectorAll('.blog-page-container');
+                    const pagination = document.getElementById('blogPagination');
+
+                    if (!query) {
+                        filterBlogByCategory('all');
+                        return;
+                    }
+
+                    allPages.forEach(p => p.classList.remove('d-none'));
+                    if (pagination) pagination.classList.add('d-none');
+
+                    allCards.forEach(card => {
+                        const title = card.querySelector('h5')?.innerText.toLowerCase() || '';
+                        const desc = card.querySelector('p')?.innerText.toLowerCase() || '';
+                        const tag = card.getAttribute('data-category')?.toLowerCase() || '';
+                        if (title.includes(query) || desc.includes(query) || tag.includes(query)) {
+                            card.classList.remove('d-none');
+                        } else {
+                            card.classList.add('d-none');
+                        }
+                    });
+                });
+            }
+        });
+    </script>
+</body>
+</html>
+

@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en" data-bs-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Portal Login | Lingua Academy</title>
+    <meta name="description" content="Access your Lingua Academy student dashboard, batch timetable, demo bookings, and course materials.">
+
+        <!-- Favicon (Save Icon) -->
+    <link rel="icon" type="image/png" href="favicon.png">
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+    <link rel="apple-touch-icon" href="favicon.png">
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@500;600;700;800&display=swap" rel="stylesheet">
+
+    <!-- Bootstrap 5 CSS & Icons -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" rel="stylesheet">
+
+    <!-- Custom CSS -->
+    <link href="assets/css/style.css" rel="stylesheet">
+    <link href="assets/css/animations.css" rel="stylesheet">
+</head>
+<body class="bg-alt min-vh-100 d-flex flex-column justify-content-between">
+
+    <!-- NAVBAR SIMPLE -->
+    <nav class="navbar navbar-main">
+        <div class="container">
+            <a class="navbar-brand navbar-brand-logo" href="index.html">
+                <div class="brand-icon-wrap"><i class="bi bi-chat-quote-fill"></i></div>
+                <span>Lingua<span class="text-orange">Academy</span></span>
+            </a>
+            <div class="d-flex align-items-center gap-3">
+                <button class="btn btn-sm btn-link text-main p-0 theme-toggle-btn" title="Toggle Theme"><i class="bi bi-moon-stars-fill"></i></button>
+                <button class="btn btn-sm btn-link text-main p-0 rtl-toggle-btn" title="Toggle RTL"><i class="bi bi-save"></i> RTL</button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- LOGIN CARD SECTION -->
+    <div class="container py-5">
+        <div class="row justify-content-center">
+            <div class="col-md-8 col-lg-5">
+                <div class="card p-4 p-sm-5 bg-surface border-0 rounded-4 shadow-lg">
+                    <div class="text-center mb-4">
+                        <div class="brand-icon-wrap mx-auto mb-3 fs-3">
+                            <i class="bi bi-person-lock"></i>
+                        </div>
+                        <h3 class="font-heading mb-1">Student Portal Sign In</h3>
+                        <p class="small text-muted">Manage your batch schedule & course progress</p>
+                    </div>
+
+                    <!-- Apple & Google Social Sign In -->
+                    <div class="d-flex flex-column gap-2 mb-4">
+                        <button type="button" class="btn btn-outline-secondary w-100 py-2 d-flex align-items-center justify-content-center gap-2 social-login-btn rounded-3 fw-semibold" onclick="LinguaAuth.socialLogin('Google')">
+                            <svg width="18" height="18" viewBox="0 0 24 24"><path fill="#4285F4" d="M23.745 12.27c0-.7-.06-1.4-.19-2.07H12v4.51h6.6c-.29 1.52-1.14 2.82-2.4 3.68v3.05h3.88c2.27-2.09 3.66-5.17 3.66-9.17z"/><path fill="#34A853" d="M12 24c3.24 0 5.95-1.08 7.93-2.91l-3.88-3.05c-1.08.72-2.45 1.16-4.05 1.16-3.12 0-5.77-2.1-6.72-4.93H1.25v3.15C3.26 21.36 7.34 24 12 24z"/><path fill="#FBBC05" d="M5.28 14.27c-.25-.72-.38-1.49-.38-2.27s.13-1.55.38-2.27V6.58H1.25C.45 8.18 0 9.99 0 12s.45 3.82 1.25 5.42l4.03-3.15z"/><path fill="#EA4335" d="M12 4.75c1.77 0 3.35.61 4.6 1.8l3.42-3.42C17.95 1.19 15.24 0 12 0 7.34 0 3.26 2.64 1.25 6.58l4.03 3.15c.95-2.83 3.6-4.98 6.72-4.98z"/></svg>
+                            <span>Continue with Google</span>
+                        </button>
+                        <button type="button" class="btn btn-outline-secondary w-100 py-2 d-flex align-items-center justify-content-center gap-2 social-login-btn rounded-3 fw-semibold" onclick="LinguaAuth.socialLogin('Apple')">
+                            <i class="bi bi-apple fs-5"></i>
+                            <span>Continue with Apple</span>
+                        </button>
+                    </div>
+
+                    <div class="position-relative text-center my-4">
+                        <hr class="text-muted opacity-25">
+                        <span class="position-absolute top-50 start-50 translate-middle bg-surface px-3 small text-muted">or continue with email</span>
+                    </div>
+
+                    <form id="loginForm">
+                        <div class="mb-3">
+                            <label class="form-label small fw-bold">Email Address</label>
+                            <div class="input-group">
+                                <span class="input-group-text bg-alt"><i class="bi bi-envelope"></i></span>
+                                <input type="email" id="loginEmail" class="form-control" placeholder="your.name@example.com" required>
+                            </div>
+                        </div>
+
+                        <div class="mb-3">
+                            <div class="d-flex justify-content-between align-items-center mb-1">
+                                <label class="form-label small fw-bold mb-0">Password</label>
+                                <a href="#" class="small text-orange" onclick="LinguaApp.showToast('Password reset instructions sent to your email.', 'Password Reset'); return false;">Forgot?</a>
+                            </div>
+                            <div class="input-group">
+                                <span class="input-group-text bg-alt"><i class="bi bi-lock"></i></span>
+                                <input type="password" id="loginPassword" class="form-control" placeholder="••••••••" required>
+                                <button type="button" class="btn btn-outline-secondary toggle-password-btn"><i class="bi bi-eye-fill"></i></button>
+                            </div>
+                        </div>
+
+                        <div class="form-check mb-4">
+                            <input type="checkbox" class="form-check-input" id="rememberMe" checked>
+                            <label class="form-check-label small" for="rememberMe">Remember my session</label>
+                        </div>
+
+                        <button type="submit" class="btn btn-primary-theme btn-lg w-100 mb-3">
+                            <i class="bi bi-box-arrow-in-right me-2"></i> Sign In
+                        </button>
+
+                        <div class="text-center small text-muted mb-3">
+                            Don't have a student account? <a href="register.html" class="fw-bold text-orange">Register Here</a>
+                        </div>
+
+                        <div class="text-center pt-3 border-top">
+                            <a href="admin-login.html" class="small text-muted text-decoration-none">
+                                <i class="bi bi-shield-lock me-1"></i> Admin Portal Login
+                            </a>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- FOOTER SIMPLE -->
+    <footer class="py-4 text-center small text-muted bg-surface border-top">
+        <div class="container d-flex flex-column flex-md-row justify-content-between align-items-center gap-2">
+            <span>&copy; 2026 Lingua Academy. Secure Student & Faculty Portal.</span>
+            <div class="d-flex gap-3">
+                <a href="index.html" class="text-muted text-decoration-none">Home</a>
+                <a href="courses.html" class="text-muted text-decoration-none">Courses</a>
+                <a href="contact.html" class="text-muted text-decoration-none">Support Desk</a>
+                <a href="about.html" class="text-muted text-decoration-none">Privacy Policy</a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="assets/js/main.js"></script>
+    <script src="assets/js/auth.js"></script>
+</body>
+</html>

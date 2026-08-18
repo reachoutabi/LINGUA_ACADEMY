@@ -1,0 +1,368 @@
+<!DOCTYPE html>
+<html lang="en" data-bs-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us | Lingua Academy</title>
+    <meta name="description" content="Learn about Lingua Academy's 12-year history of transforming communication skills, certified native faculty, CEFR alignment, and world-class centers.">
+
+        <!-- Favicon (Save Icon) -->
+    <link rel="icon" type="image/png" href="favicon.png">
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+    <link rel="apple-touch-icon" href="favicon.png">
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@500;600;700;800&display=swap" rel="stylesheet">
+
+    <!-- Bootstrap 5 CSS & Icons -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" rel="stylesheet">
+
+    <!-- Custom CSS -->
+    <link href="assets/css/style.css" rel="stylesheet">
+    <link href="assets/css/animations.css" rel="stylesheet">
+</head>
+<body>
+
+    <!-- TOP BAR -->
+    <div class="top-bar d-none d-md-block">
+        <div class="container">
+            <div class="d-flex justify-content-between align-items-center">
+                <div class="d-flex align-items-center gap-4">
+                    <span><i class="bi bi-telephone-fill me-2 text-orange"></i>+1 (800) 555-LANG</span>
+                    <span><i class="bi bi-envelope-fill me-2 text-orange"></i>info@linguaacademy.com</span>
+                </div>
+                <div class="d-flex align-items-center gap-3">
+                    <button class="btn btn-sm btn-link text-light p-0 theme-toggle-btn" title="Toggle Theme"><i class="bi bi-moon-stars-fill"></i></button>
+                    <button class="btn btn-sm btn-link text-light p-0 rtl-toggle-btn" title="Toggle RTL"><i class="bi bi-save"></i> RTL</button>
+                    <a href="login.html" class="small ms-2"><i class="bi bi-person-lock me-1"></i> Student Portal</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- MAIN NAVBAR -->
+    <nav class="navbar navbar-expand-lg navbar-main">
+        <div class="container">
+            <a class="navbar-brand navbar-brand-logo" href="index.html">
+                <div class="brand-icon-wrap"><i class="bi bi-chat-quote-fill"></i></div>
+                <span>Lingua<span class="text-orange">Academy</span></span>
+            </a>
+
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarMainContent">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="navbarMainContent">
+                <ul class="navbar-menu nav ms-auto align-items-lg-center">
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown">Home</a>
+                        <ul class="dropdown-menu shadow-sm">
+                            <li><a class="dropdown-item" href="index.html"><i class="bi bi-house-door me-2"></i> General Academy Landing</a></li>
+                            <li><a class="dropdown-item" href="home-corporate.html"><i class="bi bi-building me-2"></i> Corporate Communication</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item"><a class="nav-link active" href="about.html">About Us</a></li>
+                    <li class="nav-item"><a class="nav-link" href="courses.html">Courses</a></li>
+                    <li class="nav-item"><a class="nav-link" href="faculty.html">Faculty</a></li>
+                    <li class="nav-item"><a class="nav-link" href="schedule.html">Schedule</a></li>
+                    <li class="nav-item"><a class="nav-link" href="fees.html">Fees</a></li>
+                    <li class="nav-item"><a class="nav-link" href="pricing.html">Pricing</a></li>
+                    <li class="nav-item"><a class="nav-link" href="blog.html">Blog</a></li>
+                    <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+                </ul>
+
+                <div class="d-flex align-items-center gap-2 ms-lg-3 mt-3 mt-lg-0 auth-nav-container">
+                    <button class="btn btn-primary-theme btn-sm" data-bs-toggle="modal" data-bs-target="#demoClassModal">
+                        Book Free Demo
+                    </button>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- BREADCRUMB HERO -->
+    <section class="py-5 bg-surface border-bottom">
+        <div class="container py-3">
+            <nav aria-label="breadcrumb">
+                <ol class="breadcrumb mb-2">
+                    <li class="breadcrumb-item"><a href="index.html">Home</a></li>
+                    <li class="breadcrumb-item active">About Us</li>
+                </ol>
+            </nav>
+            <h1 class="display-5 font-heading">Empowering Global Voices Since 2014</h1>
+            <p class="lead text-muted mb-0">Discover our story, pedagogical philosophy, and commitment to real-world conversational fluency.</p>
+        </div>
+    </section>
+
+    <!-- MISSION & VISION -->
+    <section class="py-5">
+        <div class="container py-4">
+            <div class="row g-4 align-items-center">
+                <div class="col-lg-6">
+                    <img src="https://images.unsplash.com/photo-1577896851231-70ef18881754?auto=format&fit=crop&w=800&q=80" alt="Language class interactive session" class="img-fluid rounded-4 shadow-lg">
+                </div>
+                <div class="col-lg-6">
+                    <span class="badge-tag badge-orange mb-2">Our Purpose</span>
+                    <h2 class="font-heading display-6 mb-3">Breaking Language Barriers, Unlocking Human Potential</h2>
+                    <p class="text-muted mb-4">Founded in 2014 by a group of passionate linguists and corporate communication strategists, Lingua Academy was built on a simple premise: traditional language learning focuses too heavily on rote grammar drills and not enough on active speech confidence.</p>
+                    
+                    <div class="row g-3">
+                        <div class="col-sm-6">
+                            <div class="p-3 bg-card border rounded-3">
+                                <h5 class="font-heading text-orange mb-1"><i class="bi bi-compass me-2"></i> Our Mission</h5>
+                                <p class="small text-muted mb-0">To provide accessible, high-energy, CEFR-aligned language coaching that empowers learners of all ages to speak with absolute clarity.</p>
+                            </div>
+                        </div>
+                        <div class="col-sm-6">
+                            <div class="p-3 bg-card border rounded-3">
+                                <h5 class="font-heading text-teal mb-1"><i class="bi bi-eye me-2"></i> Our Vision</h5>
+                                <p class="small text-muted mb-0">To be the world’s most trusted multi-skill communication academy, bridging cultural divides across international borders.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- HISTORY TIMELINE -->
+    <section class="py-5 bg-surface border-top border-bottom">
+        <div class="container py-4">
+            <div class="text-center max-w-700 mx-auto mb-5">
+                <span class="badge-tag badge-teal mb-2">12 Years of Excellence</span>
+                <h2 class="font-heading display-6">Our Expansion Milestone Journey</h2>
+            </div>
+
+            <div class="max-w-700 mx-auto">
+                <div class="timeline-list">
+                    <div class="timeline-item">
+                        <div class="timeline-dot"></div>
+                        <strong class="text-orange font-heading d-block mb-1">2014 — Academy Inception</strong>
+                        <h5 class="font-heading">First Flagship Centre Opened</h5>
+                        <p class="small text-muted mb-0">Launched with 2 Spoken English batches and 4 certified trainers in downtown London.</p>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="timeline-dot"></div>
+                        <strong class="text-orange font-heading d-block mb-1">2017 — European Languages & IELTS Division</strong>
+                        <h5 class="font-heading">Expanded into French, German & Exam Coaching</h5>
+                        <p class="small text-muted mb-0">Partnered with international examination frameworks and accredited CEFR assessment rubrics.</p>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="timeline-dot"></div>
+                        <strong class="text-orange font-heading d-block mb-1">2020 — Hybrid Digital Launch</strong>
+                        <h5 class="font-heading">Live Interactive Online Classroom Rollout</h5>
+                        <p class="small text-muted mb-0">Overcame global pandemic disruptions by transitioning 5,000+ students to seamless virtual video labs.</p>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="timeline-dot"></div>
+                        <strong class="text-orange font-heading d-block mb-1">2024 - Present — Multi-Branch Franchise Model</strong>
+                        <h5 class="font-heading">5 Physical Centres & B2B Corporate Hubs</h5>
+                        <p class="small text-muted mb-0">Crossing the landmark of 15,000 certified graduates across 30+ countries.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CENTRE GALLERY -->
+    <section class="py-5">
+        <div class="container py-4">
+            <div class="text-center max-w-700 mx-auto mb-5">
+                <span class="badge-tag badge-purple mb-2">Modern Infrastructure</span>
+                <h2 class="font-heading display-6">Inside Our Learning Centres</h2>
+                <p class="text-muted mb-0">State-of-the-art acoustic facilities and collaborative spaces engineered for immersive speech practice.</p>
+            </div>
+
+            <div class="row g-4">
+                <div class="col-md-4">
+                    <div class="learning-centre-card">
+                        <div class="learning-centre-img-wrap">
+                            <img src="assets/images/centre-classroom.jpg" alt="Interactive Audio-Visual Classrooms" loading="lazy">
+                        </div>
+                        <div class="learning-centre-body text-center">
+                            <h5 class="font-heading mb-1">Interactive Audio-Visual Classrooms</h5>
+                            <p class="small text-muted mb-0">Equipped with smart displays, acoustic damping, and hybrid streaming cameras.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="learning-centre-card">
+                        <div class="learning-centre-img-wrap">
+                            <img src="assets/images/centre-roundtable.jpg" alt="Group Conversation Roundtables" loading="lazy">
+                        </div>
+                        <div class="learning-centre-body text-center">
+                            <h5 class="font-heading mb-1">Group Conversation Roundtables</h5>
+                            <p class="small text-muted mb-0">Dynamic breakout pods designed for peer debates, presentations, and roleplays.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="learning-centre-card">
+                        <div class="learning-centre-img-wrap">
+                            <img src="assets/images/centre-soundbooth.jpg" alt="Digital Phonetics Sound Booths" loading="lazy">
+                        </div>
+                        <div class="learning-centre-body text-center">
+                            <h5 class="font-heading mb-1">Digital Phonetics Sound Booths</h5>
+                            <p class="small text-muted mb-0">Individual recording stations with noise-canceling headsets for accent labs.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+        <!-- FOOTER -->
+    <footer class="footer-main">
+        <div class="container">
+            <div class="row g-4 g-lg-5">
+                <!-- Column 1: Brand & Contact Info -->
+                <div class="col-lg-4 col-md-6">
+                    <a class="navbar-brand navbar-brand-logo mb-3 d-inline-flex align-items-center" href="index.html">
+                        <div class="brand-icon-wrap me-2">
+                            <i class="bi bi-chat-quote-fill"></i>
+                        </div>
+                        <span class="text-white">Lingua<span class="text-orange">Academy</span></span>
+                    </a>
+                    <p class="small text-muted mb-4">Empowering students, working professionals, and global organizations with certified language fluency, accent neutralization, and executive communication coaching since 2014.</p>
+                    
+                    <!-- Direct Contact Details -->
+                    <div class="footer-contact-info mb-4">
+                        <div class="d-flex align-items-center gap-2 mb-2 small text-light">
+                            <i class="bi bi-telephone-fill text-orange"></i>
+                            <span>Admissions Desk: <a href="tel:+18005555264" class="text-light fw-semibold">+1 (800) 555-LANG</a></span>
+                        </div>
+                        <div class="d-flex align-items-center gap-2 mb-2 small text-light">
+                            <i class="bi bi-envelope-fill text-orange"></i>
+                            <span>Email: <a href="mailto:info@linguaacademy.com" class="text-light">info@linguaacademy.com</a></span>
+                        </div>
+                        <div class="d-flex align-items-center gap-2 small text-light">
+                            <i class="bi bi-geo-alt-fill text-orange"></i>
+                            <span>104 Knowledge Boulevard, Downtown Campus & Virtual Labs</span>
+                        </div>
+                    </div>
+
+                    <!-- Social Media Links -->
+                    <div class="d-flex gap-2">
+                        <a href="https://www.facebook.com" target="_blank" rel="noopener noreferrer" class="btn btn-sm btn-outline-secondary rounded-circle text-light footer-social-btn" title="Facebook" aria-label="Facebook"><i class="bi bi-facebook"></i></a>
+                        <a href="https://x.com" target="_blank" rel="noopener noreferrer" class="btn btn-sm btn-outline-secondary rounded-circle text-light footer-social-btn" title="X (Twitter)" aria-label="X (Twitter)"><i class="bi bi-twitter-x"></i></a>
+                        <a href="https://www.linkedin.com" target="_blank" rel="noopener noreferrer" class="btn btn-sm btn-outline-secondary rounded-circle text-light footer-social-btn" title="LinkedIn" aria-label="LinkedIn"><i class="bi bi-linkedin"></i></a>
+                        <a href="https://www.youtube.com" target="_blank" rel="noopener noreferrer" class="btn btn-sm btn-outline-secondary rounded-circle text-light footer-social-btn" title="YouTube" aria-label="YouTube"><i class="bi bi-youtube"></i></a>
+                        <a href="https://www.instagram.com" target="_blank" rel="noopener noreferrer" class="btn btn-sm btn-outline-secondary rounded-circle text-light footer-social-btn" title="Instagram" aria-label="Instagram"><i class="bi bi-instagram"></i></a>
+                    </div>
+                </div>
+
+                <!-- Column 2: Quick Links -->
+                <div class="col-6 col-lg-2 col-md-3">
+                    <h5>Navigation</h5>
+                    <ul class="footer-links">
+                        <li><a href="about.html"><i class="bi bi-chevron-right small text-orange me-1"></i> About Us</a></li>
+                        <li><a href="courses.html"><i class="bi bi-chevron-right small text-orange me-1"></i> All Courses</a></li>
+                        <li><a href="faculty.html"><i class="bi bi-chevron-right small text-orange me-1"></i> Certified Faculty</a></li>
+                        <li><a href="schedule.html"><i class="bi bi-chevron-right small text-orange me-1"></i> Batch Schedule</a></li>
+                        <li><a href="fees.html"><i class="bi bi-chevron-right small text-orange me-1"></i> Tuition & Fees</a></li>
+                        <li><a href="pricing.html"><i class="bi bi-chevron-right small text-orange me-1"></i> Membership Plans</a></li>
+                        <li><a href="blog.html"><i class="bi bi-chevron-right small text-orange me-1"></i> Language Blog</a></li>
+                        <li><a href="contact.html"><i class="bi bi-chevron-right small text-orange me-1"></i> Contact & Centers</a></li>
+                    </ul>
+                </div>
+
+                <!-- Column 3: Language Programs -->
+                <div class="col-6 col-lg-2 col-md-3">
+                    <h5>Our Programs</h5>
+                    <ul class="footer-links">
+                        <li><a href="course-spoken-english.html"><i class="bi bi-chevron-right small text-orange me-1"></i> Spoken English</a></li>
+                        <li><a href="course-ielts.html"><i class="bi bi-chevron-right small text-orange me-1"></i> IELTS (Band 8.0+)</a></li>
+                        <li><a href="course-french.html"><i class="bi bi-chevron-right small text-orange me-1"></i> French (DELF/DALF)</a></li>
+                        <li><a href="course-german.html"><i class="bi bi-chevron-right small text-orange me-1"></i> German (Goethe Prep)</a></li>
+                        <li><a href="course-spanish.html"><i class="bi bi-chevron-right small text-orange me-1"></i> Spanish (DELE Track)</a></li>
+                        <li><a href="course-public-speaking.html"><i class="bi bi-chevron-right small text-orange me-1"></i> Public Speaking</a></li>
+                        <li><a href="home-corporate.html"><i class="bi bi-chevron-right small text-orange me-1"></i> Corporate Training</a></li>
+                        <li><a href="course-kids.html"><i class="bi bi-chevron-right small text-orange me-1"></i> Kids' Fluency Club</a></li>
+                    </ul>
+                </div>
+
+                <!-- Column 4: Newsletter & Accreditation -->
+                <div class="col-lg-4 col-md-12">
+                    <h5>Newsletter & Updates</h5>
+                    <p class="small text-muted mb-3">Subscribe to receive free weekly vocabulary flashcards, grammar hacks, and early-bird batch discount tokens.</p>
+                    
+                    <form id="newsletterForm" class="d-flex gap-2 mb-4" onsubmit="event.preventDefault(); LinguaApp.showToast('Thank you for subscribing! Check your inbox for your welcome vocabulary pack.', 'Newsletter Subscribed'); this.reset();">
+                        <input type="email" class="form-control form-control-sm bg-dark text-white border-secondary" placeholder="Enter your email address" required>
+                        <button type="submit" class="btn btn-primary-theme btn-sm text-nowrap">Subscribe</button>
+                    </form>
+
+                    <!-- Trust & Accreditation Badges -->
+                    <div class="footer-badges p-3 rounded-3 border border-secondary border-opacity-25 bg-surface bg-opacity-10">
+                        <div class="d-flex align-items-center gap-2 mb-2">
+                            <i class="bi bi-patch-check-fill text-orange fs-4"></i>
+                            <div>
+                                <strong class="d-block text-white small font-heading">CEFR Aligned & Accredited</strong>
+                                <span class="small text-muted" style="font-size: 0.75rem;">Recognized by foreign universities & Fortune 500 corporate employers</span>
+                            </div>
+                        </div>
+                        <div class="d-flex flex-wrap gap-2 pt-1">
+                            <span class="badge bg-dark border border-secondary text-light fw-normal" style="font-size: 0.7rem;"><i class="bi bi-award text-teal me-1"></i> British Council Aligned</span>
+                            <span class="badge bg-dark border border-secondary text-light fw-normal" style="font-size: 0.7rem;"><i class="bi bi-award text-blue me-1"></i> Cambridge English</span>
+                            <span class="badge bg-dark border border-secondary text-light fw-normal" style="font-size: 0.7rem;"><i class="bi bi-award text-purple me-1"></i> Goethe Zertifikat</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Footer Bottom Bar -->
+            <div class="footer-bottom text-center text-md-start d-md-flex justify-content-between align-items-center">
+                <p class="mb-0">&copy; 2026 Lingua Academy. All rights reserved. Professional Language & Communication Training Institute.</p>
+                <div class="d-flex gap-3 justify-content-center mt-3 mt-md-0">
+                    <a href="about.html" class="small text-muted">Privacy Policy</a>
+                    <a href="about.html" class="small text-muted">Terms of Service</a>
+                    <a href="fees.html" class="small text-muted">Refund Policy</a>
+                    <a href="login.html" class="small text-orange fw-semibold"><i class="bi bi-person-lock me-1"></i> Student Portal</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Demo Modal -->
+    <div class="modal fade" id="demoClassModal" tabindex="-1">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title font-heading"><i class="bi bi-camera-video-fill text-orange me-2"></i> Book a Free Demo Class</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                </div>
+                <form id="demoClassForm">
+                    <div class="modal-body">
+                        <div class="mb-3">
+                            <label class="form-label small fw-bold">Full Name</label>
+                            <input type="text" class="form-control" name="name" required>
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label small fw-bold">Email Address</label>
+                            <input type="email" class="form-control" name="email" required>
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label small fw-bold">Course of Interest</label>
+                            <select class="form-select" name="course">
+                                <option value="Spoken English">Spoken English</option>
+                                <option value="French">French Language</option>
+                                <option value="German">German Language</option>
+                                <option value="IELTS">IELTS Preparation</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="submit" class="btn btn-primary-theme">Schedule Demo</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <!-- Scripts -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="assets/js/main.js"></script>
+</body>
+</html>

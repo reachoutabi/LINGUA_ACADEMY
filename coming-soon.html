@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en" data-bs-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>New Batch Launching Soon | Lingua Academy</title>
+    <meta name="description" content="We are launching new online and campus batches for French, German, Japanese, and IELTS masterclasses. Subscribe for early bird discounts.">
+
+        <!-- Favicon (Save Icon) -->
+    <link rel="icon" type="image/png" href="favicon.png">
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+    <link rel="apple-touch-icon" href="favicon.png">
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@500;600;700;800&display=swap" rel="stylesheet">
+
+    <!-- Bootstrap 5 CSS & Icons -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" rel="stylesheet">
+
+    <!-- Custom CSS -->
+    <link href="assets/css/style.css" rel="stylesheet">
+    <link href="assets/css/animations.css" rel="stylesheet">
+</head>
+<body class="bg-dark text-white min-vh-100 d-flex flex-column justify-content-between">
+
+    <!-- NAVBAR SIMPLE -->
+    <nav class="navbar navbar-dark">
+        <div class="container">
+            <a class="navbar-brand navbar-brand-logo" href="index.html">
+                <div class="brand-icon-wrap"><i class="bi bi-chat-quote-fill"></i></div>
+                <span class="text-white">Lingua<span class="text-orange">Academy</span></span>
+            </a>
+            <div class="d-flex align-items-center gap-3">
+                <button class="btn btn-sm btn-link text-light p-0 theme-toggle-btn" title="Toggle Theme"><i class="bi bi-moon-stars-fill"></i></button>
+                <a href="index.html" class="btn btn-sm btn-outline-light"><i class="bi bi-house me-1"></i> Website</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- COUNTDOWN HERO CONTENT -->
+    <div class="container py-5 text-center my-auto">
+        <div class="max-w-800 mx-auto">
+            <span class="badge-tag badge-orange mb-3"><i class="bi bi-rocket-takeoff-fill me-1"></i> Next Academic Term</span>
+            <h1 class="display-4 font-heading text-white mb-3">New Fall Batches Launching Soon</h1>
+            <p class="lead text-light opacity-75 mb-5">We are upgrading our interactive digital language labs and preparing new native-led batches for English, French, German, Spanish, and Japanese.</p>
+
+            <!-- LIVE COUNTDOWN BOXES -->
+            <div class="row g-3 justify-content-center mb-5 max-w-600 mx-auto">
+                <div class="col-3">
+                    <div class="p-3 bg-surface text-main rounded-4 border shadow-md">
+                        <div id="csDays" class="display-5 font-heading text-orange fw-bold">14</div>
+                        <span class="small text-muted text-uppercase fw-semibold">Days</span>
+                    </div>
+                </div>
+                <div class="col-3">
+                    <div class="p-3 bg-surface text-main rounded-4 border shadow-md">
+                        <div id="csHours" class="display-5 font-heading text-orange fw-bold">08</div>
+                        <span class="small text-muted text-uppercase fw-semibold">Hours</span>
+                    </div>
+                </div>
+                <div class="col-3">
+                    <div class="p-3 bg-surface text-main rounded-4 border shadow-md">
+                        <div id="csMinutes" class="display-5 font-heading text-orange fw-bold">42</div>
+                        <span class="small text-muted text-uppercase fw-semibold">Mins</span>
+                    </div>
+                </div>
+                <div class="col-3">
+                    <div class="p-3 bg-surface text-main rounded-4 border shadow-md">
+                        <div id="csSeconds" class="display-5 font-heading text-orange fw-bold">19</div>
+                        <span class="small text-muted text-uppercase fw-semibold">Secs</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Early Access Subscription Form -->
+            <div class="max-w-500 mx-auto">
+                <p class="small text-light opacity-75 mb-3">Get notified first & claim a <strong>20% Early-Bird Discount Token</strong></p>
+                <form id="csSubscribeForm" onsubmit="event.preventDefault(); LinguaApp.showToast('You are registered for early-bird batch updates!', 'Subscription Saved'); this.reset();" class="d-flex gap-2">
+                    <input type="email" class="form-control form-control-lg" placeholder="Enter your email address" required>
+                    <button type="submit" class="btn btn-primary-theme btn-lg text-nowrap">Get VIP Access</button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <!-- FOOTER SIMPLE -->
+    <footer class="py-4 text-center small text-light opacity-75 border-top border-secondary">
+        <div class="container d-flex flex-column flex-md-row justify-content-between align-items-center gap-2">
+            <span>&copy; 2026 Lingua Academy. All rights reserved.</span>
+            <div class="d-flex gap-3">
+                <a href="index.html" class="text-light text-decoration-none opacity-75">Home</a>
+                <a href="courses.html" class="text-light text-decoration-none opacity-75">Courses</a>
+                <a href="contact.html" class="text-light text-decoration-none opacity-75">Contact Admissions</a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="assets/js/main.js"></script>
+    <script src="assets/js/countdown.js"></script>
+</body>
+</html>
