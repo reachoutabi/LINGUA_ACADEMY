@@ -836,6 +836,9 @@ document.addEventListener('DOMContentLoaded', () => {
     const viewGridBtn = document.querySelector('#viewGridBtn');
     const viewListBtn = document.querySelector('#viewListBtn');
     const coursesContainer = document.querySelector('#coursesContainer');
+    const visibleCoursesCountEl = document.querySelector('#visibleCoursesCount');
+    const clearSearchBtn = document.querySelector('#clearSearchBtn');
+    const resetFiltersBtn = document.querySelector('#resetFiltersBtn');
 
     // Handle initial query parameters on courses.html (e.g. ?lang=french or ?search=ielts)
     if (courseCards.length > 0) {
@@ -894,8 +897,21 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         });
 
+        if (visibleCoursesCountEl) {
+            visibleCoursesCountEl.innerText = visibleCount;
+        }
+
         if (noResultsMsg) {
             noResultsMsg.style.display = visibleCount === 0 ? 'block' : 'none';
+        }
+
+        if (clearSearchBtn) {
+            clearSearchBtn.style.display = query.length > 0 ? 'block' : 'none';
+        }
+
+        const isFiltered = query.length > 0 || lang !== 'all' || level !== 'all' || mode !== 'all' || age !== 'all';
+        if (resetFiltersBtn) {
+            resetFiltersBtn.style.display = isFiltered ? 'inline-block' : 'none';
         }
     }
 
@@ -905,26 +921,47 @@ document.addEventListener('DOMContentLoaded', () => {
     if (modeFilter) modeFilter.addEventListener('change', filterCourses);
     if (ageFilter) ageFilter.addEventListener('change', filterCourses);
 
-    // Initial filter run if parameters were present
-    if (courseCards.length > 0 && window.location.search) {
-        filterCourses();
+    if (clearSearchBtn) {
+        clearSearchBtn.addEventListener('click', () => {
+            if (courseSearchInput) {
+                courseSearchInput.value = '';
+                filterCourses();
+                courseSearchInput.focus();
+            }
+        });
     }
 
-    // View Toggle
+    if (resetFiltersBtn) {
+        resetFiltersBtn.addEventListener('click', () => {
+            if (courseSearchInput) courseSearchInput.value = '';
+            if (languageFilter) languageFilter.value = 'all';
+            if (levelFilter) levelFilter.value = 'all';
+            if (modeFilter) modeFilter.value = 'all';
+            if (ageFilter) ageFilter.value = 'all';
+            filterCourses();
+        });
+    }
+
+    // Initial filter run if parameters were present
+    filterCourses();
+
+    // View Toggle (Grid / List)
     if (viewGridBtn && viewListBtn && coursesContainer) {
-        viewGridBtn.addEventListener('click', () => {
-            viewGridBtn.classList.add('active', 'btn-primary-theme');
-            viewGridBtn.classList.remove('btn-outline-theme');
-            viewListBtn.classList.remove('active', 'btn-primary-theme');
-            viewListBtn.classList.add('btn-outline-theme');
+        viewGridBtn.addEventListener('click', (e) => {
+            e.preventDefault();
+            viewGridBtn.classList.add('active');
+            viewGridBtn.setAttribute('aria-pressed', 'true');
+            viewListBtn.classList.remove('active');
+            viewListBtn.setAttribute('aria-pressed', 'false');
             coursesContainer.classList.remove('list-view');
         });
 
-        viewListBtn.addEventListener('click', () => {
-            viewListBtn.classList.add('active', 'btn-primary-theme');
-            viewListBtn.classList.remove('btn-outline-theme');
-            viewGridBtn.classList.remove('active', 'btn-primary-theme');
-            viewGridBtn.classList.add('btn-outline-theme');
+        viewListBtn.addEventListener('click', (e) => {
+            e.preventDefault();
+            viewListBtn.classList.add('active');
+            viewListBtn.setAttribute('aria-pressed', 'true');
+            viewGridBtn.classList.remove('active');
+            viewGridBtn.setAttribute('aria-pressed', 'false');
             coursesContainer.classList.add('list-view');
         });
     }

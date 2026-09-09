@@ -3,10 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Academy Membership & Track Packages | Lingua Academy</title>
-    <meta name="description" content="Compare institute-wide learning packages: Basic Track, Standard Track, Premium Immersion, and All-Access Pass.">
+    <title>Membership Plans & Pricing | Lingua Academy</title>
+    <meta name="description" content="Flexible language learning memberships for individuals and professionals. Unlimited conversation clubs, live instructor cohorts, and CEFR diplomas.">
 
-        <!-- Favicon (Save Icon) -->
+    <!-- Favicon -->
     <link rel="icon" type="image/png" href="favicon.png">
     <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
     <link rel="apple-touch-icon" href="favicon.png">
@@ -26,43 +26,51 @@
 </head>
 <body>
 
-    <!-- TOP BAR -->
-    <div class="top-bar d-none d-md-block">
-        <div class="container">
-            <div class="d-flex justify-content-between align-items-center">
-                <div class="d-flex align-items-center gap-4">
-                    <span><i class="bi bi-telephone-fill me-2 text-orange"></i>+1 (800) 555-LANG</span>
-                    <span><i class="bi bi-envelope-fill me-2 text-orange"></i>info@linguaacademy.com</span>
-                </div>
-                <div class="d-flex align-items-center gap-3">
-                    <button class="btn btn-sm btn-link text-light p-0 theme-toggle-btn" title="Toggle Theme"><i class="bi bi-moon-stars-fill"></i></button>
-                    <button class="btn btn-sm btn-link text-light p-0 rtl-toggle-btn" title="Toggle RTL"><i class="bi bi-save"></i> RTL</button>
-                    <a href="login.html" class="small ms-2"><i class="bi bi-person-lock me-1"></i> Student Portal</a>
-                </div>
-            </div>
-        </div>
-    </div>
-
     <!-- MAIN NAVBAR -->
     <nav class="navbar navbar-expand-lg navbar-main">
-        <div class="container">
+        <div class="container-fluid px-3 px-xl-5">
             <a class="navbar-brand navbar-brand-logo" href="index.html">
-                <div class="brand-icon-wrap"><i class="bi bi-chat-quote-fill"></i></div>
+                <div class="brand-icon-wrap">
+                    <i class="bi bi-chat-quote-fill"></i>
+                </div>
                 <span>Lingua<span class="text-orange">Academy</span></span>
             </a>
 
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarMainContent">
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarMainContent" aria-controls="navbarMainContent" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
 
             <div class="collapse navbar-collapse" id="navbarMainContent">
-                <ul class="navbar-menu nav ms-auto align-items-lg-center">
-                    <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown">Home</a>
-                        <ul class="dropdown-menu shadow-sm">
-                            <li><a class="dropdown-item" href="index.html"><i class="bi bi-house-door me-2"></i> General Academy Landing</a></li>
-                            <li><a class="dropdown-item" href="home-corporate.html"><i class="bi bi-building me-2"></i> Corporate Communication</a></li>
-                        </ul>
+                <ul class="navbar-menu ms-auto">
+                    <li class="nav-item dropdown home-dropdown">
+                        <a class="nav-link" href="index.html">Home</a>
+                        <div class="dropdown-menu home-hover-menu shadow-lg">
+                            <div class="px-3 pt-2 pb-1 text-uppercase text-muted fw-bold" style="font-size: 0.68rem; letter-spacing: 0.08em;">Select Home Version</div>
+                            <a class="dropdown-item home-menu-card" href="index.html">
+                                <div class="home-menu-icon home-icon-academy">
+                                    <i class="bi bi-house-door-fill"></i>
+                                </div>
+                                <div class="home-menu-content">
+                                    <div class="d-flex align-items-center justify-content-between">
+                                        <span class="home-menu-title">General Academy</span>
+                                        <span class="badge bg-orange-subtle text-orange" style="font-size: 0.65rem;">Home 1</span>
+                                    </div>
+                                    <p class="home-menu-desc mb-0">Individual, Kids & Exam Fluency</p>
+                                </div>
+                            </a>
+                            <a class="dropdown-item home-menu-card" href="home-corporate.html">
+                                <div class="home-menu-icon home-icon-corp">
+                                    <i class="bi bi-building-fill"></i>
+                                </div>
+                                <div class="home-menu-content">
+                                    <div class="d-flex align-items-center justify-content-between">
+                                        <span class="home-menu-title">Corporate Training</span>
+                                        <span class="badge bg-blue-subtle text-primary" style="font-size: 0.65rem;">Home 2</span>
+                                    </div>
+                                    <p class="home-menu-desc mb-0">Enterprise Communication & B2B Solutions</p>
+                                </div>
+                            </a>
+                        </div>
                     </li>
                     <li class="nav-item"><a class="nav-link" href="about.html">About Us</a></li>
                     <li class="nav-item"><a class="nav-link" href="courses.html">Courses</a></li>
@@ -74,26 +82,56 @@
                     <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
                 </ul>
 
-                <div class="d-flex align-items-center gap-2 ms-lg-3 mt-3 mt-lg-0 auth-nav-container">
-                    <button class="btn btn-primary-theme btn-sm" data-bs-toggle="modal" data-bs-target="#demoClassModal">
-                        Book Free Demo
+                <div class="navbar-actions">
+                    <button class="btn nav-action-btn theme-toggle-btn" title="Toggle Light/Dark Theme" aria-label="Toggle light or dark theme">
+                        <i class="bi bi-moon-stars-fill"></i>
                     </button>
+                    <button class="btn nav-action-btn rtl-toggle-btn" title="Toggle RTL Layout" aria-label="Toggle text direction">
+                        <i class="bi bi-arrow-left-right"></i>
+                        <span>RTL</span>
+                    </button>
+                    <div class="auth-nav-container">
+                        <button class="btn btn-primary-theme btn-sm text-nowrap" data-bs-toggle="modal" data-bs-target="#demoClassModal">
+                            <i class="bi bi-calendar-check me-1"></i> Book Free Demo
+                        </button>
+                    </div>
                 </div>
             </div>
         </div>
     </nav>
 
-    <!-- BREADCRUMB HERO -->
+    <!-- BREADCRUMB HERO & BILLING TOGGLE -->
     <section class="py-5 bg-surface border-bottom">
-        <div class="container py-3 text-center max-w-700 mx-auto">
-            <span class="badge-tag badge-orange mb-2">Institute Packages</span>
-            <h1 class="display-5 font-heading">Choose Your Learning Membership</h1>
-            <p class="lead text-muted mb-0">Select a flexible track engineered for your personal or professional fluency goals.</p>
+        <div class="container py-3">
+            <div class="row align-items-center g-4">
+                <div class="col-lg-8">
+                    <nav aria-label="breadcrumb">
+                        <ol class="breadcrumb mb-2">
+                            <li class="breadcrumb-item"><a href="index.html">Home</a></li>
+                            <li class="breadcrumb-item active">Membership & Pricing</li>
+                        </ol>
+                    </nav>
+                    <h1 class="display-5 font-heading mb-2">Choose Your Learning Membership</h1>
+                    <p class="lead text-muted mb-0">Select a flexible track engineered for your personal or professional fluency goals.</p>
+                </div>
+                <div class="col-lg-4 text-lg-end">
+                    <!-- Monthly vs Annual Billing Toggle -->
+                    <div class="d-inline-flex align-items-center gap-3 p-2 bg-alt rounded-pill border shadow-xs">
+                        <span class="small fw-bold text-main" id="monthlyLabel">Monthly Billing</span>
+                        <div class="form-check form-switch mb-0">
+                            <input class="form-check-input" type="checkbox" id="billingToggle" onchange="toggleBilling(this.checked)" style="cursor: pointer; width: 2.75rem; height: 1.4rem;">
+                        </div>
+                        <span class="small fw-bold text-muted" id="annualLabel">
+                            Annual <span class="badge bg-success text-white rounded-pill ms-1">Save 20%</span>
+                        </span>
+                    </div>
+                </div>
+            </div>
         </div>
     </section>
 
-    <!-- PRICING TIERS GRID -->
-    <section class="py-5">
+    <!-- 1. PRICING TIERS GRID -->
+    <section class="py-5 bg-surface">
         <div class="container py-3">
             <div class="row g-4 align-items-stretch">
 
@@ -102,7 +140,10 @@
                     <div class="pricing-card tier-blue">
                         <h4 class="font-heading mb-1 text-blue">Basic Track</h4>
                         <span class="small text-muted">Core Foundation</span>
-                        <div class="pricing-price">$99 <span class="fs-6 text-muted font-body">/ mo</span></div>
+                        <div class="pricing-price">
+                            <span class="price-val" data-monthly="99" data-annual="79">$99</span> 
+                            <span class="fs-6 text-muted font-body">/ mo</span>
+                        </div>
                         <ul class="pricing-feature-list">
                             <li><i class="bi bi-check-circle-fill"></i> 1 Language Program Access</li>
                             <li><i class="bi bi-check-circle-fill"></i> 2 Live Group Sessions / Wk</li>
@@ -110,7 +151,7 @@
                             <li class="text-muted"><i class="bi bi-x-circle opacity-50"></i> Daily Conversation Club</li>
                             <li class="text-muted"><i class="bi bi-x-circle opacity-50"></i> 1-on-1 Mentor Feedback</li>
                         </ul>
-                        <button class="btn btn-outline-theme w-100" data-bs-toggle="modal" data-bs-target="#enrollModal" data-course-name="Basic Track Membership">Select Plan</button>
+                        <button class="btn btn-outline-theme w-100 mt-auto" data-bs-toggle="modal" data-bs-target="#enrollModal" data-course-name="Basic Track Membership">Select Plan</button>
                     </div>
                 </div>
 
@@ -120,7 +161,10 @@
                         <div class="pricing-popular-ribbon">Most Popular</div>
                         <h4 class="font-heading mb-1 text-orange">Standard Track</h4>
                         <span class="small text-muted">Complete Fluency</span>
-                        <div class="pricing-price">$149 <span class="fs-6 text-muted font-body">/ mo</span></div>
+                        <div class="pricing-price">
+                            <span class="price-val" data-monthly="149" data-annual="119">$149</span> 
+                            <span class="fs-6 text-muted font-body">/ mo</span>
+                        </div>
                         <ul class="pricing-feature-list">
                             <li><i class="bi bi-check-circle-fill"></i> 1 Language + Exam Coaching</li>
                             <li><i class="bi bi-check-circle-fill"></i> 4 Live Interactive Sessions / Wk</li>
@@ -128,7 +172,7 @@
                             <li><i class="bi bi-check-circle-fill"></i> CEFR Certified Diploma</li>
                             <li class="text-muted"><i class="bi bi-x-circle opacity-50"></i> 1-on-1 Mentor Feedback</li>
                         </ul>
-                        <button class="btn btn-primary-theme w-100" data-bs-toggle="modal" data-bs-target="#enrollModal" data-course-name="Standard Track Membership">Select Plan</button>
+                        <button class="btn btn-primary-theme w-100 mt-auto" data-bs-toggle="modal" data-bs-target="#enrollModal" data-course-name="Standard Track Membership">Select Plan</button>
                     </div>
                 </div>
 
@@ -137,7 +181,10 @@
                     <div class="pricing-card tier-teal">
                         <h4 class="font-heading mb-1 text-teal">Premium Track</h4>
                         <span class="small text-muted">Executive & Accent</span>
-                        <div class="pricing-price">$229 <span class="fs-6 text-muted font-body">/ mo</span></div>
+                        <div class="pricing-price">
+                            <span class="price-val" data-monthly="229" data-annual="179">$229</span> 
+                            <span class="fs-6 text-muted font-body">/ mo</span>
+                        </div>
                         <ul class="pricing-feature-list">
                             <li><i class="bi bi-check-circle-fill"></i> 2 Languages OR Public Speaking</li>
                             <li><i class="bi bi-check-circle-fill"></i> Small Group (Max 6 Students)</li>
@@ -145,7 +192,7 @@
                             <li><i class="bi bi-check-circle-fill"></i> Weekly 1-on-1 Accent Feedback</li>
                             <li><i class="bi bi-check-circle-fill"></i> Priority Batch Scheduling</li>
                         </ul>
-                        <button class="btn btn-outline-theme w-100" data-bs-toggle="modal" data-bs-target="#enrollModal" data-course-name="Premium Track Membership">Select Plan</button>
+                        <button class="btn btn-outline-theme w-100 mt-auto" data-bs-toggle="modal" data-bs-target="#enrollModal" data-course-name="Premium Track Membership">Select Plan</button>
                     </div>
                 </div>
 
@@ -154,15 +201,18 @@
                     <div class="pricing-card tier-purple">
                         <h4 class="font-heading mb-1 text-purple">All-Access Pass</h4>
                         <span class="small text-muted">Lifetime & Dual Language</span>
-                        <div class="pricing-price">$349 <span class="fs-6 text-muted font-body">/ mo</span></div>
+                        <div class="pricing-price">
+                            <span class="price-val" data-monthly="349" data-annual="279">$349</span> 
+                            <span class="fs-6 text-muted font-body">/ mo</span>
+                        </div>
                         <ul class="pricing-feature-list">
                             <li><i class="bi bi-check-circle-fill"></i> Unlimited Access to All 12 Courses</li>
                             <li><i class="bi bi-check-circle-fill"></i> Personal Academic Counsellor</li>
                             <li><i class="bi bi-check-circle-fill"></i> 1-on-1 Mock Interview Coaching</li>
                             <li><i class="bi bi-check-circle-fill"></i> Corporate Presentation Lab</li>
-                            <li><i class="bi bi-check-circle-fill"></i> VIP Exam Guarantee</li>
+                            <li><i class="bi bi-check-circle-fill"></i> VIP Exam Pass Guarantee</li>
                         </ul>
-                        <button class="btn btn-outline-theme w-100" data-bs-toggle="modal" data-bs-target="#enrollModal" data-course-name="All-Access Pass Membership">Select Plan</button>
+                        <button class="btn btn-outline-theme w-100 mt-auto" data-bs-toggle="modal" data-bs-target="#enrollModal" data-course-name="All-Access Pass Membership">Select Plan</button>
                     </div>
                 </div>
 
@@ -170,7 +220,192 @@
         </div>
     </section>
 
-        <!-- FOOTER -->
+    <!-- 2. DETAILED FEATURE COMPARISON MATRIX -->
+    <section class="py-5 bg-alt border-top border-bottom">
+        <div class="container py-4">
+            <div class="text-center max-w-700 mx-auto mb-5">
+                <span class="badge-tag badge-teal mb-2">Compare Plans</span>
+                <h2 class="font-heading display-6">Complete Plan Feature Comparison</h2>
+                <p class="text-muted">Review full inclusions side-by-side to choose the exact plan that suits your goals.</p>
+            </div>
+
+            <div class="table-responsive bg-surface rounded-4 border shadow-sm max-w-1000 mx-auto">
+                <table class="table table-custom mb-0 text-center align-middle">
+                    <thead>
+                        <tr>
+                            <th class="text-start" style="width: 32%;">Inclusion / Feature</th>
+                            <th style="width: 17%;">Basic</th>
+                            <th class="bg-accent-subtle text-orange" style="width: 17%;">Standard</th>
+                            <th style="width: 17%;">Premium</th>
+                            <th style="width: 17%;">All-Access</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td class="text-start fw-semibold">Live Interactive Sessions</td>
+                            <td>2 / Week</td>
+                            <td class="bg-accent-subtle fw-bold text-orange">4 / Week</td>
+                            <td>6 / Week</td>
+                            <td>Unlimited</td>
+                        </tr>
+                        <tr>
+                            <td class="text-start fw-semibold">Daily Conversation Practice Clubs</td>
+                            <td class="text-muted"><i class="bi bi-x text-danger fs-5"></i></td>
+                            <td class="bg-accent-subtle text-success"><i class="bi bi-check-circle-fill text-orange"></i></td>
+                            <td class="text-success"><i class="bi bi-check-circle-fill"></i></td>
+                            <td class="text-success"><i class="bi bi-check-circle-fill"></i></td>
+                        </tr>
+                        <tr>
+                            <td class="text-start fw-semibold">CEFR Certified Diploma</td>
+                            <td class="text-muted"><i class="bi bi-dash text-secondary fs-5"></i></td>
+                            <td class="bg-accent-subtle text-success"><i class="bi bi-check-circle-fill text-orange"></i></td>
+                            <td class="text-success"><i class="bi bi-check-circle-fill"></i></td>
+                            <td class="text-success"><i class="bi bi-check-circle-fill"></i></td>
+                        </tr>
+                        <tr>
+                            <td class="text-start fw-semibold">1-on-1 Accent & Phonetics Coaching</td>
+                            <td class="text-muted"><i class="bi bi-x text-danger fs-5"></i></td>
+                            <td class="bg-accent-subtle text-muted"><i class="bi bi-dash text-secondary fs-5"></i></td>
+                            <td class="text-success"><i class="bi bi-check-circle-fill"></i> Weekly</td>
+                            <td class="text-success"><i class="bi bi-check-circle-fill"></i> Unlimited</td>
+                        </tr>
+                        <tr>
+                            <td class="text-start fw-semibold">Full Video Recording Archive</td>
+                            <td class="text-muted"><i class="bi bi-x text-danger fs-5"></i></td>
+                            <td class="bg-accent-subtle text-success"><i class="bi bi-check-circle-fill text-orange"></i> 30 Days</td>
+                            <td class="text-success"><i class="bi bi-check-circle-fill"></i> 90 Days</td>
+                            <td class="text-success"><i class="bi bi-check-circle-fill"></i> Lifetime</td>
+                        </tr>
+                        <tr>
+                            <td class="text-start fw-semibold">Dedicated Academic Counselor</td>
+                            <td class="text-muted"><i class="bi bi-x text-danger fs-5"></i></td>
+                            <td class="bg-accent-subtle text-muted"><i class="bi bi-x text-danger fs-5"></i></td>
+                            <td class="text-muted"><i class="bi bi-dash text-secondary fs-5"></i></td>
+                            <td class="text-success"><i class="bi bi-check-circle-fill"></i> Dedicated</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </section>
+
+    <!-- 3. MEMBERSHIP PERKS & INCLUSIONS -->
+    <section class="py-5 bg-surface">
+        <div class="container py-4">
+            <div class="text-center max-w-700 mx-auto mb-5">
+                <span class="badge-tag badge-purple mb-2">Member Perks</span>
+                <h2 class="font-heading display-6">Included in Every Membership</h2>
+                <p class="text-muted">Experience comprehensive support designed to accelerate your speaking milestones.</p>
+            </div>
+
+            <div class="row g-4">
+                <div class="col-md-6 col-lg-3">
+                    <div class="p-4 bg-alt rounded-4 border h-100 shadow-sm text-center">
+                        <i class="bi bi-chat-heart-fill text-orange fs-1 mb-2 d-block"></i>
+                        <h5 class="font-heading mb-2">Daily Live Clubs</h5>
+                        <p class="small text-muted mb-0">Join daily peer conversation rooms hosted by moderators to overcome hesitation.</p>
+                    </div>
+                </div>
+
+                <div class="col-md-6 col-lg-3">
+                    <div class="p-4 bg-alt rounded-4 border h-100 shadow-sm text-center">
+                        <i class="bi bi-phone-fill text-teal fs-1 mb-2 d-block"></i>
+                        <h5 class="font-heading mb-2">Smart Mobile App</h5>
+                        <p class="small text-muted mb-0">Practice audio flashcards, review lesson notes, and book classes on the go.</p>
+                    </div>
+                </div>
+
+                <div class="col-md-6 col-lg-3">
+                    <div class="p-4 bg-alt rounded-4 border h-100 shadow-sm text-center">
+                        <i class="bi bi-play-circle-fill text-blue fs-1 mb-2 d-block"></i>
+                        <h5 class="font-heading mb-2">HD Video Library</h5>
+                        <p class="small text-muted mb-0">Never miss a concept with on-demand access to recorded masterclasses.</p>
+                    </div>
+                </div>
+
+                <div class="col-md-6 col-lg-3">
+                    <div class="p-4 bg-alt rounded-4 border h-100 shadow-sm text-center">
+                        <i class="bi bi-patch-check-fill text-purple fs-1 mb-2 d-block"></i>
+                        <h5 class="font-heading mb-2">CEFR Certification</h5>
+                        <p class="small text-muted mb-0">Official accredited graduation diplomas upon passing your capstone speaking test.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 4. CORPORATE & ENTERPRISE PLAN BANNER -->
+    <section class="py-4 bg-alt">
+        <div class="container py-2">
+            <div class="card p-4 p-lg-5 bg-surface border rounded-4 shadow-sm">
+                <div class="row align-items-center g-4">
+                    <div class="col-lg-8">
+                        <span class="badge bg-orange text-white mb-2">Enterprise & Team Plans</span>
+                        <h3 class="font-heading mb-2">Training 10 or More Team Members?</h3>
+                        <p class="text-muted mb-0">Get customized corporate invoicing, dedicated company-specific cohorts, L&D manager attendance analytics, and volume discounts.</p>
+                    </div>
+                    <div class="col-lg-4 text-lg-end">
+                        <a href="home-corporate.html" class="btn btn-primary-theme btn-lg">
+                            <i class="bi bi-building me-1"></i> Explore Corporate Solutions
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 5. MEMBERSHIP FAQS ACCORDION -->
+    <section class="py-5 bg-surface border-top">
+        <div class="container py-4">
+            <div class="text-center max-w-700 mx-auto mb-5">
+                <span class="badge-tag badge-orange mb-2">Help Center</span>
+                <h2 class="font-heading display-6">Frequently Asked Questions</h2>
+            </div>
+
+            <div class="accordion max-w-800 mx-auto" id="pricingFaqAccordion">
+                <div class="accordion-item mb-2 border rounded-3 overflow-hidden">
+                    <h2 class="accordion-header">
+                        <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#pf1">
+                            Can I pause or cancel my membership at any time?
+                        </button>
+                    </h2>
+                    <div id="pf1" class="accordion-collapse collapse show" data-bs-parent="#pricingFaqAccordion">
+                        <div class="accordion-body small text-muted">
+                            Yes. You can pause your membership for up to 60 days per calendar year if you have travel or exams, or cancel anytime with one click in your student portal.
+                        </div>
+                    </div>
+                </div>
+
+                <div class="accordion-item mb-2 border rounded-3 overflow-hidden">
+                    <h2 class="accordion-header">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#pf2">
+                            Can I switch language tracks midway through my subscription?
+                        </button>
+                    </h2>
+                    <div id="pf2" class="accordion-collapse collapse" data-bs-parent="#pricingFaqAccordion">
+                        <div class="accordion-body small text-muted">
+                            Yes! On Standard, Premium, and All-Access plans, you can freely switch from Spoken English to French, German, Spanish, or Japanese at the start of any new monthly term.
+                        </div>
+                    </div>
+                </div>
+
+                <div class="accordion-item border rounded-3 overflow-hidden">
+                    <h2 class="accordion-header">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#pf3">
+                            Are all study materials and practice tests included in the monthly fee?
+                        </button>
+                    </h2>
+                    <div id="pf3" class="accordion-collapse collapse" data-bs-parent="#pricingFaqAccordion">
+                        <div class="accordion-body small text-muted">
+                            Yes. There are zero additional material fees. Digital books, mock tests, vocabulary decks, and conversation club access are 100% included in all tiers.
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
     <footer class="footer-main">
         <div class="container">
             <div class="row g-4 g-lg-5">
@@ -184,7 +419,6 @@
                     </a>
                     <p class="small text-muted mb-4">Empowering students, working professionals, and global organizations with certified language fluency, accent neutralization, and executive communication coaching since 2014.</p>
                     
-                    <!-- Direct Contact Details -->
                     <div class="footer-contact-info mb-4">
                         <div class="d-flex align-items-center gap-2 mb-2 small text-light">
                             <i class="bi bi-telephone-fill text-orange"></i>
@@ -200,7 +434,6 @@
                         </div>
                     </div>
 
-                    <!-- Social Media Links -->
                     <div class="d-flex gap-2">
                         <a href="https://www.facebook.com" target="_blank" rel="noopener noreferrer" class="btn btn-sm btn-outline-secondary rounded-circle text-light footer-social-btn" title="Facebook" aria-label="Facebook"><i class="bi bi-facebook"></i></a>
                         <a href="https://x.com" target="_blank" rel="noopener noreferrer" class="btn btn-sm btn-outline-secondary rounded-circle text-light footer-social-btn" title="X (Twitter)" aria-label="X (Twitter)"><i class="bi bi-twitter-x"></i></a>
@@ -250,7 +483,6 @@
                         <button type="submit" class="btn btn-primary-theme btn-sm text-nowrap">Subscribe</button>
                     </form>
 
-                    <!-- Trust & Accreditation Badges -->
                     <div class="footer-badges p-3 rounded-3 border border-secondary border-opacity-25 bg-surface bg-opacity-10">
                         <div class="d-flex align-items-center gap-2 mb-2">
                             <i class="bi bi-patch-check-fill text-orange fs-4"></i>
@@ -268,7 +500,6 @@
                 </div>
             </div>
 
-            <!-- Footer Bottom Bar -->
             <div class="footer-bottom text-center text-md-start d-md-flex justify-content-between align-items-center">
                 <p class="mb-0">&copy; 2026 Lingua Academy. All rights reserved. Professional Language & Communication Training Institute.</p>
                 <div class="d-flex gap-3 justify-content-center mt-3 mt-md-0">
@@ -281,12 +512,45 @@
         </div>
     </footer>
 
-    <!-- Modals -->
+    <!-- Enrollment Modal -->
+    <div class="modal fade" id="enrollModal" tabindex="-1">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title font-heading"><i class="bi bi-mortarboard-fill text-orange me-2"></i> Join <span class="selected-course-title">Membership Plan</span></h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                </div>
+                <form id="enrollForm">
+                    <div class="modal-body">
+                        <div class="mb-3">
+                            <label class="form-label small fw-bold">Full Name</label>
+                            <input type="text" class="form-control" name="name" required>
+                        </div>
+                        <div class="row g-2 mb-3">
+                            <div class="col-md-6">
+                                <label class="form-label small fw-bold">Email Address</label>
+                                <input type="email" class="form-control" name="email" required>
+                            </div>
+                            <div class="col-md-6">
+                                <label class="form-label small fw-bold">Phone Number</label>
+                                <input type="tel" class="form-control" name="phone" required>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="submit" class="btn btn-primary-theme">Complete Membership Registration</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <!-- Demo Class Modal -->
     <div class="modal fade" id="demoClassModal" tabindex="-1">
         <div class="modal-dialog modal-dialog-centered">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h5 class="modal-title font-heading"><i class="bi bi-camera-video-fill text-orange me-2"></i> Book Free Demo Class</h5>
+                    <h5 class="modal-title font-heading"><i class="bi bi-camera-video-fill text-orange me-2"></i> Book a Free Demo Class</h5>
                     <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
                 </div>
                 <form id="demoClassForm">
@@ -295,48 +559,19 @@
                             <label class="form-label small fw-bold">Full Name</label>
                             <input type="text" class="form-control" name="name" required>
                         </div>
-                        <div class="mb-3">
-                            <label class="form-label small fw-bold">Email</label>
-                            <input type="email" class="form-control" name="email" required>
-                        </div>
-                    </div>
-                    <div class="modal-footer">
-                        <button type="submit" class="btn btn-primary-theme">Schedule Demo</button>
-                    </div>
-                </form>
-            </div>
-        </div>
-    </div>
-
-    <div class="modal fade" id="enrollModal" tabindex="-1">
-        <div class="modal-dialog modal-dialog-centered">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title font-heading"><i class="bi bi-pencil-square text-orange me-2"></i> Join Selected Membership Track</h5>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
-                </div>
-                <form id="enrollForm">
-                    <div class="modal-body">
-                        <div class="alert alert-info py-2 px-3 small">
-                            Track: <strong class="selected-course-title text-orange">Selected Plan</strong>
-                        </div>
-                        <div class="mb-3">
-                            <label class="form-label small fw-bold">Full Name</label>
-                            <input type="text" class="form-control" name="name" required>
-                        </div>
                         <div class="row g-2 mb-3">
                             <div class="col-md-6">
-                                <label class="form-label small fw-bold">Phone</label>
-                                <input type="tel" class="form-control" name="phone" required>
+                                <label class="form-label small fw-bold">Email Address</label>
+                                <input type="email" class="form-control" name="email" required>
                             </div>
                             <div class="col-md-6">
-                                <label class="form-label small fw-bold">Email</label>
-                                <input type="email" class="form-control" name="email" required>
+                                <label class="form-label small fw-bold">Phone Number</label>
+                                <input type="tel" class="form-control" name="phone" required>
                             </div>
                         </div>
                     </div>
                     <div class="modal-footer">
-                        <button type="submit" class="btn btn-primary-theme">Confirm Membership</button>
+                        <button type="submit" class="btn btn-primary-theme">Book Free Demo</button>
                     </div>
                 </form>
             </div>
@@ -346,5 +581,24 @@
     <!-- Scripts -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
     <script src="assets/js/main.js"></script>
+    <script>
+        function toggleBilling(isAnnual) {
+            const priceEls = document.querySelectorAll('.price-val');
+            priceEls.forEach(el => {
+                const val = isAnnual ? el.getAttribute('data-annual') : el.getAttribute('data-monthly');
+                el.innerText = '$' + val;
+            });
+
+            const mLabel = document.getElementById('monthlyLabel');
+            const aLabel = document.getElementById('annualLabel');
+            if (isAnnual) {
+                mLabel.className = 'small fw-bold text-muted';
+                aLabel.className = 'small fw-bold text-main';
+            } else {
+                mLabel.className = 'small fw-bold text-main';
+                aLabel.className = 'small fw-bold text-muted';
+            }
+        }
+    </script>
 </body>
 </html>

@@ -32,32 +32,9 @@
 </head>
 <body>
 
-    <!-- 1. TOP BAR -->
-    <div class="top-bar d-none d-md-block">
-        <div class="container">
-            <div class="d-flex justify-content-between align-items-center">
-                <div class="d-flex align-items-center gap-4">
-                    <span><i class="bi bi-telephone-fill me-2 text-orange"></i>+1 (800) 555-LANG</span>
-                    <span><i class="bi bi-envelope-fill me-2 text-orange"></i>info@linguaacademy.com</span>
-                    <span><i class="bi bi-clock-fill me-2 text-orange"></i>Mon - Sat: 8:00 AM - 8:00 PM</span>
-                </div>
-                <div class="d-flex align-items-center gap-3">
-                    <button class="btn btn-sm btn-link text-light p-0 theme-toggle-btn" title="Toggle Light/Dark Theme">
-                        <i class="bi bi-moon-stars-fill"></i>
-                    </button>
-                    <button class="btn btn-sm btn-link text-light p-0 rtl-toggle-btn" title="Toggle RTL Layout">
-                        <i class="bi bi-save"></i> RTL
-                    </button>
-                    <span class="text-secondary">|</span>
-                    <a href="login.html" class="small"><i class="bi bi-person-lock me-1"></i> Student Portal</a>
-                </div>
-            </div>
-        </div>
-    </div>
-
     <!-- 2. MAIN NAVBAR -->
     <nav class="navbar navbar-expand-lg navbar-main">
-        <div class="container">
+        <div class="container-fluid px-3 px-xl-5">
             <a class="navbar-brand navbar-brand-logo" href="index.html">
                 <div class="brand-icon-wrap">
                     <i class="bi bi-chat-quote-fill"></i>
@@ -65,18 +42,41 @@
                 <span>Lingua<span class="text-orange">Academy</span></span>
             </a>
 
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarMainContent">
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarMainContent" aria-controls="navbarMainContent" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
 
             <div class="collapse navbar-collapse" id="navbarMainContent">
-                <ul class="navbar-menu nav ms-auto align-items-lg-center">
-                    <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle active" href="#" data-bs-toggle="dropdown">Home</a>
-                        <ul class="dropdown-menu shadow-sm">
-                            <li><a class="dropdown-item active" href="index.html"><i class="bi bi-house-door me-2"></i> General Academy Landing</a></li>
-                            <li><a class="dropdown-item" href="home-corporate.html"><i class="bi bi-building me-2"></i> Corporate Communication</a></li>
-                        </ul>
+                <ul class="navbar-menu ms-auto">
+                    <li class="nav-item dropdown home-dropdown">
+                        <a class="nav-link active" href="index.html">Home</a>
+                        <div class="dropdown-menu home-hover-menu shadow-lg">
+                            <div class="px-3 pt-2 pb-1 text-uppercase text-muted fw-bold" style="font-size: 0.68rem; letter-spacing: 0.08em;">Select Home Version</div>
+                            <a class="dropdown-item home-menu-card active" href="index.html">
+                                <div class="home-menu-icon home-icon-academy">
+                                    <i class="bi bi-house-door-fill"></i>
+                                </div>
+                                <div class="home-menu-content">
+                                    <div class="d-flex align-items-center justify-content-between">
+                                        <span class="home-menu-title">General Academy</span>
+                                        <span class="badge bg-orange-subtle text-orange" style="font-size: 0.65rem;">Home 1</span>
+                                    </div>
+                                    <p class="home-menu-desc mb-0">Individual, Kids & Exam Fluency</p>
+                                </div>
+                            </a>
+                            <a class="dropdown-item home-menu-card" href="home-corporate.html">
+                                <div class="home-menu-icon home-icon-corp">
+                                    <i class="bi bi-building-fill"></i>
+                                </div>
+                                <div class="home-menu-content">
+                                    <div class="d-flex align-items-center justify-content-between">
+                                        <span class="home-menu-title">Corporate Training</span>
+                                        <span class="badge bg-blue-subtle text-primary" style="font-size: 0.65rem;">Home 2</span>
+                                    </div>
+                                    <p class="home-menu-desc mb-0">Enterprise Communication & B2B Solutions</p>
+                                </div>
+                            </a>
+                        </div>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="about.html">About Us</a>
@@ -92,10 +92,19 @@
                     <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
                 </ul>
 
-                <div class="d-flex align-items-center gap-2 ms-lg-3 mt-3 mt-lg-0 auth-nav-container">
-                    <button class="btn btn-primary-theme btn-sm" data-bs-toggle="modal" data-bs-target="#demoClassModal">
-                        <i class="bi bi-calendar-check"></i> Book Free Demo
+                <div class="navbar-actions">
+                    <button class="btn nav-action-btn theme-toggle-btn" title="Toggle Light/Dark Theme" aria-label="Toggle light or dark theme">
+                        <i class="bi bi-moon-stars-fill"></i>
                     </button>
+                    <button class="btn nav-action-btn rtl-toggle-btn" title="Toggle RTL Layout" aria-label="Toggle text direction">
+                        <i class="bi bi-arrow-left-right"></i>
+                        <span>RTL</span>
+                    </button>
+                    <div class="auth-nav-container">
+                        <button class="btn btn-primary-theme btn-sm text-nowrap" data-bs-toggle="modal" data-bs-target="#demoClassModal">
+                            <i class="bi bi-calendar-check me-1"></i> Book Free Demo
+                        </button>
+                    </div>
                 </div>
             </div>
         </div>
@@ -322,38 +331,48 @@
                 <p class="text-muted">A proven roadmap engineered to turn hesitation into natural, confident communication.</p>
             </div>
 
-            <div class="row g-4 text-center">
+            <div class="row g-4 text-center justify-content-center">
                 <div class="col-6 col-md-4 col-lg">
-                    <div class="p-3 roadmap-step">
-                        <div class="brand-icon-wrap mx-auto mb-3 fs-3 fw-bold">1</div>
+                    <div class="roadmap-step">
+                        <div class="roadmap-step-circle mx-auto mb-3 step-circle-orange">
+                            <span class="roadmap-step-number">01</span>
+                        </div>
                         <h6 class="font-heading mb-1">Enquire Online</h6>
                         <p class="small text-muted mb-0">Fill a quick request or book a free trial slot.</p>
                     </div>
                 </div>
                 <div class="col-6 col-md-4 col-lg">
-                    <div class="p-3 roadmap-step">
-                        <div class="brand-icon-wrap mx-auto mb-3 fs-3 fw-bold bg-dark text-white">2</div>
+                    <div class="roadmap-step">
+                        <div class="roadmap-step-circle mx-auto mb-3 step-circle-teal">
+                            <span class="roadmap-step-number">02</span>
+                        </div>
                         <h6 class="font-heading mb-1">Free Demo Class</h6>
                         <p class="small text-muted mb-0">Experience our interactive teaching methodology.</p>
                     </div>
                 </div>
                 <div class="col-6 col-md-4 col-lg">
-                    <div class="p-3 roadmap-step">
-                        <div class="brand-icon-wrap mx-auto mb-3 fs-3 fw-bold">3</div>
+                    <div class="roadmap-step">
+                        <div class="roadmap-step-circle mx-auto mb-3 step-circle-blue">
+                            <span class="roadmap-step-number">03</span>
+                        </div>
                         <h6 class="font-heading mb-1">Level Assessment</h6>
                         <p class="small text-muted mb-0">Our counsellor evaluates your CEFR baseline.</p>
                     </div>
                 </div>
                 <div class="col-6 col-md-4 col-lg">
-                    <div class="p-3 roadmap-step">
-                        <div class="brand-icon-wrap mx-auto mb-3 fs-3 fw-bold bg-dark text-white">4</div>
+                    <div class="roadmap-step">
+                        <div class="roadmap-step-circle mx-auto mb-3 step-circle-purple">
+                            <span class="roadmap-step-number">04</span>
+                        </div>
                         <h6 class="font-heading mb-1">Active Batches</h6>
                         <p class="small text-muted mb-0">Practice daily with native trainers & peers.</p>
                     </div>
                 </div>
                 <div class="col-6 col-md-4 col-lg">
-                    <div class="p-3 roadmap-step">
-                        <div class="brand-icon-wrap mx-auto mb-3 fs-3 fw-bold">5</div>
+                    <div class="roadmap-step">
+                        <div class="roadmap-step-circle mx-auto mb-3 step-circle-green">
+                            <span class="roadmap-step-number">05</span>
+                        </div>
                         <h6 class="font-heading mb-1">Get Certified</h6>
                         <p class="small text-muted mb-0">Earn your accredited completion diploma.</p>
                     </div>
@@ -372,13 +391,17 @@
 
             <div class="row g-4">
                 <div class="col-md-4">
-                    <div class="custom-card p-4">
-                        <div class="d-flex align-items-center gap-1 text-warning mb-3">
-                            <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i>
+                    <div class="custom-card p-4 h-100 d-flex flex-column justify-content-between">
+                        <div>
+                            <div class="d-flex align-items-center gap-1 text-warning mb-3">
+                                <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i>
+                            </div>
+                            <p class="small text-muted mb-4">"The public speaking course transformed my corporate career. I went from trembling before presentations to delivering keynote speeches effortlessly!"</p>
                         </div>
-                        <p class="small text-muted mb-4">"The public speaking course transformed my corporate career. I went from trembling before presentations to delivering keynote speeches effortlessly!"</p>
-                        <div class="d-flex align-items-center gap-3 mt-auto">
-                            <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=150&q=80" alt="Student photo" class="rounded-circle" width="48" height="48">
+                        <div class="d-flex align-items-center gap-3 pt-3 border-top border-light-subtle">
+                            <div class="testimonial-avatar-frame frame-orange">
+                                <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=150&h=150&q=80" alt="Elena Rostova" class="testimonial-avatar-img">
+                            </div>
                             <div>
                                 <strong class="d-block font-heading mb-0">Elena Rostova</strong>
                                 <span class="small text-muted">Marketing Director</span>
@@ -388,13 +411,17 @@
                 </div>
 
                 <div class="col-md-4">
-                    <div class="custom-card p-4">
-                        <div class="d-flex align-items-center gap-1 text-warning mb-3">
-                            <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i>
+                    <div class="custom-card p-4 h-100 d-flex flex-column justify-content-between">
+                        <div>
+                            <div class="d-flex align-items-center gap-1 text-warning mb-3">
+                                <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i>
+                            </div>
+                            <p class="small text-muted mb-4">"Achieved Band 8.0 on my IELTS exam on the first attempt! The mock test feedback from Trainer David was spot-on."</p>
                         </div>
-                        <p class="small text-muted mb-4">"Achieved Band 8.0 on my IELTS exam on the first attempt! The mock test feedback from Trainer David was spot-on."</p>
-                        <div class="d-flex align-items-center gap-3 mt-auto">
-                            <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=150&q=80" alt="Student photo" class="rounded-circle" width="48" height="48">
+                        <div class="d-flex align-items-center gap-3 pt-3 border-top border-light-subtle">
+                            <div class="testimonial-avatar-frame frame-blue">
+                                <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=150&h=150&q=80" alt="Rahul Sharma" class="testimonial-avatar-img">
+                            </div>
                             <div>
                                 <strong class="d-block font-heading mb-0">Rahul Sharma</strong>
                                 <span class="small text-muted">IELTS Scholar</span>
@@ -404,13 +431,17 @@
                 </div>
 
                 <div class="col-md-4">
-                    <div class="custom-card p-4">
-                        <div class="d-flex align-items-center gap-1 text-warning mb-3">
-                            <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i>
+                    <div class="custom-card p-4 h-100 d-flex flex-column justify-content-between">
+                        <div>
+                            <div class="d-flex align-items-center gap-1 text-warning mb-3">
+                                <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i>
+                            </div>
+                            <p class="small text-muted mb-4">"My 10-year-old son enrolled in the Kids' Confidence class. His vocabulary and school presentation skills have improved tremendously!"</p>
                         </div>
-                        <p class="small text-muted mb-4">"My 10-year-old son enrolled in the Kids' Confidence class. His vocabulary and school presentation skills have improved tremendously!"</p>
-                        <div class="d-flex align-items-center gap-3 mt-auto">
-                            <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&w=150&q=80" alt="Parent photo" class="rounded-circle" width="48" height="48">
+                        <div class="d-flex align-items-center gap-3 pt-3 border-top border-light-subtle">
+                            <div class="testimonial-avatar-frame frame-teal">
+                                <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&w=150&h=150&q=80" alt="Claire Dupont" class="testimonial-avatar-img">
+                            </div>
                             <div>
                                 <strong class="d-block font-heading mb-0">Claire Dupont</strong>
                                 <span class="small text-muted">Parent of Leo</span>

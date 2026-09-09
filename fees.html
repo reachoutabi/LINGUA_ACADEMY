@@ -3,10 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Fees & Tuition Structure | Lingua Academy</title>
-    <meta name="description" content="Transparent course-wise tuition breakdown, installment options, materials included, and group discounts.">
+    <title>Tuition Fees & Installment Plans | Lingua Academy</title>
+    <meta name="description" content="Transparent course fees, zero hidden registration charges, flexible 0% interest monthly installments, group discounts, and scholarship programs.">
 
-        <!-- Favicon (Save Icon) -->
+    <!-- Favicon -->
     <link rel="icon" type="image/png" href="favicon.png">
     <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
     <link rel="apple-touch-icon" href="favicon.png">
@@ -26,43 +26,51 @@
 </head>
 <body>
 
-    <!-- TOP BAR -->
-    <div class="top-bar d-none d-md-block">
-        <div class="container">
-            <div class="d-flex justify-content-between align-items-center">
-                <div class="d-flex align-items-center gap-4">
-                    <span><i class="bi bi-telephone-fill me-2 text-orange"></i>+1 (800) 555-LANG</span>
-                    <span><i class="bi bi-envelope-fill me-2 text-orange"></i>info@linguaacademy.com</span>
-                </div>
-                <div class="d-flex align-items-center gap-3">
-                    <button class="btn btn-sm btn-link text-light p-0 theme-toggle-btn" title="Toggle Theme"><i class="bi bi-moon-stars-fill"></i></button>
-                    <button class="btn btn-sm btn-link text-light p-0 rtl-toggle-btn" title="Toggle RTL"><i class="bi bi-save"></i> RTL</button>
-                    <a href="login.html" class="small ms-2"><i class="bi bi-person-lock me-1"></i> Student Portal</a>
-                </div>
-            </div>
-        </div>
-    </div>
-
     <!-- MAIN NAVBAR -->
     <nav class="navbar navbar-expand-lg navbar-main">
-        <div class="container">
+        <div class="container-fluid px-3 px-xl-5">
             <a class="navbar-brand navbar-brand-logo" href="index.html">
-                <div class="brand-icon-wrap"><i class="bi bi-chat-quote-fill"></i></div>
+                <div class="brand-icon-wrap">
+                    <i class="bi bi-chat-quote-fill"></i>
+                </div>
                 <span>Lingua<span class="text-orange">Academy</span></span>
             </a>
 
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarMainContent">
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarMainContent" aria-controls="navbarMainContent" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
 
             <div class="collapse navbar-collapse" id="navbarMainContent">
-                <ul class="navbar-menu nav ms-auto align-items-lg-center">
-                    <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown">Home</a>
-                        <ul class="dropdown-menu shadow-sm">
-                            <li><a class="dropdown-item" href="index.html"><i class="bi bi-house-door me-2"></i> General Academy Landing</a></li>
-                            <li><a class="dropdown-item" href="home-corporate.html"><i class="bi bi-building me-2"></i> Corporate Communication</a></li>
-                        </ul>
+                <ul class="navbar-menu ms-auto">
+                    <li class="nav-item dropdown home-dropdown">
+                        <a class="nav-link" href="index.html">Home</a>
+                        <div class="dropdown-menu home-hover-menu shadow-lg">
+                            <div class="px-3 pt-2 pb-1 text-uppercase text-muted fw-bold" style="font-size: 0.68rem; letter-spacing: 0.08em;">Select Home Version</div>
+                            <a class="dropdown-item home-menu-card" href="index.html">
+                                <div class="home-menu-icon home-icon-academy">
+                                    <i class="bi bi-house-door-fill"></i>
+                                </div>
+                                <div class="home-menu-content">
+                                    <div class="d-flex align-items-center justify-content-between">
+                                        <span class="home-menu-title">General Academy</span>
+                                        <span class="badge bg-orange-subtle text-orange" style="font-size: 0.65rem;">Home 1</span>
+                                    </div>
+                                    <p class="home-menu-desc mb-0">Individual, Kids & Exam Fluency</p>
+                                </div>
+                            </a>
+                            <a class="dropdown-item home-menu-card" href="home-corporate.html">
+                                <div class="home-menu-icon home-icon-corp">
+                                    <i class="bi bi-building-fill"></i>
+                                </div>
+                                <div class="home-menu-content">
+                                    <div class="d-flex align-items-center justify-content-between">
+                                        <span class="home-menu-title">Corporate Training</span>
+                                        <span class="badge bg-blue-subtle text-primary" style="font-size: 0.65rem;">Home 2</span>
+                                    </div>
+                                    <p class="home-menu-desc mb-0">Enterprise Communication & B2B Solutions</p>
+                                </div>
+                            </a>
+                        </div>
                     </li>
                     <li class="nav-item"><a class="nav-link" href="about.html">About Us</a></li>
                     <li class="nav-item"><a class="nav-link" href="courses.html">Courses</a></li>
@@ -74,10 +82,19 @@
                     <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
                 </ul>
 
-                <div class="d-flex align-items-center gap-2 ms-lg-3 mt-3 mt-lg-0 auth-nav-container">
-                    <button class="btn btn-primary-theme btn-sm" data-bs-toggle="modal" data-bs-target="#demoClassModal">
-                        Book Free Demo
+                <div class="navbar-actions">
+                    <button class="btn nav-action-btn theme-toggle-btn" title="Toggle Light/Dark Theme" aria-label="Toggle light or dark theme">
+                        <i class="bi bi-moon-stars-fill"></i>
                     </button>
+                    <button class="btn nav-action-btn rtl-toggle-btn" title="Toggle RTL Layout" aria-label="Toggle text direction">
+                        <i class="bi bi-arrow-left-right"></i>
+                        <span>RTL</span>
+                    </button>
+                    <div class="auth-nav-container">
+                        <button class="btn btn-primary-theme btn-sm text-nowrap" data-bs-toggle="modal" data-bs-target="#demoClassModal">
+                            <i class="bi bi-calendar-check me-1"></i> Book Free Demo
+                        </button>
+                    </div>
                 </div>
             </div>
         </div>
@@ -93,83 +110,263 @@
                 </ol>
             </nav>
             <h1 class="display-5 font-heading">Transparent Tuition & Installment Plans</h1>
-            <p class="lead text-muted mb-0">No hidden registration fees. Every plan includes physical/digital workbooks and CEFR certification.</p>
+            <p class="lead text-muted mb-0">No hidden registration fees. Every plan includes physical/digital workbooks, daily conversation clubs, and CEFR certification.</p>
         </div>
     </section>
 
-    <!-- FEE TABLES BY CATEGORY -->
-    <section class="py-5">
+    <!-- 1. INTERACTIVE TUITION & INSTALLMENT CALCULATOR -->
+    <section class="py-4 bg-alt border-bottom">
+        <div class="container py-2">
+            <div class="card p-4 bg-surface border rounded-4 shadow-sm max-w-900 mx-auto">
+                <div class="d-flex flex-column flex-md-row justify-content-between align-items-md-center mb-3">
+                    <div>
+                        <h5 class="font-heading mb-1"><i class="bi bi-calculator text-orange me-2"></i> Interactive Installment & Savings Estimator</h5>
+                        <p class="small text-muted mb-0">Select your preferred course to check upfront 10% discount vs monthly split options.</p>
+                    </div>
+                    <span class="badge bg-success-subtle text-success mt-2 mt-md-0 px-3 py-2 fw-semibold">0% Interest Financing</span>
+                </div>
+
+                <div class="row g-3 align-items-center">
+                    <div class="col-md-5">
+                        <label class="form-label small fw-bold">Select Program</label>
+                        <select class="form-select form-select-sm" id="feeProgramSelect" onchange="calculateFee()">
+                            <option value="199|Spoken English Mastery|2 x $110">Spoken English Mastery ($199)</option>
+                            <option value="249|French DELF Track|3 x $90">French Language A1-C1 ($249)</option>
+                            <option value="269|German Goethe Track|3 x $98">German Goethe Track ($269)</option>
+                            <option value="219|Spanish DELE Track|2 x $118">Spanish DELE Track ($219)</option>
+                            <option value="299|IELTS Academic/General (Band 8.0+)|3 x $108">IELTS Masterclass Band 8.0+ ($299)</option>
+                            <option value="189|Public Speaking & Oratory|2 x $105">Public Speaking & Oratory ($189)</option>
+                            <option value="159|Kids Fluency Club|2 x $88">Kids' Fluency Club ($159)</option>
+                        </select>
+                    </div>
+                    <div class="col-md-7">
+                        <div class="row g-2 text-center p-3 bg-alt rounded-3 border">
+                            <div class="col-6 border-end">
+                                <span class="small text-muted d-block">One-Time (10% Off)</span>
+                                <strong class="text-success fs-4" id="feeOneTime">$199</strong>
+                            </div>
+                            <div class="col-6">
+                                <span class="small text-muted d-block">Monthly Installment</span>
+                                <strong class="text-orange fs-5" id="feeInstallment">2 x $110 / mo</strong>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 2. COMPREHENSIVE FEE TABLES -->
+    <section class="py-5 bg-surface">
         <div class="container py-3">
 
-            <!-- Category 1: Language Courses -->
+            <!-- Category 1: Foreign Languages & CEFR Tracks -->
             <div class="mb-5">
                 <div class="d-flex align-items-center gap-2 mb-3">
                     <i class="bi bi-translate text-orange fs-3"></i>
-                    <h3 class="font-heading mb-0">Language Programs & CEFR Tracks</h3>
+                    <h3 class="font-heading mb-0">Foreign Language Programs & CEFR Tracks</h3>
                 </div>
 
                 <div class="table-responsive bg-surface rounded-4 border shadow-sm">
-                    <table class="table table-custom mb-0">
+                    <table class="table table-custom mb-0 align-middle">
                         <thead>
                             <tr>
                                 <th>Course Title</th>
                                 <th>Duration</th>
-                                <th>One-Time Fee (10% Off)</th>
-                                <th>Installment Option</th>
+                                <th>One-Time Fee</th>
+                                <th>Installment Plan</th>
                                 <th>What's Included</th>
                                 <th>Enroll</th>
                             </tr>
                         </thead>
                         <tbody>
                             <tr>
-                                <td><strong class="font-heading text-orange">Spoken English Mastery</strong></td>
-                                <td>12 Weeks</td>
+                                <td><strong class="font-heading text-main">Spoken English Mastery</strong></td>
+                                <td>12 Weeks (48 Hrs)</td>
                                 <td><span class="fw-bold text-success fs-5">$199</span></td>
-                                <td>2 x $110 / month</td>
-                                <td><span class="small text-muted">Workbook + Conversation Club + CEFR B2 Certificate</span></td>
+                                <td>2 x $110 / mo</td>
+                                <td><span class="small text-muted">Workbook + Unlimited Clubs + CEFR B2 Certificate</span></td>
                                 <td><button class="btn btn-sm btn-primary-theme" data-bs-toggle="modal" data-bs-target="#enrollModal" data-course-name="Spoken English Mastery">Enroll</button></td>
                             </tr>
                             <tr>
-                                <td><strong class="font-heading text-blue">French Language (A1 - C1)</strong></td>
-                                <td>14 Weeks</td>
+                                <td><strong class="font-heading text-main">French Language (A1 - C1)</strong></td>
+                                <td>14 Weeks (56 Hrs)</td>
                                 <td><span class="fw-bold text-success fs-5">$249</span></td>
-                                <td>3 x $90 / month</td>
-                                <td><span class="small text-muted">DELF Exam Prep Kit + Live Phonetics Audio Labs</span></td>
+                                <td>3 x $90 / mo</td>
+                                <td><span class="small text-muted">DELF Exam Kit + Native Phonetics Audio Labs</span></td>
                                 <td><button class="btn btn-sm btn-primary-theme" data-bs-toggle="modal" data-bs-target="#enrollModal" data-course-name="French Language (A1-C1)">Enroll</button></td>
                             </tr>
                             <tr>
-                                <td><strong class="font-heading text-teal">German Goethe Track</strong></td>
-                                <td>16 Weeks</td>
+                                <td><strong class="font-heading text-main">German Goethe Track</strong></td>
+                                <td>16 Weeks (64 Hrs)</td>
                                 <td><span class="fw-bold text-success fs-5">$269</span></td>
-                                <td>3 x $98 / month</td>
-                                <td><span class="small text-muted">Goethe Mock Papers + Vocabulary Flashcards</span></td>
+                                <td>3 x $98 / mo</td>
+                                <td><span class="small text-muted">Goethe Mock Papers + Vocabulary Flashcard Deck</span></td>
                                 <td><button class="btn btn-sm btn-primary-theme" data-bs-toggle="modal" data-bs-target="#enrollModal" data-course-name="German Goethe Track">Enroll</button></td>
                             </tr>
                             <tr>
-                                <td><strong class="font-heading text-purple">Spanish DELE Track</strong></td>
-                                <td>12 Weeks</td>
+                                <td><strong class="font-heading text-main">Spanish DELE Track</strong></td>
+                                <td>12 Weeks (48 Hrs)</td>
                                 <td><span class="fw-bold text-success fs-5">$219</span></td>
-                                <td>2 x $118 / month</td>
-                                <td><span class="small text-muted">Castilian & Latin Culture Modules + Digital Book</span></td>
+                                <td>2 x $118 / mo</td>
+                                <td><span class="small text-muted">Castilian & Latin Culture Immersion Modules</span></td>
                                 <td><button class="btn btn-sm btn-primary-theme" data-bs-toggle="modal" data-bs-target="#enrollModal" data-course-name="Spanish DELE Track">Enroll</button></td>
+                            </tr>
+                            <tr>
+                                <td><strong class="font-heading text-main">Japanese & JLPT (N5 - N2)</strong></td>
+                                <td>16 Weeks (64 Hrs)</td>
+                                <td><span class="fw-bold text-success fs-5">$279</span></td>
+                                <td>3 x $102 / mo</td>
+                                <td><span class="small text-muted">Kanji Workbook + JLPT Mock Tests + Keigo Guide</span></td>
+                                <td><button class="btn btn-sm btn-primary-theme" data-bs-toggle="modal" data-bs-target="#enrollModal" data-course-name="Japanese & JLPT Track">Enroll</button></td>
                             </tr>
                         </tbody>
                     </table>
                 </div>
             </div>
 
-            <!-- Discount Banners -->
+            <!-- Category 2: Exam Prep & Skills Masterclasses -->
+            <div class="mb-5">
+                <div class="d-flex align-items-center gap-2 mb-3">
+                    <i class="bi bi-award-fill text-teal fs-3"></i>
+                    <h3 class="font-heading mb-0">Exam Prep & Special Skills Masterclasses</h3>
+                </div>
+
+                <div class="table-responsive bg-surface rounded-4 border shadow-sm">
+                    <table class="table table-custom mb-0 align-middle">
+                        <thead>
+                            <tr>
+                                <th>Course Title</th>
+                                <th>Duration</th>
+                                <th>One-Time Fee</th>
+                                <th>Installment Plan</th>
+                                <th>What's Included</th>
+                                <th>Enroll</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><strong class="font-heading text-main">IELTS Academic (Band 8.0+)</strong></td>
+                                <td>10 Weeks (40 Hrs)</td>
+                                <td><span class="fw-bold text-success fs-5">$299</span></td>
+                                <td>3 x $108 / mo</td>
+                                <td><span class="small text-muted">10 Mock Exams + 1-on-1 Speaking Interviews</span></td>
+                                <td><button class="btn btn-sm btn-primary-theme" data-bs-toggle="modal" data-bs-target="#enrollModal" data-course-name="IELTS Academic Masterclass">Enroll</button></td>
+                            </tr>
+                            <tr>
+                                <td><strong class="font-heading text-main">Public Speaking & Oratory</strong></td>
+                                <td>8 Weeks (32 Hrs)</td>
+                                <td><span class="fw-bold text-success fs-5">$189</span></td>
+                                <td>2 x $105 / mo</td>
+                                <td><span class="small text-muted">Stage Video Reviews + Extempore Debate Labs</span></td>
+                                <td><button class="btn btn-sm btn-primary-theme" data-bs-toggle="modal" data-bs-target="#enrollModal" data-course-name="Public Speaking & Oratory">Enroll</button></td>
+                            </tr>
+                            <tr>
+                                <td><strong class="font-heading text-main">Kids' Fluency Club (Ages 6-14)</strong></td>
+                                <td>12 Weeks (36 Hrs)</td>
+                                <td><span class="fw-bold text-success fs-5">$159</span></td>
+                                <td>2 x $88 / mo</td>
+                                <td><span class="small text-muted">Gamified Storytelling + Activity Worksheets</span></td>
+                                <td><button class="btn btn-sm btn-primary-theme" data-bs-toggle="modal" data-bs-target="#enrollModal" data-course-name="Kids Fluency Club">Enroll</button></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+            <!-- 3. ALL-INCLUSIVE VALUE INCLUSIONS -->
+            <div class="mb-5">
+                <div class="text-center max-w-700 mx-auto mb-4">
+                    <span class="badge-tag badge-orange mb-2">Total Transparency</span>
+                    <h3 class="font-heading">What's Included in Every Tuition Fee</h3>
+                </div>
+
+                <div class="row g-3">
+                    <div class="col-md-4">
+                        <div class="p-3 bg-alt border rounded-3 h-100">
+                            <i class="bi bi-book-fill text-orange fs-4 mb-2 d-block"></i>
+                            <h6 class="font-heading mb-1">Physical & Digital Books</h6>
+                            <p class="small text-muted mb-0">Delivered to your address or available immediately in the digital portal.</p>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="p-3 bg-alt border rounded-3 h-100">
+                            <i class="bi bi-chat-dots-fill text-teal fs-4 mb-2 d-block"></i>
+                            <h6 class="font-heading mb-1">Daily Conversation Clubs</h6>
+                            <p class="small text-muted mb-0">Unlimited access to daily practice rooms without paying extra fees.</p>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="p-3 bg-alt border rounded-3 h-100">
+                            <i class="bi bi-patch-check-fill text-blue fs-4 mb-2 d-block"></i>
+                            <h6 class="font-heading mb-1">Accredited CEFR Diploma</h6>
+                            <p class="small text-muted mb-0">Verifiable certificate recognized by employers and universities worldwide.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 4. DISCOUNT & CONCESSION OFFERS -->
             <div class="row g-4 mb-5">
-                <div class="col-md-6">
+                <div class="col-md-4">
                     <div class="discount-box discount-orange p-4 bg-accent-subtle border border-warning rounded-4 h-100">
                         <h5 class="font-heading text-orange"><i class="bi bi-people-fill me-2"></i> Group Discount Offer</h5>
                         <p class="small text-muted mb-0">Enroll with 2 or more friends/colleagues and receive an additional <strong>15% discount</strong> on total tuition fees.</p>
                     </div>
                 </div>
-                <div class="col-md-6">
+                <div class="col-md-4">
                     <div class="discount-box discount-blue p-4 bg-surface border border-info rounded-4 h-100">
                         <h5 class="font-heading text-info"><i class="bi bi-heart-fill me-2"></i> Family / Sibling Concession</h5>
                         <p class="small text-muted mb-0">Families enrolling siblings or multiple children in our Kids Confidence program get <strong>20% off</strong> second enrollment.</p>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="discount-box p-4 bg-surface border border-success rounded-4 h-100">
+                        <h5 class="font-heading text-success"><i class="bi bi-award-fill me-2"></i> Merit Scholarship (30% Off)</h5>
+                        <p class="small text-muted mb-0">College students maintaining >3.5 GPA can apply for our quarterly <strong>30% academic merit waiver</strong>.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 5. TUITION FAQS & REFUND POLICY -->
+            <div class="card p-4 p-lg-5 bg-alt border rounded-4">
+                <h4 class="font-heading mb-4 text-center"><i class="bi bi-shield-check text-orange me-2"></i> Tuition FAQs & Guarantee Policy</h4>
+                <div class="accordion" id="feeFaqAccordion">
+                    <div class="accordion-item mb-2 border rounded-3 overflow-hidden">
+                        <h2 class="accordion-header">
+                            <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#ff1">
+                                What is your refund and batch cancellation policy?
+                            </button>
+                        </h2>
+                        <div id="ff1" class="accordion-collapse collapse show" data-bs-parent="#feeFaqAccordion">
+                            <div class="accordion-body small text-muted">
+                                We offer a 100% no-questions-asked refund policy within the first 14 calendar days of batch commencement if you are not fully satisfied with your trainer and curriculum.
+                            </div>
+                        </div>
+                    </div>
+                    <div class="accordion-item mb-2 border rounded-3 overflow-hidden">
+                        <h2 class="accordion-header">
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#ff2">
+                                Can I switch my batch time or transfer to another language after enrollment?
+                            </button>
+                        </h2>
+                        <div id="ff2" class="accordion-collapse collapse" data-bs-parent="#feeFaqAccordion">
+                            <div class="accordion-body small text-muted">
+                                Yes. You can switch between morning, evening, weekend, or online/offline modes once per term at zero administrative cost.
+                            </div>
+                        </div>
+                    </div>
+                    <div class="accordion-item border rounded-3 overflow-hidden">
+                        <h2 class="accordion-header">
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#ff3">
+                                Do you provide employer invoice receipts for corporate reimbursement?
+                            </button>
+                        </h2>
+                        <div id="ff3" class="accordion-collapse collapse" data-bs-parent="#feeFaqAccordion">
+                            <div class="accordion-body small text-muted">
+                                Yes. Automated GST/VAT tax receipts with employee corporate IDs are generated instantly upon fee payment for easy L&D expense claims.
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -177,7 +374,7 @@
         </div>
     </section>
 
-        <!-- FOOTER -->
+    <!-- FOOTER -->
     <footer class="footer-main">
         <div class="container">
             <div class="row g-4 g-lg-5">
@@ -191,7 +388,6 @@
                     </a>
                     <p class="small text-muted mb-4">Empowering students, working professionals, and global organizations with certified language fluency, accent neutralization, and executive communication coaching since 2014.</p>
                     
-                    <!-- Direct Contact Details -->
                     <div class="footer-contact-info mb-4">
                         <div class="d-flex align-items-center gap-2 mb-2 small text-light">
                             <i class="bi bi-telephone-fill text-orange"></i>
@@ -207,7 +403,6 @@
                         </div>
                     </div>
 
-                    <!-- Social Media Links -->
                     <div class="d-flex gap-2">
                         <a href="https://www.facebook.com" target="_blank" rel="noopener noreferrer" class="btn btn-sm btn-outline-secondary rounded-circle text-light footer-social-btn" title="Facebook" aria-label="Facebook"><i class="bi bi-facebook"></i></a>
                         <a href="https://x.com" target="_blank" rel="noopener noreferrer" class="btn btn-sm btn-outline-secondary rounded-circle text-light footer-social-btn" title="X (Twitter)" aria-label="X (Twitter)"><i class="bi bi-twitter-x"></i></a>
@@ -257,7 +452,6 @@
                         <button type="submit" class="btn btn-primary-theme btn-sm text-nowrap">Subscribe</button>
                     </form>
 
-                    <!-- Trust & Accreditation Badges -->
                     <div class="footer-badges p-3 rounded-3 border border-secondary border-opacity-25 bg-surface bg-opacity-10">
                         <div class="d-flex align-items-center gap-2 mb-2">
                             <i class="bi bi-patch-check-fill text-orange fs-4"></i>
@@ -275,7 +469,6 @@
                 </div>
             </div>
 
-            <!-- Footer Bottom Bar -->
             <div class="footer-bottom text-center text-md-start d-md-flex justify-content-between align-items-center">
                 <p class="mb-0">&copy; 2026 Lingua Academy. All rights reserved. Professional Language & Communication Training Institute.</p>
                 <div class="d-flex gap-3 justify-content-center mt-3 mt-md-0">
@@ -288,12 +481,52 @@
         </div>
     </footer>
 
-    <!-- Modals -->
+    <!-- Enrollment Modal -->
+    <div class="modal fade" id="enrollModal" tabindex="-1">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title font-heading"><i class="bi bi-mortarboard-fill text-orange me-2"></i> Enroll in <span class="selected-course-title">Program</span></h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                </div>
+                <form id="enrollForm">
+                    <div class="modal-body">
+                        <div class="mb-3">
+                            <label class="form-label small fw-bold">Full Name</label>
+                            <input type="text" class="form-control" name="name" required>
+                        </div>
+                        <div class="row g-2 mb-3">
+                            <div class="col-md-6">
+                                <label class="form-label small fw-bold">Email Address</label>
+                                <input type="email" class="form-control" name="email" required>
+                            </div>
+                            <div class="col-md-6">
+                                <label class="form-label small fw-bold">Phone Number</label>
+                                <input type="tel" class="form-control" name="phone" required>
+                            </div>
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label small fw-bold">Preferred Payment Method</label>
+                            <select class="form-select" name="paymentOption">
+                                <option value="full">One-Time Payment (10% Discount Applied)</option>
+                                <option value="emi">Monthly Split Installment (0% Interest)</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="submit" class="btn btn-primary-theme">Proceed to Secure Registration</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <!-- Demo Class Modal -->
     <div class="modal fade" id="demoClassModal" tabindex="-1">
         <div class="modal-dialog modal-dialog-centered">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h5 class="modal-title font-heading"><i class="bi bi-camera-video-fill text-orange me-2"></i> Book Free Demo Class</h5>
+                    <h5 class="modal-title font-heading"><i class="bi bi-camera-video-fill text-orange me-2"></i> Book a Free Demo Class</h5>
                     <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
                 </div>
                 <form id="demoClassForm">
@@ -302,48 +535,19 @@
                             <label class="form-label small fw-bold">Full Name</label>
                             <input type="text" class="form-control" name="name" required>
                         </div>
-                        <div class="mb-3">
-                            <label class="form-label small fw-bold">Email</label>
-                            <input type="email" class="form-control" name="email" required>
-                        </div>
-                    </div>
-                    <div class="modal-footer">
-                        <button type="submit" class="btn btn-primary-theme">Schedule Demo</button>
-                    </div>
-                </form>
-            </div>
-        </div>
-    </div>
-
-    <div class="modal fade" id="enrollModal" tabindex="-1">
-        <div class="modal-dialog modal-dialog-centered">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title font-heading"><i class="bi bi-pencil-square text-orange me-2"></i> Enroll Now</h5>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
-                </div>
-                <form id="enrollForm">
-                    <div class="modal-body">
-                        <div class="alert alert-info py-2 px-3 small">
-                            Course: <strong class="selected-course-title text-orange">Selected Program</strong>
-                        </div>
-                        <div class="mb-3">
-                            <label class="form-label small fw-bold">Student Name</label>
-                            <input type="text" class="form-control" name="name" required>
-                        </div>
                         <div class="row g-2 mb-3">
                             <div class="col-md-6">
-                                <label class="form-label small fw-bold">Phone</label>
-                                <input type="tel" class="form-control" name="phone" required>
+                                <label class="form-label small fw-bold">Email Address</label>
+                                <input type="email" class="form-control" name="email" required>
                             </div>
                             <div class="col-md-6">
-                                <label class="form-label small fw-bold">Email</label>
-                                <input type="email" class="form-control" name="email" required>
+                                <label class="form-label small fw-bold">Phone Number</label>
+                                <input type="tel" class="form-control" name="phone" required>
                             </div>
                         </div>
                     </div>
                     <div class="modal-footer">
-                        <button type="submit" class="btn btn-primary-theme">Submit Enrollment</button>
+                        <button type="submit" class="btn btn-primary-theme">Book Free Demo</button>
                     </div>
                 </form>
             </div>
@@ -353,5 +557,13 @@
     <!-- Scripts -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
     <script src="assets/js/main.js"></script>
+    <script>
+        function calculateFee() {
+            const raw = document.getElementById('feeProgramSelect').value;
+            const parts = raw.split('|');
+            document.getElementById('feeOneTime').innerText = '$' + parts[0];
+            document.getElementById('feeInstallment').innerText = parts[2] + ' / mo';
+        }
+    </script>
 </body>
 </html>

@@ -26,43 +26,49 @@
 </head>
 <body>
 
-    <!-- TOP BAR -->
-    <div class="top-bar d-none d-md-block">
-        <div class="container">
-            <div class="d-flex justify-content-between align-items-center">
-                <div class="d-flex align-items-center gap-4">
-                    <span><i class="bi bi-telephone-fill me-2 text-orange"></i>+1 (800) 555-LANG</span>
-                    <span><i class="bi bi-envelope-fill me-2 text-orange"></i>info@linguaacademy.com</span>
-                </div>
-                <div class="d-flex align-items-center gap-3">
-                    <button class="btn btn-sm btn-link text-light p-0 theme-toggle-btn" title="Toggle Theme"><i class="bi bi-moon-stars-fill"></i></button>
-                    <button class="btn btn-sm btn-link text-light p-0 rtl-toggle-btn" title="Toggle RTL"><i class="bi bi-save"></i> RTL</button>
-                    <a href="login.html" class="small ms-2"><i class="bi bi-person-lock me-1"></i> Student Portal</a>
-                </div>
-            </div>
-        </div>
-    </div>
-
     <!-- MAIN NAVBAR -->
     <nav class="navbar navbar-expand-lg navbar-main">
-        <div class="container">
+        <div class="container-fluid px-3 px-xl-5">
             <a class="navbar-brand navbar-brand-logo" href="index.html">
                 <div class="brand-icon-wrap"><i class="bi bi-chat-quote-fill"></i></div>
                 <span>Lingua<span class="text-orange">Academy</span></span>
             </a>
 
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarMainContent">
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarMainContent" aria-controls="navbarMainContent" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
 
             <div class="collapse navbar-collapse" id="navbarMainContent">
-                <ul class="navbar-menu nav ms-auto align-items-lg-center">
-                    <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown">Home</a>
-                        <ul class="dropdown-menu shadow-sm">
-                            <li><a class="dropdown-item" href="index.html"><i class="bi bi-house-door me-2"></i> General Academy Landing</a></li>
-                            <li><a class="dropdown-item" href="home-corporate.html"><i class="bi bi-building me-2"></i> Corporate Communication</a></li>
-                        </ul>
+                <ul class="navbar-menu ms-auto">
+                    <li class="nav-item dropdown home-dropdown">
+                        <a class="nav-link" href="index.html">Home</a>
+                        <div class="dropdown-menu home-hover-menu shadow-lg">
+                            <div class="px-3 pt-2 pb-1 text-uppercase text-muted fw-bold" style="font-size: 0.68rem; letter-spacing: 0.08em;">Select Home Version</div>
+                            <a class="dropdown-item home-menu-card" href="index.html">
+                                <div class="home-menu-icon home-icon-academy">
+                                    <i class="bi bi-house-door-fill"></i>
+                                </div>
+                                <div class="home-menu-content">
+                                    <div class="d-flex align-items-center justify-content-between">
+                                        <span class="home-menu-title">General Academy</span>
+                                        <span class="badge bg-orange-subtle text-orange" style="font-size: 0.65rem;">Home 1</span>
+                                    </div>
+                                    <p class="home-menu-desc mb-0">Individual, Kids & Exam Fluency</p>
+                                </div>
+                            </a>
+                            <a class="dropdown-item home-menu-card" href="home-corporate.html">
+                                <div class="home-menu-icon home-icon-corp">
+                                    <i class="bi bi-building-fill"></i>
+                                </div>
+                                <div class="home-menu-content">
+                                    <div class="d-flex align-items-center justify-content-between">
+                                        <span class="home-menu-title">Corporate Training</span>
+                                        <span class="badge bg-blue-subtle text-primary" style="font-size: 0.65rem;">Home 2</span>
+                                    </div>
+                                    <p class="home-menu-desc mb-0">Enterprise Communication & B2B Solutions</p>
+                                </div>
+                            </a>
+                        </div>
                     </li>
                     <li class="nav-item"><a class="nav-link" href="about.html">About Us</a></li>
                     <li class="nav-item"><a class="nav-link" href="courses.html">Courses</a></li>
@@ -74,10 +80,19 @@
                     <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
                 </ul>
 
-                <div class="d-flex align-items-center gap-2 ms-lg-3 mt-3 mt-lg-0 auth-nav-container">
-                    <button class="btn btn-primary-theme btn-sm" data-bs-toggle="modal" data-bs-target="#demoClassModal">
-                        Book Free Demo
+                <div class="navbar-actions">
+                    <button class="btn nav-action-btn theme-toggle-btn" title="Toggle Light/Dark Theme" aria-label="Toggle light or dark theme">
+                        <i class="bi bi-moon-stars-fill"></i>
                     </button>
+                    <button class="btn nav-action-btn rtl-toggle-btn" title="Toggle RTL Layout" aria-label="Toggle text direction">
+                        <i class="bi bi-arrow-left-right"></i>
+                        <span>RTL</span>
+                    </button>
+                    <div class="auth-nav-container">
+                        <button class="btn btn-primary-theme btn-sm text-nowrap" data-bs-toggle="modal" data-bs-target="#demoClassModal">
+                            <i class="bi bi-calendar-check me-1"></i> Book Free Demo
+                        </button>
+                    </div>
                 </div>
             </div>
         </div>
@@ -100,6 +115,12 @@
     <!-- FACULTY CARDS GRID -->
     <section class="py-5">
         <div class="container py-3">
+            <div class="text-center max-w-700 mx-auto mb-5">
+                <span class="badge-tag badge-orange mb-2">Core Teaching Council</span>
+                <h2 class="font-heading">Meet Your Language Mentors</h2>
+                <p class="text-muted">Every instructor at Lingua Academy is an internationally accredited native or bilingual specialist with a passion for communicative teaching.</p>
+            </div>
+
             <div class="row g-4">
 
                 <!-- Trainer 1 -->
@@ -282,6 +303,144 @@
                     </div>
                 </div>
 
+            </div>
+        </div>
+    </section>
+
+    <!-- FACULTY SELECTION PROTOCOL & STANDARDS -->
+    <section class="py-5 bg-surface border-top border-bottom">
+        <div class="container py-3">
+            <div class="text-center max-w-700 mx-auto mb-5">
+                <span class="badge-tag badge-teal mb-2">Academic Excellence</span>
+                <h2 class="font-heading">Our 4-Stage Faculty Selection Protocol</h2>
+                <p class="text-muted">We maintain the highest pedagogical benchmarks in language education. Only top 3% of instructor applicants are inducted into our core council.</p>
+            </div>
+
+            <div class="row g-4">
+                <div class="col-md-6 col-lg-3">
+                    <div class="custom-card p-4 h-100 text-center">
+                        <div class="step-number-box step-box-orange mb-3">
+                            01
+                        </div>
+                        <h5 class="font-heading mb-2">Native & C2 Verification</h5>
+                        <p class="small text-muted mb-0">Rigorous phonetic, idiomatic, and pronunciation audit by senior linguists to ensure native-level standard fluency.</p>
+                    </div>
+                </div>
+
+                <div class="col-md-6 col-lg-3">
+                    <div class="custom-card p-4 h-100 text-center">
+                        <div class="step-number-box step-box-blue mb-3">
+                            02
+                        </div>
+                        <h5 class="font-heading mb-2">Global Certifications</h5>
+                        <p class="small text-muted mb-0">Mandatory credentials: Cambridge CELTA/DELTA, Goethe-Zertifikat C2, Sorbonne DELF/DALF, or JLPT N1 examiners.</p>
+                    </div>
+                </div>
+
+                <div class="col-md-6 col-lg-3">
+                    <div class="custom-card p-4 h-100 text-center">
+                        <div class="step-number-box step-box-purple mb-3">
+                            03
+                        </div>
+                        <h5 class="font-heading mb-2">Live Teaching Audition</h5>
+                        <p class="small text-muted mb-0">Hands-on micro-teaching simulations evaluated for student engagement, error correction, and communicative pedagogy.</p>
+                    </div>
+                </div>
+
+                <div class="col-md-6 col-lg-3">
+                    <div class="custom-card p-4 h-100 text-center">
+                        <div class="step-number-box step-box-teal mb-3">
+                            04
+                        </div>
+                        <h5 class="font-heading mb-2">Bi-Weekly Peer Review</h5>
+                        <p class="small text-muted mb-0">Continuous classroom observations, speech pattern workshops, and student feedback loops for unmatched quality.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Key Teaching Metrics -->
+            <div class="row g-4 mt-4 pt-3 text-center">
+                <div class="col-6 col-md-3">
+                    <h3 class="font-heading display-6 text-orange mb-0">Top 3%</h3>
+                    <p class="small text-muted">Applicant Acceptance Rate</p>
+                </div>
+                <div class="col-6 col-md-3">
+                    <h3 class="font-heading display-6 text-blue mb-0">100%</h3>
+                    <p class="small text-muted">Native / C2 Certified</p>
+                </div>
+                <div class="col-6 col-md-3">
+                    <h3 class="font-heading display-6 text-purple mb-0">11.4 Yrs</h3>
+                    <p class="small text-muted">Average Trainer Experience</p>
+                </div>
+                <div class="col-6 col-md-3">
+                    <h3 class="font-heading display-6 text-teal mb-0">4.94 / 5</h3>
+                    <p class="small text-muted">Student Satisfaction Score</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 1-ON-1 ACCENT & FLUENCY DIAGNOSTIC CALLOUT -->
+    <section class="py-5 bg-surface border-top">
+        <div class="container py-3">
+            <div class="card p-4 p-md-5 rounded-4 border-orange border-2 bg-card shadow-sm">
+                <div class="row align-items-center g-4">
+                    <div class="col-lg-8">
+                        <span class="badge-tag badge-orange mb-2">Personalized Diagnostic</span>
+                        <h3 class="font-heading display-6 mb-2">Book a 30-Minute 1-on-1 Faculty Diagnostic Session</h3>
+                        <p class="text-muted mb-0">Get evaluated directly by a certified master coach. Receive an instant CEFR oral fluency report, personalized accent roadmaps, and custom curriculum recommendations with zero enrollment commitment.</p>
+                    </div>
+                    <div class="col-lg-4 text-lg-end">
+                        <button class="btn btn-primary-theme btn-lg px-4 py-3" data-bs-toggle="modal" data-bs-target="#demoClassModal">
+                            <i class="bi bi-calendar-check me-2"></i> Book Free Diagnostic
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- GUEST MASTERCLASSES & CAREERS BANNER -->
+    <section class="py-5 bg-surface border-top">
+        <div class="container py-3">
+            <div class="row g-4 align-items-stretch">
+                <!-- Guest Masterclass Box -->
+                <div class="col-lg-6">
+                    <div class="custom-card p-4 h-100 border-start border-4 border-purple">
+                        <div class="d-flex align-items-center gap-3 mb-3">
+                            <div class="feature-icon-box text-purple">
+                                <i class="bi bi-mortarboard-fill fs-2"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-heading mb-0">Visiting Masterclass Series</h4>
+                                <span class="small text-muted">Exclusive monthly guest sessions for enrolled students</span>
+                            </div>
+                        </div>
+                        <p class="text-muted small mb-3">Every month, we host distinguished visiting fellows from Oxford, Sorbonne, and Goethe Institut who conduct interactive masterclasses on cross-cultural negotiation, phonetic precision, and global leadership communication.</p>
+                        <a href="courses.html" class="btn btn-sm btn-outline-theme">
+                            <i class="bi bi-calendar-week me-1"></i> View Upcoming Masterclass Schedule
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Faculty Careers Box -->
+                <div class="col-lg-6">
+                    <div class="custom-card p-4 h-100 border-start border-4 border-teal">
+                        <div class="d-flex align-items-center gap-3 mb-3">
+                            <div class="feature-icon-box text-teal">
+                                <i class="bi bi-person-plus-fill fs-2"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-heading mb-0">Join Our Faculty Council</h4>
+                                <span class="small text-muted">We are always hiring certified native trainers</span>
+                            </div>
+                        </div>
+                        <p class="text-muted small mb-3">Are you a CELTA, DELF, Goethe, or JLPT certified language educator who thrives on student transformation? Explore full-time, part-time, and remote international trainer positions with competitive global compensation.</p>
+                        <a href="contact.html" class="btn btn-sm btn-outline-theme">
+                            <i class="bi bi-briefcase me-1"></i> Apply as an Instructor
+                        </a>
+                    </div>
+                </div>
             </div>
         </div>
     </section>

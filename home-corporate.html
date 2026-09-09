@@ -4,9 +4,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Corporate Communication & B2B Training | Lingua Academy</title>
-    <meta name="description" content="Empower your workforce with elite Business English, accent neutralization, public speaking, and executive cross-cultural communication workshops.">
+    <meta name="description" content="Empower your workforce with elite Business English, accent neutralization, executive presentation coaching, and cross-cultural communication workshops.">
 
-        <!-- Favicon (Save Icon) -->
+    <!-- Favicon -->
     <link rel="icon" type="image/png" href="favicon.png">
     <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
     <link rel="apple-touch-icon" href="favicon.png">
@@ -26,45 +26,51 @@
 </head>
 <body>
 
-    <!-- TOP BAR -->
-    <div class="top-bar d-none d-md-block">
-        <div class="container">
-            <div class="d-flex justify-content-between align-items-center">
-                <div class="d-flex align-items-center gap-4">
-                    <span><i class="bi bi-building-check me-2 text-orange"></i>Enterprise Hotline: +1 (800) 555-CORP</span>
-                    <span><i class="bi bi-envelope-fill me-2 text-orange"></i>corporate@linguaacademy.com</span>
-                </div>
-                <div class="d-flex align-items-center gap-3">
-                    <button class="btn btn-sm btn-link text-light p-0 theme-toggle-btn" title="Toggle Theme"><i class="bi bi-moon-stars-fill"></i></button>
-                    <button class="btn btn-sm btn-link text-light p-0 rtl-toggle-btn" title="Toggle RTL"><i class="bi bi-save"></i> RTL</button>
-                    <a href="login.html" class="small ms-2"><i class="bi bi-person-lock me-1"></i> Student Portal</a>
-                </div>
-            </div>
-        </div>
-    </div>
-
     <!-- MAIN NAVBAR -->
     <nav class="navbar navbar-expand-lg navbar-main">
-        <div class="container">
+        <div class="container-fluid px-3 px-xl-5">
             <a class="navbar-brand navbar-brand-logo" href="index.html">
                 <div class="brand-icon-wrap">
-                    <i class="bi bi-building"></i>
+                    <i class="bi bi-chat-quote-fill"></i>
                 </div>
-                <span>Lingua<span class="text-orange">Corporate</span></span>
+                <span>Lingua<span class="text-orange">Academy</span></span>
             </a>
 
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarMainContent">
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarMainContent" aria-controls="navbarMainContent" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
 
             <div class="collapse navbar-collapse" id="navbarMainContent">
-                <ul class="navbar-menu nav ms-auto align-items-lg-center">
-                    <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle active" href="#" data-bs-toggle="dropdown">Home</a>
-                        <ul class="dropdown-menu shadow-sm">
-                            <li><a class="dropdown-item" href="index.html"><i class="bi bi-house-door me-2"></i> General Academy Landing</a></li>
-                            <li><a class="dropdown-item active" href="home-corporate.html"><i class="bi bi-building me-2"></i> Corporate Communication</a></li>
-                        </ul>
+                <ul class="navbar-menu ms-auto">
+                    <li class="nav-item dropdown home-dropdown">
+                        <a class="nav-link active" href="home-corporate.html">Home</a>
+                        <div class="dropdown-menu home-hover-menu shadow-lg">
+                            <div class="px-3 pt-2 pb-1 text-uppercase text-muted fw-bold" style="font-size: 0.68rem; letter-spacing: 0.08em;">Select Home Version</div>
+                            <a class="dropdown-item home-menu-card" href="index.html">
+                                <div class="home-menu-icon home-icon-academy">
+                                    <i class="bi bi-house-door-fill"></i>
+                                </div>
+                                <div class="home-menu-content">
+                                    <div class="d-flex align-items-center justify-content-between">
+                                        <span class="home-menu-title">General Academy</span>
+                                        <span class="badge bg-orange-subtle text-orange" style="font-size: 0.65rem;">Home 1</span>
+                                    </div>
+                                    <p class="home-menu-desc mb-0">Individual, Kids & Exam Fluency</p>
+                                </div>
+                            </a>
+                            <a class="dropdown-item home-menu-card active" href="home-corporate.html">
+                                <div class="home-menu-icon home-icon-corp">
+                                    <i class="bi bi-building-fill"></i>
+                                </div>
+                                <div class="home-menu-content">
+                                    <div class="d-flex align-items-center justify-content-between">
+                                        <span class="home-menu-title">Corporate Training</span>
+                                        <span class="badge bg-blue-subtle text-primary" style="font-size: 0.65rem;">Home 2</span>
+                                    </div>
+                                    <p class="home-menu-desc mb-0">Enterprise Communication & B2B Solutions</p>
+                                </div>
+                            </a>
+                        </div>
                     </li>
                     <li class="nav-item"><a class="nav-link" href="about.html">About Us</a></li>
                     <li class="nav-item"><a class="nav-link" href="courses.html">Courses</a></li>
@@ -76,18 +82,27 @@
                     <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
                 </ul>
 
-                <div class="d-flex align-items-center gap-2 ms-lg-3 mt-3 mt-lg-0 auth-nav-container">
-                    <button class="btn btn-primary-theme btn-sm" data-bs-toggle="modal" data-bs-target="#corpEnquiryModal">
-                        <i class="bi bi-briefcase-fill"></i> Request Proposal
+                <div class="navbar-actions">
+                    <button class="btn nav-action-btn theme-toggle-btn" title="Toggle Light/Dark Theme" aria-label="Toggle light or dark theme">
+                        <i class="bi bi-moon-stars-fill"></i>
                     </button>
+                    <button class="btn nav-action-btn rtl-toggle-btn" title="Toggle RTL Layout" aria-label="Toggle text direction">
+                        <i class="bi bi-arrow-left-right"></i>
+                        <span>RTL</span>
+                    </button>
+                    <div class="auth-nav-container">
+                        <button class="btn btn-primary-theme btn-sm text-nowrap" data-bs-toggle="modal" data-bs-target="#corpEnquiryModal">
+                            <i class="bi bi-briefcase-fill me-1"></i> Request Proposal
+                        </button>
+                    </div>
                 </div>
             </div>
         </div>
     </nav>
 
-    <!-- B2B HERO SECTION -->
+    <!-- 1. B2B HERO SECTION WITH INTERACTIVE ROI ESTIMATOR -->
     <section class="hero-section bg-surface border-bottom">
-        <div class="container">
+        <div class="container py-2">
             <div class="row align-items-center g-5">
                 <div class="col-lg-6">
                     <span class="badge-tag badge-orange mb-3"><i class="bi bi-award me-1"></i> Fortune 500 Trusted Communication Partner</span>
@@ -99,24 +114,53 @@
                         Tailored business English, accent neutralization, executive presentation coaching, and cross-cultural workshops designed to drive cross-border deal closures and team alignment.
                     </p>
 
-                    <!-- Interactive Program Finder Widget -->
-                    <div class="card p-3 shadow-md border-0 bg-alt rounded-4 mb-4">
-                        <h6 class="font-heading mb-2"><i class="bi bi-sliders text-orange me-2"></i> Corporate Program Finder by Goal</h6>
-                        <div class="row g-2">
+                    <!-- Interactive Program Scope & ROI Estimator -->
+                    <div class="card p-4 shadow-md border-0 bg-alt rounded-4 mb-4">
+                        <div class="d-flex justify-content-between align-items-center mb-3">
+                            <h6 class="font-heading mb-0"><i class="bi bi-calculator text-orange me-2"></i> Interactive Training Scope & ROI Estimator</h6>
+                            <span class="badge bg-orange text-white" style="font-size: 0.75rem;">Instant Projection</span>
+                        </div>
+                        
+                        <div class="row g-3 mb-3">
                             <div class="col-md-6">
-                                <select class="form-select form-select-sm" id="corpGoalSelect">
-                                    <option value="business">Business English & Emails</option>
-                                    <option value="public">Executive Presentation Skills</option>
-                                    <option value="accent">Global Accent Neutralization</option>
-                                    <option value="interview">Interviewing & Talent Acquisition</option>
+                                <label class="form-label small fw-bold text-muted">Team Size to Train</label>
+                                <select class="form-select form-select-sm" id="calcTeamSize" onchange="updateCorpRoi()">
+                                    <option value="15">15 - 30 Employees (Pilot)</option>
+                                    <option value="50" selected>50 - 100 Employees (Department)</option>
+                                    <option value="150">150 - 300 Employees (Division)</option>
+                                    <option value="500">500+ Enterprise Cohort</option>
                                 </select>
                             </div>
                             <div class="col-md-6">
-                                <button class="btn btn-sm btn-primary-theme w-100" onclick="LinguaApp.showToast('Displaying enterprise programs matching your selection.', 'Program Finder Activated')">
-                                    <i class="bi bi-search"></i> Match Corporate Plan
-                                </button>
+                                <label class="form-label small fw-bold text-muted">Primary Focus Track</label>
+                                <select class="form-select form-select-sm" id="calcTrack" onchange="updateCorpRoi()">
+                                    <option value="exec" selected>Executive & Client Presentation</option>
+                                    <option value="email">Business English & Written Etiquette</option>
+                                    <option value="accent">Global Accent Neutralization</option>
+                                    <option value="relocation">Expat Foreign Language Immersion</option>
+                                </select>
                             </div>
                         </div>
+
+                        <!-- Dynamic Calculated Output Metrics -->
+                        <div class="row g-2 text-center p-3 bg-surface rounded-3 border mb-3">
+                            <div class="col-4 border-end">
+                                <span class="small text-muted d-block" style="font-size: 0.72rem;">Projected Fluency Jump</span>
+                                <strong class="text-orange fs-5" id="roiFluency">+48%</strong>
+                            </div>
+                            <div class="col-4 border-end">
+                                <span class="small text-muted d-block" style="font-size: 0.72rem;">Pitch Conversion Boost</span>
+                                <strong class="text-teal fs-5" id="roiPitch">+35%</strong>
+                            </div>
+                            <div class="col-4">
+                                <span class="small text-muted d-block" style="font-size: 0.72rem;">Recommended Track</span>
+                                <strong class="text-main fs-6" id="roiDuration">8 Wks (2x/Wk)</strong>
+                            </div>
+                        </div>
+
+                        <button class="btn btn-sm btn-primary-theme w-100" data-bs-toggle="modal" data-bs-target="#corpEnquiryModal">
+                            <i class="bi bi-file-earmark-check me-1"></i> Lock in Custom Enterprise Quotation
+                        </button>
                     </div>
 
                     <div class="d-flex gap-3">
@@ -140,16 +184,26 @@
                                 <span class="small text-muted">In Client Pitch Conversions</span>
                             </div>
                         </div>
+
+                        <div class="hero-stats-card position-absolute bottom-0 start-0 m-4 shadow-lg d-none d-sm-flex">
+                            <div class="stat-icon-wrap bg-orange text-white">
+                                <i class="bi bi-shield-check"></i>
+                            </div>
+                            <div>
+                                <h5 class="font-heading mb-0 text-main">CEFR Certified</h5>
+                                <span class="small text-muted">International Accreditation</span>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- CORPORATE STATS -->
+    <!-- 2. CORPORATE STATS & CLIENT VERTICALS -->
     <section class="py-5 bg-dark text-white">
         <div class="container">
-            <div class="row g-4 text-center">
+            <div class="row g-4 text-center mb-5">
                 <div class="col-6 col-md-3">
                     <h2 class="font-heading display-5 text-orange counter-value" data-target="220">220+</h2>
                     <p class="small text-muted mb-0">Corporate Clients Trained</p>
@@ -167,58 +221,498 @@
                     <p class="small text-muted mb-0">Customized Industries Covered</p>
                 </div>
             </div>
+
+            <!-- Trusted Industry Badges -->
+            <div class="text-center pt-3 border-top border-secondary border-opacity-25">
+                <span class="small text-uppercase text-light opacity-75 letter-spacing-1 d-block mb-3">Trusted by Learning & Development Heads Across Key Verticals</span>
+                <div class="d-flex flex-wrap justify-content-center gap-2">
+                    <span class="industry-vertical-pill"><i class="bi bi-cpu text-teal me-1"></i> Global Tech & SaaS</span>
+                    <span class="industry-vertical-pill"><i class="bi bi-bank text-warning me-1"></i> Investment Banking & FinTech</span>
+                    <span class="industry-vertical-pill"><i class="bi bi-heart-pulse text-danger me-1"></i> Healthcare & Pharma</span>
+                    <span class="industry-vertical-pill"><i class="bi bi-car-front text-info me-1"></i> Automotive & Manufacturing</span>
+                    <span class="industry-vertical-pill"><i class="bi bi-headset text-warning me-1"></i> Global BPO & Support Centers</span>
+                </div>
+            </div>
         </div>
     </section>
 
-    <!-- ENTERPRISE OFFERINGS -->
-    <section class="py-5">
+    <!-- 3. SIX CORE ENTERPRISE TRAINING TRACKS -->
+    <section class="py-5 bg-surface">
         <div class="container py-4">
             <div class="text-center max-w-700 mx-auto mb-5">
-                <span class="badge-tag badge-orange mb-2">B2B Core Modules</span>
-                <h2 class="font-heading display-6">Specialized Corporate Workshops</h2>
+                <span class="badge-tag badge-orange mb-2">B2B Core Curriculum</span>
+                <h2 class="font-heading display-6">Specialized Corporate Workshops & Tracks</h2>
+                <p class="text-muted">Modular corporate learning pathways calibrated to eliminate communication bottlenecks and elevate team performance.</p>
             </div>
 
             <div class="row g-4">
-                <div class="col-md-6 col-lg-3">
-                    <div class="custom-card p-4">
+                <!-- Track 1 -->
+                <div class="col-md-6 col-lg-4">
+                    <div class="custom-card p-4 h-100">
                         <i class="bi bi-briefcase-fill text-orange fs-1 mb-3"></i>
-                        <h5 class="font-heading mb-2">Business Writing & Emailing</h5>
-                        <p class="small text-muted mb-3">Master executive tone, persuasive proposals, technical report summaries, and crisp email etiquette.</p>
+                        <h5 class="font-heading mb-2">Business Writing & Email Diplomacy</h5>
+                        <p class="small text-muted mb-3">Master crisp executive tone, high-stakes proposals, RFP documentation, and diplomatic email conflict resolution.</p>
+                        <ul class="list-unstyled small text-muted mb-4">
+                            <li><i class="bi bi-check2 text-orange me-1"></i> Eliminating ambiguity in written briefs</li>
+                            <li><i class="bi bi-check2 text-orange me-1"></i> Executive summaries & board memorandums</li>
+                            <li><i class="bi bi-check2 text-orange me-1"></i> Cross-border email etiquette</li>
+                        </ul>
                         <a href="course-details.html" class="small fw-bold text-orange mt-auto">View Module Syllabus <i class="bi bi-arrow-right"></i></a>
                     </div>
                 </div>
 
-                <div class="col-md-6 col-lg-3">
-                    <div class="custom-card p-4">
+                <!-- Track 2 -->
+                <div class="col-md-6 col-lg-4">
+                    <div class="custom-card p-4 h-100">
                         <i class="bi bi-mic-fill text-teal fs-1 mb-3"></i>
-                        <h5 class="font-heading mb-2">Accent Neutralization</h5>
-                        <p class="small text-muted mb-3">Eliminate mother-tongue heavy cadence for seamless communication with US, UK, & European clients.</p>
+                        <h5 class="font-heading mb-2">Accent Neutralization & Intonation</h5>
+                        <p class="small text-muted mb-3">Eliminate mother-tongue heavy cadence and enhance acoustic clarity for smooth calls with US, UK, and European clients.</p>
+                        <ul class="list-unstyled small text-muted mb-4">
+                            <li><i class="bi bi-check2 text-teal me-1"></i> Syllable stress & vowel length correction</li>
+                            <li><i class="bi bi-check2 text-teal me-1"></i> Pacing, pausing, and breath control</li>
+                            <li><i class="bi bi-check2 text-teal me-1"></i> 1-on-1 phonetic diagnostic labs</li>
+                        </ul>
                         <a href="course-details.html" class="small fw-bold text-teal mt-auto">View Module Syllabus <i class="bi bi-arrow-right"></i></a>
                     </div>
                 </div>
 
-                <div class="col-md-6 col-lg-3">
-                    <div class="custom-card p-4">
+                <!-- Track 3 -->
+                <div class="col-md-6 col-lg-4">
+                    <div class="custom-card p-4 h-100">
                         <i class="bi bi-easel-fill text-primary fs-1 mb-3"></i>
-                        <h5 class="font-heading mb-2">Boardroom Presentation</h5>
-                        <p class="small text-muted mb-3">Command authority on stage, master slide storytelling, and handle intense Q&A sessions with poise.</p>
+                        <h5 class="font-heading mb-2">Boardroom Presentations & Storytelling</h5>
+                        <p class="small text-muted mb-3">Command audience attention, transform dry metrics into compelling business narratives, and handle hostile Q&A sessions.</p>
+                        <ul class="list-unstyled small text-muted mb-4">
+                            <li><i class="bi bi-check2 text-primary me-1"></i> The Pyramid Principle in executive slides</li>
+                            <li><i class="bi bi-check2 text-primary me-1"></i> Stage presence & vocal modulation</li>
+                            <li><i class="bi bi-check2 text-primary me-1"></i> Live recorded mock defense drills</li>
+                        </ul>
                         <a href="course-details.html" class="small fw-bold text-primary mt-auto">View Module Syllabus <i class="bi bi-arrow-right"></i></a>
                     </div>
                 </div>
 
-                <div class="col-md-6 col-lg-3">
-                    <div class="custom-card p-4">
+                <!-- Track 4 -->
+                <div class="col-md-6 col-lg-4">
+                    <div class="custom-card p-4 h-100">
                         <i class="bi bi-globe-americas text-purple fs-1 mb-3"></i>
-                        <h5 class="font-heading mb-2">Cross-Cultural Dynamics</h5>
-                        <p class="small text-muted mb-3">Understand global business customs, negotiation nuances, and non-verbal cues across continents.</p>
+                        <h5 class="font-heading mb-2">Cross-Cultural Dynamics & Negotiations</h5>
+                        <p class="small text-muted mb-3">Navigate subtle cultural norms, direct vs indirect feedback customs, and non-verbal cues across continents.</p>
+                        <ul class="list-unstyled small text-muted mb-4">
+                            <li><i class="bi bi-check2 text-purple me-1"></i> US/UK, DACH, and APAC business etiquette</li>
+                            <li><i class="bi bi-check2 text-purple me-1"></i> High-trust negotiation tactics</li>
+                            <li><i class="bi bi-check2 text-purple me-1"></i> Onshore-offshore collaboration harmony</li>
+                        </ul>
                         <a href="course-details.html" class="small fw-bold text-purple mt-auto">View Module Syllabus <i class="bi bi-arrow-right"></i></a>
+                    </div>
+                </div>
+
+                <!-- Track 5 -->
+                <div class="col-md-6 col-lg-4">
+                    <div class="custom-card p-4 h-100">
+                        <i class="bi bi-translate text-orange fs-1 mb-3"></i>
+                        <h5 class="font-heading mb-2">Foreign Language Expat Relocation</h5>
+                        <p class="small text-muted mb-3">Intensive German, French, Spanish, and Japanese survival-to-professional modules for engineers and managers moving overseas.</p>
+                        <ul class="list-unstyled small text-muted mb-4">
+                            <li><i class="bi bi-check2 text-orange me-1"></i> Rapid CEFR A1 - B1 acceleration</li>
+                            <li><i class="bi bi-check2 text-orange me-1"></i> Industry-specific technical vocabulary</li>
+                            <li><i class="bi bi-check2 text-orange me-1"></i> Expat social integration & customs</li>
+                        </ul>
+                        <a href="course-details.html" class="small fw-bold text-orange mt-auto">View Module Syllabus <i class="bi bi-arrow-right"></i></a>
+                    </div>
+                </div>
+
+                <!-- Track 6 -->
+                <div class="col-md-6 col-lg-4">
+                    <div class="custom-card p-4 h-100">
+                        <i class="bi bi-graph-up-arrow text-teal fs-1 mb-3"></i>
+                        <h5 class="font-heading mb-2">Technical Sales & Demo Narration</h5>
+                        <p class="small text-muted mb-3">Equip pre-sales engineers and account executives to articulate complex technical value into high-converting client demos.</p>
+                        <ul class="list-unstyled small text-muted mb-4">
+                            <li><i class="bi bi-check2 text-teal me-1"></i> Translating feature jargon into ROI metrics</li>
+                            <li><i class="bi bi-check2 text-teal me-1"></i> Overcoming pricing & scope objections</li>
+                            <li><i class="bi bi-check2 text-teal me-1"></i> Live demo pacing and audience engagement</li>
+                        </ul>
+                        <a href="course-details.html" class="small fw-bold text-teal mt-auto">View Module Syllabus <i class="bi bi-arrow-right"></i></a>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-        <!-- FOOTER -->
+    <!-- 4. FOUR-STAGE ENTERPRISE DELIVERY METHODOLOGY -->
+    <section class="py-5 bg-alt border-top border-bottom">
+        <div class="container py-4">
+            <div class="text-center max-w-700 mx-auto mb-5">
+                <span class="badge-tag badge-teal mb-2">Our Process</span>
+                <h2 class="font-heading display-6">The 4-Stage Enterprise Delivery Model</h2>
+                <p class="text-muted">A data-backed, systematic training methodology ensuring measurable skill progression and verifiable business impact.</p>
+            </div>
+
+            <div class="row g-4">
+                <div class="col-md-6 col-lg-3">
+                    <div class="card p-4 bg-surface border rounded-4 h-100 shadow-sm text-center">
+                        <div class="step-number-box step-box-orange mb-3">
+                            01
+                        </div>
+                        <h5 class="font-heading mb-2">Diagnostic Pre-Assessment</h5>
+                        <p class="small text-muted mb-0">1-on-1 spoken and written CEFR baseline benchmarking across 8 key communication competencies.</p>
+                    </div>
+                </div>
+
+                <div class="col-md-6 col-lg-3">
+                    <div class="card p-4 bg-surface border rounded-4 h-100 shadow-sm text-center">
+                        <div class="step-number-box step-box-teal mb-3">
+                            02
+                        </div>
+                        <h5 class="font-heading mb-2">Custom Scenario Mapping</h5>
+                        <p class="small text-muted mb-0">Roleplay cases built directly around your team's real client pitches, support tickets, and sales decks.</p>
+                    </div>
+                </div>
+
+                <div class="col-md-6 col-lg-3">
+                    <div class="card p-4 bg-surface border rounded-4 h-100 shadow-sm text-center">
+                        <div class="step-number-box step-box-blue mb-3">
+                            03
+                        </div>
+                        <h5 class="font-heading mb-2">Interactive Masterclasses</h5>
+                        <p class="small text-muted mb-0">Live cohorts led by master coaches with breakout simulations and continuous feedback.</p>
+                    </div>
+                </div>
+
+                <div class="col-md-6 col-lg-3">
+                    <div class="card p-4 bg-surface border rounded-4 h-100 shadow-sm text-center">
+                        <div class="step-number-box step-box-purple mb-3">
+                            04
+                        </div>
+                        <h5 class="font-heading mb-2">L&D Analytics & Diplomas</h5>
+                        <p class="small text-muted mb-0">Managerial attendance dashboards, individual fluency scores, and accredited CEFR certifications.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 5. INDUSTRY-SPECIFIC CUSTOM MODULES (TABS) -->
+    <section class="py-5 bg-surface">
+        <div class="container py-4">
+            <div class="text-center max-w-700 mx-auto mb-5">
+                <span class="badge-tag badge-orange mb-2">Industry Specialization</span>
+                <h2 class="font-heading display-6">Tailored by Vertical & Role</h2>
+                <p class="text-muted">We don't teach generic English — our training adapts directly to your sector's terminology, compliance requirements, and client personas.</p>
+            </div>
+
+            <!-- Vertical Tabs -->
+            <ul class="nav nav-pills justify-content-center mb-4 gap-2" id="industryPills">
+                <li class="nav-item">
+                    <button class="nav-link active" data-bs-toggle="pill" data-bs-target="#indTech"><i class="bi bi-cpu me-1"></i> IT & SaaS</button>
+                </li>
+                <li class="nav-item">
+                    <button class="nav-link" data-bs-toggle="pill" data-bs-target="#indBFSI"><i class="bi bi-bank me-1"></i> BFSI & FinTech</button>
+                </li>
+                <li class="nav-item">
+                    <button class="nav-link" data-bs-toggle="pill" data-bs-target="#indHealth"><i class="bi bi-heart-pulse me-1"></i> Healthcare & Pharma</button>
+                </li>
+                <li class="nav-item">
+                    <button class="nav-link" data-bs-toggle="pill" data-bs-target="#indBPO"><i class="bi bi-headset me-1"></i> Customer Success & BPO</button>
+                </li>
+            </ul>
+
+            <div class="tab-content max-w-900 mx-auto" id="industryPillsContent">
+                <!-- Tech -->
+                <div class="tab-pane fade show active" id="indTech">
+                    <div class="card p-4 p-lg-5 bg-alt border rounded-4 shadow-sm">
+                        <div class="row align-items-center g-4">
+                            <div class="col-md-7">
+                                <h4 class="font-heading mb-3 text-orange">IT, Software Engineering & Cloud Solutions</h4>
+                                <p class="text-muted small mb-3">Designed for solution architects, sprint leads, and developers who interface with international clients during sprint demos and discovery calls.</p>
+                                <ul class="list-unstyled small text-muted mb-0">
+                                    <li class="mb-2"><i class="bi bi-check-circle-fill text-orange me-2"></i> Agile sprint demo delivery and technical Q&A confidence</li>
+                                    <li class="mb-2"><i class="bi bi-check-circle-fill text-orange me-2"></i> Explaining cloud architecture without overwhelming non-technical clients</li>
+                                    <li><i class="bi bi-check-circle-fill text-orange me-2"></i> Writing crisp Jira tickets, Slack updates, and API release notes</li>
+                                </ul>
+                            </div>
+                            <div class="col-md-5 text-center">
+                                <div class="p-3 bg-surface rounded-3 border">
+                                    <strong class="text-success display-6 font-heading d-block">+42%</strong>
+                                    <span class="small text-muted">Faster Sprint Alignment & Fewer Requirements Misunderstandings</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- BFSI -->
+                <div class="tab-pane fade" id="indBFSI">
+                    <div class="card p-4 p-lg-5 bg-alt border rounded-4 shadow-sm">
+                        <div class="row align-items-center g-4">
+                            <div class="col-md-7">
+                                <h4 class="font-heading mb-3 text-blue">Banking, Financial Services & FinTech</h4>
+                                <p class="text-muted small mb-3">Equips financial analysts, wealth managers, and risk consultants with high-trust advisory language and compliance communication.</p>
+                                <ul class="list-unstyled small text-muted mb-0">
+                                    <li class="mb-2"><i class="bi bi-check-circle-fill text-blue me-2"></i> Presenting quarterly forecasts and financial portfolio reviews with authority</li>
+                                    <li class="mb-2"><i class="bi bi-check-circle-fill text-blue me-2"></i> High-trust advisory vocabulary that calms high-net-worth investors</li>
+                                    <li><i class="bi bi-check-circle-fill text-blue me-2"></i> Regulatory compliance writing and audit explanation</li>
+                                </ul>
+                            </div>
+                            <div class="col-md-5 text-center">
+                                <div class="p-3 bg-surface rounded-3 border">
+                                    <strong class="text-blue display-6 font-heading d-block">98.5%</strong>
+                                    <span class="small text-muted">Client Satisfaction Rating on Advisory Reviews</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Healthcare -->
+                <div class="tab-pane fade" id="indHealth">
+                    <div class="card p-4 p-lg-5 bg-alt border rounded-4 shadow-sm">
+                        <div class="row align-items-center g-4">
+                            <div class="col-md-7">
+                                <h4 class="font-heading mb-3 text-teal">Healthcare, Biotech & Clinical Research</h4>
+                                <p class="text-muted small mb-3">Empowers doctors, pharmaceutical representatives, and medical writers to communicate clinical findings with precision and empathy.</p>
+                                <ul class="list-unstyled small text-muted mb-0">
+                                    <li class="mb-2"><i class="bi bi-check-circle-fill text-teal me-2"></i> Empathetic doctor-patient consultation techniques</li>
+                                    <li class="mb-2"><i class="bi bi-check-circle-fill text-teal me-2"></i> Presenting research papers at international medical symposiums</li>
+                                    <li><i class="bi bi-check-circle-fill text-teal me-2"></i> Medical terminology precision for FDA / EMA regulatory documentation</li>
+                                </ul>
+                            </div>
+                            <div class="col-md-5 text-center">
+                                <div class="p-3 bg-surface rounded-3 border">
+                                    <strong class="text-teal display-6 font-heading d-block">100%</strong>
+                                    <span class="small text-muted">CEFR Medical English Certified Faculty</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- BPO -->
+                <div class="tab-pane fade" id="indBPO">
+                    <div class="card p-4 p-lg-5 bg-alt border rounded-4 shadow-sm">
+                        <div class="row align-items-center g-4">
+                            <div class="col-md-7">
+                                <h4 class="font-heading mb-3 text-purple">Customer Success, Support & Global BPO</h4>
+                                <p class="text-muted small mb-3">Specialized for support managers and frontline agents handling escalation calls with overseas customers.</p>
+                                <ul class="list-unstyled small text-muted mb-0">
+                                    <li class="mb-2"><i class="bi bi-check-circle-fill text-purple me-2"></i> Polite de-escalation phrases and active listening empathy markers</li>
+                                    <li class="mb-2"><i class="bi bi-check-circle-fill text-purple me-2"></i> Eliminating harsh colloquialisms and heavy mother-tongue accents</li>
+                                    <li><i class="bi bi-check-circle-fill text-purple me-2"></i> First-contact email & chat resolution precision</li>
+                                </ul>
+                            </div>
+                            <div class="col-md-5 text-center">
+                                <div class="p-3 bg-surface rounded-3 border">
+                                    <strong class="text-purple display-6 font-heading d-block">+24 pts</strong>
+                                    <span class="small text-muted">Average Net Promoter Score (NPS) Improvement</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 6. SOLUTION COMPARISON MATRIX -->
+    <section class="py-5 bg-alt border-top border-bottom">
+        <div class="container py-4">
+            <div class="text-center max-w-700 mx-auto mb-5">
+                <span class="badge-tag badge-teal mb-2">Why Lingua Academy</span>
+                <h2 class="font-heading display-6">Enterprise Solution Comparison</h2>
+                <p class="text-muted">See how our blended live corporate framework compares to generic consumer apps and ad-hoc freelance tutors.</p>
+            </div>
+
+            <div class="table-responsive bg-surface rounded-4 border shadow-sm max-w-1000 mx-auto">
+                <table class="table table-custom mb-0 text-start align-middle">
+                    <thead>
+                        <tr>
+                            <th class="text-start ps-4" style="width: 34%;">Feature / Capability</th>
+                            <th class="bg-accent-subtle text-orange text-start ps-3" style="width: 28%;">Lingua Academy Enterprise</th>
+                            <th class="text-start ps-3" style="width: 20%;">Generic LMS Apps</th>
+                            <th class="text-start ps-3" style="width: 18%;">Ad-Hoc Freelancers</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td class="text-start fw-semibold ps-4">Live Certified Master Trainers</td>
+                            <td class="bg-accent-subtle text-success fw-bold text-start ps-3"><i class="bi bi-check-circle-fill text-orange me-2"></i>Cambridge / CELTA</td>
+                            <td class="text-muted text-start ps-3"><i class="bi bi-x-circle text-danger me-2"></i>None (Pre-recorded)</td>
+                            <td class="text-muted text-start ps-3"><i class="bi bi-dash-circle text-warning me-2"></i>Unverified Quality</td>
+                        </tr>
+                        <tr>
+                            <td class="text-start fw-semibold ps-4">Company-Specific Roleplay Scenarios</td>
+                            <td class="bg-accent-subtle text-success fw-bold text-start ps-3"><i class="bi bi-check-circle-fill text-orange me-2"></i>100% Custom Built</td>
+                            <td class="text-muted text-start ps-3"><i class="bi bi-x-circle text-danger me-2"></i>Generic Templates</td>
+                            <td class="text-muted text-start ps-3"><i class="bi bi-dash-circle text-warning me-2"></i>Limited Scope</td>
+                        </tr>
+                        <tr>
+                            <td class="text-start fw-semibold ps-4">CEFR Diagnostic & Post-Assessment</td>
+                            <td class="bg-accent-subtle text-success fw-bold text-start ps-3"><i class="bi bi-check-circle-fill text-orange me-2"></i>Formal Diplomas Issued</td>
+                            <td class="text-muted text-start ps-3"><i class="bi bi-x-circle text-danger me-2"></i>Basic Completion Badges</td>
+                            <td class="text-muted text-start ps-3"><i class="bi bi-x-circle text-danger me-2"></i>No Formal Standard</td>
+                        </tr>
+                        <tr>
+                            <td class="text-start fw-semibold ps-4">HR & L&D Management Dashboard</td>
+                            <td class="bg-accent-subtle text-success fw-bold text-start ps-3"><i class="bi bi-check-circle-fill text-orange me-2"></i>Weekly Attendance & Scores</td>
+                            <td class="text-muted text-start ps-3"><i class="bi bi-dash-circle text-warning me-2"></i>Log-in Stats Only</td>
+                            <td class="text-muted text-start ps-3"><i class="bi bi-x-circle text-danger me-2"></i>Manual Spreadsheets</td>
+                        </tr>
+                        <tr>
+                            <td class="text-start fw-semibold ps-4">Dedicated Account Manager</td>
+                            <td class="bg-accent-subtle text-success fw-bold text-start ps-3"><i class="bi bi-check-circle-fill text-orange me-2"></i>Included for 25+ Learners</td>
+                            <td class="text-muted text-start ps-3"><i class="bi bi-dash-circle text-warning me-2"></i>Automated Bot Support</td>
+                            <td class="text-muted text-start ps-3"><i class="bi bi-x-circle text-danger me-2"></i>Individual Tutor Only</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </section>
+
+    <!-- 7. QUANTIFIED CASE STUDIES -->
+    <section class="py-5 bg-surface">
+        <div class="container py-4">
+            <div class="text-center max-w-700 mx-auto mb-5">
+                <span class="badge-tag badge-orange mb-2">Proven Impact</span>
+                <h2 class="font-heading display-6">Corporate Client Case Studies</h2>
+                <p class="text-muted">Real-world outcomes delivered for multinational organizations facing high-stakes communication challenges.</p>
+            </div>
+
+            <div class="row g-4">
+                <div class="col-lg-4">
+                    <div class="card p-4 bg-alt border rounded-4 h-100 shadow-sm">
+                        <div class="d-flex justify-content-between align-items-center mb-3">
+                            <span class="badge bg-orange text-white">Global SaaS Unicorn</span>
+                            <span class="small text-muted">120 Engineers</span>
+                        </div>
+                        <h5 class="font-heading mb-2">38% Lift in Pitch Conversions</h5>
+                        <p class="small text-muted mb-3">Delivered 10-week executive storytelling and objection-handling workshops for pre-sales engineers pitching US enterprise clients.</p>
+                        <div class="pt-3 border-top mt-auto">
+                            <strong class="d-block small text-main">Outcome:</strong>
+                            <span class="small text-success fw-semibold"><i class="bi bi-graph-up me-1"></i> Shortened sales cycle by 14 days</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-4">
+                    <div class="card p-4 bg-alt border rounded-4 h-100 shadow-sm">
+                        <div class="d-flex justify-content-between align-items-center mb-3">
+                            <span class="badge bg-blue text-white">European FinTech Group</span>
+                            <span class="small text-muted">250 Staff</span>
+                        </div>
+                        <h5 class="font-heading mb-2">4.9/5 Stakeholder Satisfaction</h5>
+                        <p class="small text-muted mb-3">Conducted email diplomacy and asynchronous communication training for cross-border teams across London, Frankfurt, and Singapore.</p>
+                        <div class="pt-3 border-top mt-auto">
+                            <strong class="d-block small text-main">Outcome:</strong>
+                            <span class="small text-success fw-semibold"><i class="bi bi-clock-history me-1"></i> 52% reduction in email clarification loops</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-4">
+                    <div class="card p-4 bg-alt border rounded-4 h-100 shadow-sm">
+                        <div class="d-flex justify-content-between align-items-center mb-3">
+                            <span class="badge bg-teal text-white">Automotive MNC</span>
+                            <span class="small text-muted">85 Expats</span>
+                        </div>
+                        <h5 class="font-heading mb-2">German & Japanese Relocation</h5>
+                        <p class="small text-muted mb-3">Accelerated 85 senior manufacturing engineers to CEFR B1 German within 14 weeks ahead of overseas plant deployment in Stuttgart.</p>
+                        <div class="pt-3 border-top mt-auto">
+                            <strong class="d-block small text-main">Outcome:</strong>
+                            <span class="small text-success fw-semibold"><i class="bi bi-patch-check-fill me-1"></i> 100% first-attempt Goethe exam pass rate</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 8. CORPORATE FAQS ACCORDION -->
+    <section class="py-5 bg-alt border-top border-bottom">
+        <div class="container py-4">
+            <div class="text-center max-w-700 mx-auto mb-5">
+                <span class="badge-tag badge-purple mb-2">Got Questions?</span>
+                <h2 class="font-heading display-6">Frequently Asked B2B Questions</h2>
+            </div>
+
+            <div class="accordion max-w-800 mx-auto" id="corpFaqAccordion">
+                <div class="accordion-item mb-3 border rounded-3 overflow-hidden shadow-xs">
+                    <h2 class="accordion-header">
+                        <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#cf1">
+                            Can training sessions be scheduled around our operational shift timings?
+                        </button>
+                    </h2>
+                    <div id="cf1" class="accordion-collapse collapse show" data-bs-parent="#corpFaqAccordion">
+                        <div class="accordion-body small text-muted">
+                            Yes. We offer fully flexible scheduling across all international time zones (APAC, EMEA, US EST/PST). Batches can be conducted early morning, during lunch-and-learn hours, or post-shift.
+                        </div>
+                    </div>
+                </div>
+
+                <div class="accordion-item mb-3 border rounded-3 overflow-hidden shadow-xs">
+                    <h2 class="accordion-header">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#cf2">
+                            Can you incorporate our internal sales decks and real client emails into the course?
+                        </button>
+                    </h2>
+                    <div id="cf2" class="accordion-collapse collapse" data-bs-parent="#corpFaqAccordion">
+                        <div class="accordion-body small text-muted">
+                            Absolutely. During Stage 2 (Custom Scenario Mapping), under strict NDA protocols, our curriculum designers build custom roleplay prompts and case studies directly around your actual product decks, support tickets, and email threads.
+                        </div>
+                    </div>
+                </div>
+
+                <div class="accordion-item mb-3 border rounded-3 overflow-hidden shadow-xs">
+                    <h2 class="accordion-header">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#cf3">
+                            How do managers and L&D directors track employee attendance and skill progress?
+                        </button>
+                    </h2>
+                    <div id="cf3" class="accordion-collapse collapse" data-bs-parent="#corpFaqAccordion">
+                        <div class="accordion-body small text-muted">
+                            We provide HR managers with real-time access to our Enterprise Analytics Portal. You will receive weekly attendance logs, module quiz scores, trainer commentary, and baseline-vs-post-training CEFR progression reports.
+                        </div>
+                    </div>
+                </div>
+
+                <div class="accordion-item mb-3 border rounded-3 overflow-hidden shadow-xs">
+                    <h2 class="accordion-header">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#cf4">
+                            What certifications are awarded to employees upon completion?
+                        </button>
+                    </h2>
+                    <div id="cf4" class="accordion-collapse collapse" data-bs-parent="#corpFaqAccordion">
+                        <div class="accordion-body small text-muted">
+                            Graduating participants receive official, verifiable CEFR Diplomas accredited by the Global Language Council, complete with individual skill breakdown scores in Speaking, Listening, and Professional Writing.
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 9. FINAL ENTERPRISE CTA BANNER -->
+    <section class="py-5 bg-surface">
+        <div class="container py-3">
+            <div class="card p-4 p-lg-5 bg-dark text-white rounded-4 shadow-lg text-center border-0 position-relative overflow-hidden">
+                <div class="position-relative z-1 max-w-700 mx-auto">
+                    <span class="badge-tag badge-orange mb-3">Enterprise Communication Audit</span>
+                    <h2 class="font-heading display-6 mb-3 text-white">Ready to Transform Your Team's Global Impact?</h2>
+                    <p class="text-muted mb-4">Book a 30-minute discovery call with our corporate training director and receive a free 5-employee diagnostic CEFR assessment.</p>
+                    <div class="d-flex flex-wrap justify-content-center gap-3">
+                        <button class="btn btn-primary-theme btn-lg" data-bs-toggle="modal" data-bs-target="#corpEnquiryModal">
+                            <i class="bi bi-briefcase-fill me-2"></i> Request Custom Enterprise Proposal
+                        </button>
+                        <button class="btn btn-outline-secondary text-light btn-lg" onclick="LinguaApp.downloadBrochure('Corporate-Enterprise-Curriculum-2026')">
+                            <i class="bi bi-file-earmark-pdf-fill me-2 text-danger"></i> Download 2026 Enterprise Brochure
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
     <footer class="footer-main">
         <div class="container">
             <div class="row g-4 g-lg-5">
@@ -232,15 +726,14 @@
                     </a>
                     <p class="small text-muted mb-4">Empowering students, working professionals, and global organizations with certified language fluency, accent neutralization, and executive communication coaching since 2014.</p>
                     
-                    <!-- Direct Contact Details -->
                     <div class="footer-contact-info mb-4">
                         <div class="d-flex align-items-center gap-2 mb-2 small text-light">
                             <i class="bi bi-telephone-fill text-orange"></i>
-                            <span>Admissions Desk: <a href="tel:+18005555264" class="text-light fw-semibold">+1 (800) 555-LANG</a></span>
+                            <span>Enterprise Hotline: <a href="tel:+18005552677" class="text-light fw-semibold">+1 (800) 555-CORP</a></span>
                         </div>
                         <div class="d-flex align-items-center gap-2 mb-2 small text-light">
                             <i class="bi bi-envelope-fill text-orange"></i>
-                            <span>Email: <a href="mailto:info@linguaacademy.com" class="text-light">info@linguaacademy.com</a></span>
+                            <span>Email: <a href="mailto:corporate@linguaacademy.com" class="text-light">corporate@linguaacademy.com</a></span>
                         </div>
                         <div class="d-flex align-items-center gap-2 small text-light">
                             <i class="bi bi-geo-alt-fill text-orange"></i>
@@ -248,7 +741,6 @@
                         </div>
                     </div>
 
-                    <!-- Social Media Links -->
                     <div class="d-flex gap-2">
                         <a href="https://www.facebook.com" target="_blank" rel="noopener noreferrer" class="btn btn-sm btn-outline-secondary rounded-circle text-light footer-social-btn" title="Facebook" aria-label="Facebook"><i class="bi bi-facebook"></i></a>
                         <a href="https://x.com" target="_blank" rel="noopener noreferrer" class="btn btn-sm btn-outline-secondary rounded-circle text-light footer-social-btn" title="X (Twitter)" aria-label="X (Twitter)"><i class="bi bi-twitter-x"></i></a>
@@ -291,14 +783,13 @@
                 <!-- Column 4: Newsletter & Accreditation -->
                 <div class="col-lg-4 col-md-12">
                     <h5>Newsletter & Updates</h5>
-                    <p class="small text-muted mb-3">Subscribe to receive free weekly vocabulary flashcards, grammar hacks, and early-bird batch discount tokens.</p>
+                    <p class="small text-muted mb-3">Subscribe to receive free weekly executive vocabulary sheets, grammar hacks, and enterprise training insights.</p>
                     
-                    <form id="newsletterForm" class="d-flex gap-2 mb-4" onsubmit="event.preventDefault(); LinguaApp.showToast('Thank you for subscribing! Check your inbox for your welcome vocabulary pack.', 'Newsletter Subscribed'); this.reset();">
+                    <form id="newsletterForm" class="d-flex gap-2 mb-4" onsubmit="event.preventDefault(); LinguaApp.showToast('Thank you for subscribing! Check your inbox for your welcome executive pack.', 'Newsletter Subscribed'); this.reset();">
                         <input type="email" class="form-control form-control-sm bg-dark text-white border-secondary" placeholder="Enter your email address" required>
                         <button type="submit" class="btn btn-primary-theme btn-sm text-nowrap">Subscribe</button>
                     </form>
 
-                    <!-- Trust & Accreditation Badges -->
                     <div class="footer-badges p-3 rounded-3 border border-secondary border-opacity-25 bg-surface bg-opacity-10">
                         <div class="d-flex align-items-center gap-2 mb-2">
                             <i class="bi bi-patch-check-fill text-orange fs-4"></i>
@@ -316,7 +807,6 @@
                 </div>
             </div>
 
-            <!-- Footer Bottom Bar -->
             <div class="footer-bottom text-center text-md-start d-md-flex justify-content-between align-items-center">
                 <p class="mb-0">&copy; 2026 Lingua Academy. All rights reserved. Professional Language & Communication Training Institute.</p>
                 <div class="d-flex gap-3 justify-content-center mt-3 mt-md-0">
@@ -329,7 +819,7 @@
         </div>
     </footer>
 
-    <!-- Corporate Modal -->
+    <!-- Corporate Proposal Modal -->
     <div class="modal fade" id="corpEnquiryModal" tabindex="-1">
         <div class="modal-dialog modal-dialog-centered">
             <div class="modal-content">
@@ -355,11 +845,20 @@
                         </div>
                         <div class="mb-3">
                             <label class="form-label small fw-bold">Team Size to be Trained</label>
-                            <select class="form-select">
-                                <option value="10-25">10 - 25 Employees</option>
-                                <option value="25-50">25 - 50 Employees</option>
-                                <option value="50-100">50 - 100 Employees</option>
-                                <option value="100+">100+ Enterprise Team</option>
+                            <select class="form-select" id="modalTeamSize">
+                                <option value="15-30">15 - 30 Employees (Pilot)</option>
+                                <option value="50-100" selected>50 - 100 Employees (Department)</option>
+                                <option value="150-300">150 - 300 Employees (Division)</option>
+                                <option value="500+">500+ Enterprise Team</option>
+                            </select>
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label small fw-bold">Primary Goal / Focus Area</label>
+                            <select class="form-select" id="modalGoal">
+                                <option value="exec">Executive Presentations & Pitching</option>
+                                <option value="email">Business English & Email Diplomacy</option>
+                                <option value="accent">Global Accent Neutralization</option>
+                                <option value="relocation">Foreign Language Expat Relocation</option>
                             </select>
                         </div>
                     </div>
@@ -375,5 +874,32 @@
     <!-- Scripts -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
     <script src="assets/js/main.js"></script>
+    <script>
+        function updateCorpRoi() {
+            const size = document.getElementById('calcTeamSize').value;
+            const track = document.getElementById('calcTrack').value;
+            const fluencyEl = document.getElementById('roiFluency');
+            const pitchEl = document.getElementById('roiPitch');
+            const durationEl = document.getElementById('roiDuration');
+
+            if (track === 'exec') {
+                fluencyEl.innerText = '+48%';
+                pitchEl.innerText = '+35%';
+                durationEl.innerText = '8 Wks (2x/Wk)';
+            } else if (track === 'email') {
+                fluencyEl.innerText = '+55%';
+                pitchEl.innerText = '+42%';
+                durationEl.innerText = '6 Wks (2x/Wk)';
+            } else if (track === 'accent') {
+                fluencyEl.innerText = '+60%';
+                pitchEl.innerText = '+28%';
+                durationEl.innerText = '10 Wks (3x/Wk)';
+            } else if (track === 'relocation') {
+                fluencyEl.innerText = 'CEFR B1';
+                pitchEl.innerText = '+50%';
+                durationEl.innerText = '14 Wks (3x/Wk)';
+            }
+        }
+    </script>
 </body>
 </html>

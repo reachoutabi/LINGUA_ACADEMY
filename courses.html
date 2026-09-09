@@ -26,43 +26,49 @@
 </head>
 <body>
 
-    <!-- TOP BAR -->
-    <div class="top-bar d-none d-md-block">
-        <div class="container">
-            <div class="d-flex justify-content-between align-items-center">
-                <div class="d-flex align-items-center gap-4">
-                    <span><i class="bi bi-telephone-fill me-2 text-orange"></i>+1 (800) 555-LANG</span>
-                    <span><i class="bi bi-envelope-fill me-2 text-orange"></i>info@linguaacademy.com</span>
-                </div>
-                <div class="d-flex align-items-center gap-3">
-                    <button class="btn btn-sm btn-link text-light p-0 theme-toggle-btn" title="Toggle Theme"><i class="bi bi-moon-stars-fill"></i></button>
-                    <button class="btn btn-sm btn-link text-light p-0 rtl-toggle-btn" title="Toggle RTL"><i class="bi bi-save"></i> RTL</button>
-                    <a href="login.html" class="small ms-2"><i class="bi bi-person-lock me-1"></i> Student Portal</a>
-                </div>
-            </div>
-        </div>
-    </div>
-
     <!-- MAIN NAVBAR -->
     <nav class="navbar navbar-expand-lg navbar-main">
-        <div class="container">
+        <div class="container-fluid px-3 px-xl-5">
             <a class="navbar-brand navbar-brand-logo" href="index.html">
                 <div class="brand-icon-wrap"><i class="bi bi-chat-quote-fill"></i></div>
                 <span>Lingua<span class="text-orange">Academy</span></span>
             </a>
 
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarMainContent">
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarMainContent" aria-controls="navbarMainContent" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
 
             <div class="collapse navbar-collapse" id="navbarMainContent">
-                <ul class="navbar-menu nav ms-auto align-items-lg-center">
-                    <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown">Home</a>
-                        <ul class="dropdown-menu shadow-sm">
-                            <li><a class="dropdown-item" href="index.html"><i class="bi bi-house-door me-2"></i> General Academy Landing</a></li>
-                            <li><a class="dropdown-item" href="home-corporate.html"><i class="bi bi-building me-2"></i> Corporate Communication</a></li>
-                        </ul>
+                <ul class="navbar-menu ms-auto">
+                    <li class="nav-item dropdown home-dropdown">
+                        <a class="nav-link" href="index.html">Home</a>
+                        <div class="dropdown-menu home-hover-menu shadow-lg">
+                            <div class="px-3 pt-2 pb-1 text-uppercase text-muted fw-bold" style="font-size: 0.68rem; letter-spacing: 0.08em;">Select Home Version</div>
+                            <a class="dropdown-item home-menu-card" href="index.html">
+                                <div class="home-menu-icon home-icon-academy">
+                                    <i class="bi bi-house-door-fill"></i>
+                                </div>
+                                <div class="home-menu-content">
+                                    <div class="d-flex align-items-center justify-content-between">
+                                        <span class="home-menu-title">General Academy</span>
+                                        <span class="badge bg-orange-subtle text-orange" style="font-size: 0.65rem;">Home 1</span>
+                                    </div>
+                                    <p class="home-menu-desc mb-0">Individual, Kids & Exam Fluency</p>
+                                </div>
+                            </a>
+                            <a class="dropdown-item home-menu-card" href="home-corporate.html">
+                                <div class="home-menu-icon home-icon-corp">
+                                    <i class="bi bi-building-fill"></i>
+                                </div>
+                                <div class="home-menu-content">
+                                    <div class="d-flex align-items-center justify-content-between">
+                                        <span class="home-menu-title">Corporate Training</span>
+                                        <span class="badge bg-blue-subtle text-primary" style="font-size: 0.65rem;">Home 2</span>
+                                    </div>
+                                    <p class="home-menu-desc mb-0">Enterprise Communication & B2B Solutions</p>
+                                </div>
+                            </a>
+                        </div>
                     </li>
                     <li class="nav-item"><a class="nav-link" href="about.html">About Us</a></li>
                     <li class="nav-item"><a class="nav-link active" href="courses.html">Courses</a></li>
@@ -74,10 +80,19 @@
                     <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
                 </ul>
 
-                <div class="d-flex align-items-center gap-2 ms-lg-3 mt-3 mt-lg-0 auth-nav-container">
-                    <button class="btn btn-primary-theme btn-sm" data-bs-toggle="modal" data-bs-target="#demoClassModal">
-                        Book Free Demo
+                <div class="navbar-actions">
+                    <button class="btn nav-action-btn theme-toggle-btn" title="Toggle Light/Dark Theme" aria-label="Toggle light or dark theme">
+                        <i class="bi bi-moon-stars-fill"></i>
                     </button>
+                    <button class="btn nav-action-btn rtl-toggle-btn" title="Toggle RTL Layout" aria-label="Toggle text direction">
+                        <i class="bi bi-arrow-left-right"></i>
+                        <span>RTL</span>
+                    </button>
+                    <div class="auth-nav-container">
+                        <button class="btn btn-primary-theme btn-sm text-nowrap" data-bs-toggle="modal" data-bs-target="#demoClassModal">
+                            <i class="bi bi-calendar-check me-1"></i> Book Free Demo
+                        </button>
+                    </div>
                 </div>
             </div>
         </div>
@@ -98,65 +113,99 @@
     </section>
 
     <!-- FILTER TOOLBAR -->
-    <section class="py-4 bg-alt border-bottom sticky-top" style="top: 70px; z-index: 1020;">
-        <div class="container">
-            <div class="row g-2 align-items-center">
-                <!-- Search -->
-                <div class="col-lg-3 col-md-6">
+    <section class="py-3 bg-surface border-bottom sticky-top shadow-xs filter-toolbar-section" style="top: 70px; z-index: 1020;">
+        <div class="container-fluid px-3 px-xl-5" style="max-width: 1560px;">
+            <!-- Row 1: Search, Result Counter, and View Switcher -->
+            <div class="row g-3 align-items-center mb-3">
+                <!-- Search Input -->
+                <div class="col-lg-5 col-md-6">
                     <div class="input-group input-group-sm">
-                        <span class="input-group-text bg-surface"><i class="bi bi-search text-muted"></i></span>
-                        <input type="text" id="courseSearchInput" class="form-control" placeholder="Search course keyword...">
+                        <span class="input-group-text bg-alt border-end-0 text-muted"><i class="bi bi-search"></i></span>
+                        <input type="text" id="courseSearchInput" class="form-control border-start-0 ps-0" placeholder="Search by course title, keyword, or language...">
+                        <button class="btn btn-outline-secondary border-start-0" type="button" id="clearSearchBtn" title="Clear Search" style="display: none;">
+                            <i class="bi bi-x-circle-fill"></i>
+                        </button>
                     </div>
                 </div>
 
+                <!-- Course Count & Reset Indicator -->
+                <div class="col-lg-4 col-md-6 d-flex align-items-center gap-2">
+                    <span id="coursesCountBadge" class="badge bg-alt text-main border px-3 py-2 fw-semibold rounded-pill">
+                        <i class="bi bi-mortarboard-fill text-orange me-1"></i> <span id="visibleCoursesCount">8</span> Courses Available
+                    </span>
+                    <button id="resetFiltersBtn" class="btn btn-link btn-sm text-decoration-none text-muted p-0 ms-2" style="display: none;">
+                        <i class="bi bi-arrow-counterclockwise text-orange me-1"></i> Reset Filters
+                    </button>
+                </div>
+
+                <!-- View Switcher (Grid / List) -->
+                <div class="col-lg-3 col-12 d-flex justify-content-lg-end justify-content-between align-items-center gap-2">
+                    <span class="small text-muted d-none d-sm-inline">Layout:</span>
+                    <div class="btn-group btn-group-sm rounded-pill p-1 bg-alt border course-view-toggle" role="group" aria-label="Course Layout View">
+                        <button id="viewGridBtn" class="btn btn-sm rounded-pill px-3 active" type="button" title="Grid View" aria-label="Grid View" aria-pressed="true">
+                            <i class="bi bi-grid-fill me-1"></i> Grid
+                        </button>
+                        <button id="viewListBtn" class="btn btn-sm rounded-pill px-3" type="button" title="List View" aria-label="List View" aria-pressed="false">
+                            <i class="bi bi-list-ul me-1"></i> List
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Row 2: Four Symmetrically Spaced Dropdowns with Ample Width -->
+            <div class="row g-2 align-items-center pt-2 border-top">
                 <!-- Language Filter -->
-                <div class="col-lg-2 col-6">
-                    <select id="languageFilter" class="form-select form-select-sm">
-                        <option value="all">Language: All</option>
-                        <option value="english">English</option>
-                        <option value="french">French</option>
-                        <option value="german">German</option>
-                        <option value="spanish">Spanish</option>
-                        <option value="japanese">Japanese</option>
-                        <option value="skills">Communication Skills</option>
-                    </select>
+                <div class="col-xl-3 col-md-6 col-12">
+                    <div class="input-group input-group-sm">
+                        <span class="input-group-text bg-alt text-muted small"><i class="bi bi-translate text-orange me-1"></i> Language</span>
+                        <select id="languageFilter" class="form-select form-select-sm">
+                            <option value="all">All Languages</option>
+                            <option value="english">English</option>
+                            <option value="french">French</option>
+                            <option value="german">German</option>
+                            <option value="spanish">Spanish</option>
+                            <option value="japanese">Japanese</option>
+                            <option value="skills">Communication Skills</option>
+                        </select>
+                    </div>
                 </div>
 
                 <!-- Level Filter -->
-                <div class="col-lg-2 col-6">
-                    <select id="levelFilter" class="form-select form-select-sm">
-                        <option value="all">Level: All</option>
-                        <option value="beginner">Beginner</option>
-                        <option value="intermediate">Intermediate</option>
-                        <option value="advanced">Advanced</option>
-                        <option value="examprep">Exam Prep</option>
-                    </select>
+                <div class="col-xl-3 col-md-6 col-12">
+                    <div class="input-group input-group-sm">
+                        <span class="input-group-text bg-alt text-muted small"><i class="bi bi-bar-chart-steps text-teal me-1"></i> Level</span>
+                        <select id="levelFilter" class="form-select form-select-sm">
+                            <option value="all">All CEFR Levels</option>
+                            <option value="beginner">Beginner (A1 - A2)</option>
+                            <option value="intermediate">Intermediate (B1 - B2)</option>
+                            <option value="advanced">Advanced (C1 - C2)</option>
+                            <option value="examprep">Exam Preparation</option>
+                        </select>
+                    </div>
                 </div>
 
                 <!-- Mode Filter -->
-                <div class="col-lg-2 col-6">
-                    <select id="modeFilter" class="form-select form-select-sm">
-                        <option value="all">Mode: All</option>
-                        <option value="online">Live Online</option>
-                        <option value="offline">In-Person Centre</option>
-                        <option value="hybrid">Hybrid Track</option>
-                    </select>
+                <div class="col-xl-3 col-md-6 col-12">
+                    <div class="input-group input-group-sm">
+                        <span class="input-group-text bg-alt text-muted small"><i class="bi bi-laptop text-primary me-1"></i> Mode</span>
+                        <select id="modeFilter" class="form-select form-select-sm">
+                            <option value="all">All Study Modes</option>
+                            <option value="online">Live Online</option>
+                            <option value="offline">In-Person Centre</option>
+                            <option value="hybrid">Hybrid Track</option>
+                        </select>
+                    </div>
                 </div>
 
                 <!-- Age Filter -->
-                <div class="col-lg-2 col-6">
-                    <select id="ageFilter" class="form-select form-select-sm">
-                        <option value="all">Age: All Groups</option>
-                        <option value="kids">Kids (6 - 15 yrs)</option>
-                        <option value="adults">Adults & Pros</option>
-                    </select>
-                </div>
-
-                <!-- View Toggle -->
-                <div class="col-lg-1 d-none d-lg-flex justify-content-end">
-                    <div class="btn-group btn-group-sm">
-                        <button id="viewGridBtn" class="btn btn-primary-theme active" title="Grid View"><i class="bi bi-grid-fill"></i></button>
-                        <button id="viewListBtn" class="btn btn-outline-theme" title="List View"><i class="bi bi-list-ul"></i></button>
+                <div class="col-xl-3 col-md-6 col-12">
+                    <div class="input-group input-group-sm">
+                        <span class="input-group-text bg-alt text-muted small"><i class="bi bi-people-fill text-purple me-1"></i> Age</span>
+                        <select id="ageFilter" class="form-select form-select-sm">
+                            <option value="all">All Age Groups</option>
+                            <option value="kids">Kids & Teens (6 - 15 yrs)</option>
+                            <option value="adults">Adults & Professionals</option>
+                        </select>
                     </div>
                 </div>
             </div>

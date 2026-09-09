@@ -213,5 +213,69 @@ document.addEventListener('DOMContentLoaded', () => {
                 `).join('');
             }
         }
+
+        // Load Saved / Wishlisted Courses
+        const savedCoursesContainer = document.querySelector('#userSavedCoursesList');
+        if (savedCoursesContainer) {
+            const renderSavedCourses = () => {
+                let saved = JSON.parse(localStorage.getItem('lingua_favorites') || '[]');
+                if (!Array.isArray(saved) || saved.length === 0) {
+                    saved = ['German Language A2', 'IELTS Academic Masterclass'];
+                    localStorage.setItem('lingua_favorites', JSON.stringify(saved));
+                }
+
+                if (saved.length === 0) {
+                    savedCoursesContainer.innerHTML = '<div class="col-12"><div class="alert alert-secondary mb-0">You have no saved courses yet. <a href="courses.html" class="alert-link">Browse courses to add favorites</a></div></div>';
+                    return;
+                }
+
+                const courseDetails = {
+                    'Spoken English & Communication': { tag: 'English', color: 'orange', level: 'Beginner to Advanced', link: 'course-spoken-english.html', price: '$299' },
+                    'French Language (DELF A1-B2)': { tag: 'French', color: 'blue', level: 'DELF Accredited', link: 'course-french.html', price: '$349' },
+                    'German Language (Goethe A1-B2)': { tag: 'German', color: 'teal', level: 'Goethe Exam Track', link: 'course-german.html', price: '$349' },
+                    'German Language A2': { tag: 'German', color: 'teal', level: 'Goethe Exam Track', link: 'course-german.html', price: '$349' },
+                    'IELTS Academic & General Masterclass': { tag: 'IELTS', color: 'purple', level: 'Target Band 8.0+', link: 'course-ielts.html', price: '$399' },
+                    'IELTS Academic Masterclass': { tag: 'IELTS', color: 'purple', level: 'Target Band 8.0+', link: 'course-ielts.html', price: '$399' },
+                    'Public Speaking & Leadership': { tag: 'Executive', color: 'orange', level: 'Speech Mastery', link: 'course-public-speaking.html', price: '$299' }
+                };
+
+                savedCoursesContainer.innerHTML = saved.map(courseName => {
+                    const info = courseDetails[courseName] || { tag: 'Language', color: 'orange', level: 'Certified Course', link: 'courses.html', price: '$299' };
+                    return `
+                        <div class="col-md-6 col-lg-6">
+                            <div class="p-3 rounded-3 border bg-alt h-100 d-flex flex-column justify-content-between">
+                                <div class="d-flex justify-content-between align-items-start mb-2">
+                                    <span class="badge bg-${info.color} text-white">${info.tag}</span>
+                                    <button class="btn btn-sm text-danger p-0 remove-fav-btn" data-course="${courseName}" title="Remove from Wishlist">
+                                        <i class="bi bi-trash3"></i>
+                                    </button>
+                                </div>
+                                <h6 class="font-heading mb-1">${courseName}</h6>
+                                <p class="small text-muted mb-3"><i class="bi bi-award me-1"></i> ${info.level} • <strong class="text-main">${info.price}</strong></p>
+                                <div class="d-flex gap-2">
+                                    <a href="${info.link}" class="btn btn-xs btn-outline-theme w-50 text-center">Details</a>
+                                    <a href="schedule.html" class="btn btn-xs btn-primary-theme w-50 text-center">View Batches</a>
+                                </div>
+                            </div>
+                        </div>
+                    `;
+                }).join('');
+
+                savedCoursesContainer.querySelectorAll('.remove-fav-btn').forEach(btn => {
+                    btn.addEventListener('click', (e) => {
+                        const targetCourse = btn.getAttribute('data-course');
+                        let currentFavs = JSON.parse(localStorage.getItem('lingua_favorites') || '[]');
+                        currentFavs = currentFavs.filter(c => c !== targetCourse);
+                        localStorage.setItem('lingua_favorites', JSON.stringify(currentFavs));
+                        if (window.LinguaApp) {
+                            LinguaApp.showToast(`Removed "${targetCourse}" from saved courses.`, 'Wishlist Updated', 'bi-bookmark-x text-warning');
+                        }
+                        renderSavedCourses();
+                    });
+                });
+            };
+
+            renderSavedCourses();
+        }
     }
 });

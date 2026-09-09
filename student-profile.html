@@ -26,43 +26,49 @@
 </head>
 <body>
 
-    <!-- TOP BAR -->
-    <div class="top-bar d-none d-md-block">
-        <div class="container">
-            <div class="d-flex justify-content-between align-items-center">
-                <div class="d-flex align-items-center gap-4">
-                    <span><i class="bi bi-telephone-fill me-2 text-orange"></i>+1 (800) 555-LANG</span>
-                    <span><i class="bi bi-envelope-fill me-2 text-orange"></i>info@linguaacademy.com</span>
-                </div>
-                <div class="d-flex align-items-center gap-3">
-                    <button class="btn btn-sm btn-link text-light p-0 theme-toggle-btn" title="Toggle Theme"><i class="bi bi-moon-stars-fill"></i></button>
-                    <button class="btn btn-sm btn-link text-light p-0 rtl-toggle-btn" title="Toggle RTL"><i class="bi bi-save"></i> RTL</button>
-                    <button class="btn btn-sm btn-link text-danger p-0 ms-2" onclick="LinguaApp.logout()"><i class="bi bi-box-arrow-right me-1"></i> Logout</button>
-                </div>
-            </div>
-        </div>
-    </div>
-
     <!-- MAIN NAVBAR -->
     <nav class="navbar navbar-expand-lg navbar-main">
-        <div class="container">
+        <div class="container-fluid px-3 px-xl-5">
             <a class="navbar-brand navbar-brand-logo" href="index.html">
                 <div class="brand-icon-wrap"><i class="bi bi-chat-quote-fill"></i></div>
                 <span>Lingua<span class="text-orange">Academy</span></span>
             </a>
 
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarMainContent">
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarMainContent" aria-controls="navbarMainContent" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
 
             <div class="collapse navbar-collapse" id="navbarMainContent">
-                <ul class="navbar-menu nav ms-auto align-items-lg-center">
-                    <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown">Home</a>
-                        <ul class="dropdown-menu shadow-sm">
-                            <li><a class="dropdown-item" href="index.html"><i class="bi bi-house-door me-2"></i> General Academy Landing</a></li>
-                            <li><a class="dropdown-item" href="home-corporate.html"><i class="bi bi-building me-2"></i> Corporate Communication</a></li>
-                        </ul>
+                <ul class="navbar-menu ms-auto">
+                    <li class="nav-item dropdown home-dropdown">
+                        <a class="nav-link" href="index.html">Home</a>
+                        <div class="dropdown-menu home-hover-menu shadow-lg">
+                            <div class="px-3 pt-2 pb-1 text-uppercase text-muted fw-bold" style="font-size: 0.68rem; letter-spacing: 0.08em;">Select Home Version</div>
+                            <a class="dropdown-item home-menu-card" href="index.html">
+                                <div class="home-menu-icon home-icon-academy">
+                                    <i class="bi bi-house-door-fill"></i>
+                                </div>
+                                <div class="home-menu-content">
+                                    <div class="d-flex align-items-center justify-content-between">
+                                        <span class="home-menu-title">General Academy</span>
+                                        <span class="badge bg-orange-subtle text-orange" style="font-size: 0.65rem;">Home 1</span>
+                                    </div>
+                                    <p class="home-menu-desc mb-0">Individual, Kids & Exam Fluency</p>
+                                </div>
+                            </a>
+                            <a class="dropdown-item home-menu-card" href="home-corporate.html">
+                                <div class="home-menu-icon home-icon-corp">
+                                    <i class="bi bi-building-fill"></i>
+                                </div>
+                                <div class="home-menu-content">
+                                    <div class="d-flex align-items-center justify-content-between">
+                                        <span class="home-menu-title">Corporate Training</span>
+                                        <span class="badge bg-blue-subtle text-primary" style="font-size: 0.65rem;">Home 2</span>
+                                    </div>
+                                    <p class="home-menu-desc mb-0">Enterprise Communication & B2B Solutions</p>
+                                </div>
+                            </a>
+                        </div>
                     </li>
                     <li class="nav-item"><a class="nav-link" href="about.html">About Us</a></li>
                     <li class="nav-item"><a class="nav-link" href="courses.html">Courses</a></li>
@@ -74,8 +80,17 @@
                     <li class="nav-item"><a class="nav-link active" href="student-profile.html">Dashboard</a></li>
                 </ul>
 
-                <div class="d-flex align-items-center gap-2 ms-lg-3 mt-3 mt-lg-0 auth-nav-container">
-                    <!-- Populated dynamically -->
+                <div class="navbar-actions">
+                    <button class="btn nav-action-btn theme-toggle-btn" title="Toggle Light/Dark Theme" aria-label="Toggle light or dark theme">
+                        <i class="bi bi-moon-stars-fill"></i>
+                    </button>
+                    <button class="btn nav-action-btn rtl-toggle-btn" title="Toggle RTL Layout" aria-label="Toggle text direction">
+                        <i class="bi bi-arrow-left-right"></i>
+                        <span>RTL</span>
+                    </button>
+                    <div class="auth-nav-container">
+                        <!-- Populated dynamically -->
+                    </div>
                 </div>
             </div>
         </div>
@@ -85,24 +100,92 @@
     <section class="py-5 bg-surface border-bottom">
         <div class="container py-3">
             <div class="row align-items-center g-4">
-                <div class="col-md-8">
+                <div class="col-md-7">
                     <div class="d-flex align-items-center gap-3">
-                        <div class="brand-icon-wrap fs-2 p-4 rounded-circle" style="width: 70px; height: 70px;">
-                            <i class="bi bi-person-fill"></i>
+                        <div class="feature-icon-box text-orange me-2">
+                            <i class="bi bi-person-badge-fill display-5"></i>
                         </div>
                         <div>
-                            <h2 class="font-heading mb-1" id="profileStudentName">Sarah Jenkins</h2>
-                            <p class="text-muted mb-0 small"><i class="bi bi-envelope me-1"></i> <span id="profileStudentEmail">student@languagehub.com</span> | Enrolled: <strong id="profileEnrolledProgram" class="text-orange">Business English & Public Speaking</strong></p>
+                            <div class="d-flex align-items-center gap-2 mb-1">
+                                <h2 class="font-heading mb-0" id="profileStudentName">Sarah Jenkins</h2>
+                                <span class="badge bg-orange text-white">CEFR Level B2</span>
+                            </div>
+                            <p class="text-muted mb-0 small">
+                                <i class="bi bi-envelope me-1"></i> <span id="profileStudentEmail">student@languagehub.com</span> | Enrolled: <strong id="profileEnrolledProgram" class="text-orange">Business English & Public Speaking</strong>
+                            </p>
                         </div>
                     </div>
                 </div>
-                <div class="col-md-4 text-md-end">
-                    <button class="btn btn-outline-theme btn-sm" onclick="LinguaApp.showToast('Your academic counsellor is online! Phone: +1 (800) 555-LANG', 'Counsellor Desk', 'bi-headset text-orange')">
-                        <i class="bi bi-headset me-1"></i> Contact Counsellor
+                <div class="col-md-5 text-md-end d-flex flex-wrap gap-2 justify-content-md-end">
+                    <button class="btn btn-primary-theme btn-sm" onclick="LinguaApp.showToast('Connecting you to Zoom Live Lab Room 4...', 'Launching Virtual Classroom', 'bi-camera-video-fill text-white')">
+                        <i class="bi bi-camera-video me-1"></i> Launch Next Live Class
                     </button>
-                    <button class="btn btn-danger btn-sm ms-2" onclick="LinguaApp.logout()">
-                        <i class="bi bi-box-arrow-right"></i> Logout
+                    <button class="btn btn-outline-theme btn-sm" onclick="LinguaApp.showToast('Academic Counsellor Hotline: +1 (800) 555-LANG. Office hours: 8 AM - 8 PM.', 'Advising Desk', 'bi-headset text-orange')">
+                        <i class="bi bi-headset me-1"></i> Help Desk
                     </button>
+                    <button class="btn btn-outline-danger btn-sm" onclick="LinguaApp.logout()">
+                        <i class="bi bi-box-arrow-right me-1"></i> Logout
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CEFR FLUENCY PROGRESS & NEXT CLASS SPOTLIGHT -->
+    <section class="py-4 bg-alt border-bottom">
+        <div class="container">
+            <div class="row g-4 align-items-stretch">
+                <!-- Fluency Progress Widget -->
+                <div class="col-lg-8">
+                    <div class="custom-card p-4 h-100 bg-surface">
+                        <div class="d-flex justify-content-between align-items-center mb-3">
+                            <h5 class="font-heading mb-0"><i class="bi bi-graph-up-arrow text-orange me-2"></i> CEFR Fluency & Milestone Tracker</h5>
+                            <span class="badge bg-teal text-white">Active Milestone: 70%</span>
+                        </div>
+
+                        <div class="row g-3 mb-3">
+                            <div class="col-6 col-md-3 text-center p-2 rounded bg-surface border">
+                                <span class="small text-muted d-block">Current Level</span>
+                                <strong class="font-heading text-orange fs-5">B2 Upper</strong>
+                            </div>
+                            <div class="col-6 col-md-3 text-center p-2 rounded bg-surface border">
+                                <span class="small text-muted d-block">Completed</span>
+                                <strong class="font-heading text-blue fs-5">42 / 60 Hrs</strong>
+                            </div>
+                            <div class="col-6 col-md-3 text-center p-2 rounded bg-surface border">
+                                <span class="small text-muted d-block">Attendance</span>
+                                <strong class="font-heading text-teal fs-5">96.5%</strong>
+                            </div>
+                            <div class="col-6 col-md-3 text-center p-2 rounded bg-surface border">
+                                <span class="small text-muted d-block">Next Exam</span>
+                                <strong class="font-heading text-purple fs-6">Sep 18, 2026</strong>
+                            </div>
+                        </div>
+
+                        <div class="progress mb-2" style="height: 10px;">
+                            <div class="progress-bar bg-orange progress-bar-striped progress-bar-animated" role="progressbar" style="width: 70%;" aria-valuenow="70" aria-valuemin="0" aria-valuemax="100"></div>
+                        </div>
+                        <div class="d-flex justify-content-between small text-muted">
+                            <span>B1 Intermediate Certified</span>
+                            <span class="fw-semibold text-main">18 Hrs Remaining until C1 Advanced</span>
+                            <span>C1 Mastery Target</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Next Live Class Quick Entry -->
+                <div class="col-lg-4">
+                    <div class="custom-card p-4 h-100 bg-surface border-start border-4 border-orange">
+                        <span class="badge bg-danger-subtle text-danger small mb-2"><i class="bi bi-record-circle me-1"></i> Today's Schedule</span>
+                        <h5 class="font-heading mb-1">Executive Negotiation Lab</h5>
+                        <p class="small text-muted mb-2"><i class="bi bi-person me-1"></i> Coach: Sarah Jenkins | Live Online</p>
+                        <div class="p-2 rounded bg-alt mb-3 small">
+                            <i class="bi bi-clock-fill text-orange me-1"></i> <strong>6:30 PM - 8:00 PM</strong> (Starts in 4 hrs)
+                        </div>
+                        <button class="btn btn-sm btn-primary-theme w-100" onclick="LinguaApp.showToast('Directing you to Zoom Virtual Lab Room 4...', 'Entering Session', 'bi-camera-video-fill')">
+                            <i class="bi bi-box-arrow-up-right me-1"></i> Enter Virtual Room
+                        </button>
+                    </div>
                 </div>
             </div>
         </div>
@@ -120,7 +203,7 @@
                             <h4 class="font-heading mb-0"><i class="bi bi-camera-video-fill text-orange me-2"></i> Demo Class Bookings</h4>
                             <a href="courses.html" class="btn btn-sm btn-outline-theme">+ Book Demo</a>
                         </div>
-                        <p class="small text-muted mb-3">Saved in LocalStorage for demo simulation.</p>
+                        <p class="small text-muted mb-3">Your scheduled 1-on-1 and group demo classes with native faculty.</p>
 
                         <div id="userDemoBookingsList">
                             <!-- Populated dynamically via JS -->
@@ -143,6 +226,98 @@
                     </div>
                 </div>
 
+                <!-- Saved Courses / Wishlist -->
+                <div class="col-lg-12">
+                    <div class="card p-4 bg-surface border rounded-4 shadow-sm mb-4">
+                        <div class="d-flex align-items-center justify-content-between mb-3">
+                            <h4 class="font-heading mb-0"><i class="bi bi-bookmark-heart-fill text-danger me-2"></i> My Saved & Wishlisted Courses</h4>
+                            <a href="courses.html" class="btn btn-sm btn-outline-theme">Browse All Courses</a>
+                        </div>
+                        <p class="small text-muted mb-3">Programs you've bookmarked for future enrollment or study tracks.</p>
+
+                        <div id="userSavedCoursesList" class="row g-3">
+                            <!-- Populated dynamically via JS -->
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- LEARNING RESOURCE CENTER -->
+            <div class="custom-card p-4 p-lg-5 bg-surface border rounded-4 shadow-sm mt-4">
+                <div class="d-flex flex-wrap align-items-center justify-content-between gap-3 mb-4">
+                    <div>
+                        <span class="badge-tag badge-purple mb-1">Student Library</span>
+                        <h3 class="font-heading mb-0">Downloadable Learning Packs & Audio Drills</h3>
+                    </div>
+                    <span class="small text-muted"><i class="bi bi-shield-check text-teal me-1"></i> Verified CEFR Courseware</span>
+                </div>
+
+                <div class="row g-4">
+                    <div class="col-md-6 col-lg-3">
+                        <div class="p-3 rounded-3 border bg-alt h-100 d-flex flex-column justify-content-between">
+                            <div>
+                                <div class="d-flex align-items-center gap-2 mb-2 text-orange">
+                                    <i class="bi bi-file-earmark-pdf-fill fs-4"></i>
+                                    <span class="badge bg-orange text-white" style="font-size: 0.7rem;">PDF • 4.2 MB</span>
+                                </div>
+                                <h6 class="font-heading mb-1">CEFR B2 Grammar Blueprint</h6>
+                                <p class="small text-muted mb-3">Advanced clause structures, subjunctive mood hacks, and modal auxiliaries.</p>
+                            </div>
+                            <button class="btn btn-sm btn-outline-theme w-100" onclick="LinguaApp.showToast('Downloading CEFR B2 Grammar Blueprint PDF...', 'Download Started', 'bi-download text-orange')">
+                                <i class="bi bi-download me-1"></i> Download PDF
+                            </button>
+                        </div>
+                    </div>
+
+                    <div class="col-md-6 col-lg-3">
+                        <div class="p-3 rounded-3 border bg-alt h-100 d-flex flex-column justify-content-between">
+                            <div>
+                                <div class="d-flex align-items-center gap-2 mb-2 text-blue">
+                                    <i class="bi bi-file-earmark-pdf-fill fs-4"></i>
+                                    <span class="badge bg-blue text-white" style="font-size: 0.7rem;">PDF • 2.8 MB</span>
+                                </div>
+                                <h6 class="font-heading mb-1">500 Corporate Idioms Pack</h6>
+                                <p class="small text-muted mb-3">Executive vocabulary, diplomatic phrasing, and boardroom idioms glossary.</p>
+                            </div>
+                            <button class="btn btn-sm btn-outline-theme w-100" onclick="LinguaApp.showToast('Downloading 500 Corporate Idioms Pack PDF...', 'Download Started', 'bi-download text-blue')">
+                                <i class="bi bi-download me-1"></i> Download PDF
+                            </button>
+                        </div>
+                    </div>
+
+                    <div class="col-md-6 col-lg-3">
+                        <div class="p-3 rounded-3 border bg-alt h-100 d-flex flex-column justify-content-between">
+                            <div>
+                                <div class="d-flex align-items-center gap-2 mb-2 text-purple">
+                                    <i class="bi bi-music-note-beamed fs-4"></i>
+                                    <span class="badge bg-purple text-white" style="font-size: 0.7rem;">MP3 • 38 MB</span>
+                                </div>
+                                <h6 class="font-heading mb-1">Phonetic Audio Listening Lab</h6>
+                                <p class="small text-muted mb-3">Native intonation drills, vowel length exercises, and connected speech clips.</p>
+                            </div>
+                            <button class="btn btn-sm btn-outline-theme w-100" onclick="LinguaApp.showToast('Downloading Phonetic Audio Listening Pack ZIP...', 'Download Started', 'bi-download text-purple')">
+                                <i class="bi bi-download me-1"></i> Download Audio
+                            </button>
+                        </div>
+                    </div>
+
+                    <div class="col-md-6 col-lg-3">
+                        <div class="p-3 rounded-3 border bg-alt h-100 d-flex flex-column justify-content-between">
+                            <div>
+                                <div class="d-flex align-items-center gap-2 mb-2 text-teal">
+                                    <i class="bi bi-journal-check fs-4"></i>
+                                    <span class="badge bg-teal text-white" style="font-size: 0.7rem;">PDF • 6.5 MB</span>
+                                </div>
+                                <h6 class="font-heading mb-1">Official Mock Diagnostic Test</h6>
+                                <p class="small text-muted mb-3">Complete 90-minute timed diagnostic exam with full answer rationales.</p>
+                            </div>
+                            <button class="btn btn-sm btn-outline-theme w-100" onclick="LinguaApp.showToast('Downloading Official Mock Diagnostic Test PDF...', 'Download Started', 'bi-download text-teal')">
+                                <i class="bi bi-download me-1"></i> Download Test
+                            </button>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     </section>

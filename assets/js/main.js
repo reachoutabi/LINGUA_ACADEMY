@@ -10,10 +10,31 @@ window.LinguaApp = {
         this.initTheme();
         this.initRTL();
         this.initStickyHeader();
+        this.initNavbarHover();
         this.initCounters();
         this.bindModals();
         this.bindFormHandlers();
         this.updateAuthNavUI();
+    },
+
+    // 1.5 NAVBAR HOVER CONTROLLER
+    initNavbarHover: function() {
+        const dropdowns = document.querySelectorAll('.navbar-menu .home-dropdown, .navbar-menu .nav-item.dropdown');
+        dropdowns.forEach(item => {
+            const menu = item.querySelector('.home-hover-menu, .dropdown-menu');
+            if (!menu) return;
+
+            let hideTimer;
+            item.addEventListener('mouseenter', () => {
+                clearTimeout(hideTimer);
+                menu.classList.add('show-hover');
+            });
+            item.addEventListener('mouseleave', () => {
+                hideTimer = setTimeout(() => {
+                    menu.classList.remove('show-hover');
+                }, 120);
+            });
+        });
     },
 
     // 2. THEME CONTROLLER
@@ -68,6 +89,17 @@ window.LinguaApp = {
             document.documentElement.setAttribute('dir', 'ltr');
             localStorage.setItem('lingua_rtl', 'false');
         }
+
+        const rtlToggles = document.querySelectorAll('.rtl-toggle-btn');
+        rtlToggles.forEach(btn => {
+            if (isRTL) {
+                btn.classList.add('is-active');
+                btn.setAttribute('title', 'Switch to LTR Layout');
+            } else {
+                btn.classList.remove('is-active');
+                btn.setAttribute('title', 'Switch to RTL Layout');
+            }
+        });
     },
 
     // 4. STICKY HEADER
