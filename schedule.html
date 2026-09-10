@@ -112,91 +112,93 @@
         </div>
     </section>
 
-    <!-- SCHEDULE FILTER TOOLBAR -->
-    <section class="py-4 bg-alt border-bottom sticky-top" style="top: 70px; z-index: 1020;">
-        <div class="container">
-            <!-- Row 1: Search & Count Badge -->
-            <div class="row g-2 align-items-center mb-3">
-                <div class="col-lg-6 col-md-7">
-                    <div class="input-group input-group-sm">
-                        <span class="input-group-text bg-surface border-end-0 text-muted"><i class="bi bi-search"></i></span>
-                        <input type="text" id="schedSearchInput" class="form-control border-start-0 ps-0" placeholder="Search by course title, trainer, or language...">
-                        <button class="btn btn-outline-secondary border-start-0" type="button" id="clearSchedSearchBtn" title="Clear Search" style="display: none;">
-                            <i class="bi bi-x-circle-fill"></i>
+    <!-- SCHEDULE & TIMETABLE MASTER WRAPPER (Sticky Toolbar bounded to this section only) -->
+    <div id="scheduleTimetableWrapper" class="schedule-timetable-wrapper position-relative">
+        <!-- SCHEDULE FILTER TOOLBAR -->
+        <div class="py-4 bg-alt border-bottom sticky-top schedule-filter-section" style="z-index: 1020;">
+            <div class="container">
+                <!-- Row 1: Search & Count Badge -->
+                <div class="row g-2 align-items-center mb-3">
+                    <div class="col-lg-6 col-md-7">
+                        <div class="input-group input-group-sm">
+                            <span class="input-group-text bg-surface border-end-0 text-muted"><i class="bi bi-search"></i></span>
+                            <input type="text" id="schedSearchInput" class="form-control border-start-0 ps-0" placeholder="Search by course title, trainer, or language...">
+                            <button class="btn btn-outline-secondary border-start-0" type="button" id="clearSchedSearchBtn" title="Clear Search" style="display: none;">
+                                <i class="bi bi-x-circle-fill"></i>
+                            </button>
+                        </div>
+                    </div>
+                    <div class="col-lg-6 col-md-5 d-flex justify-content-md-end align-items-center gap-2">
+                        <span id="schedCountBadge" class="badge bg-surface text-main border px-3 py-2 fw-semibold rounded-pill">
+                            <i class="bi bi-calendar-check text-orange me-1"></i> <span id="visibleScheduleCount">20</span> Batches Available
+                        </span>
+                        <button id="resetSchedFiltersBtn" class="btn btn-link btn-sm text-decoration-none text-muted p-0 ms-2" style="display: none;">
+                            <i class="bi bi-arrow-counterclockwise text-orange me-1"></i> Reset Filters
                         </button>
                     </div>
                 </div>
-                <div class="col-lg-6 col-md-5 d-flex justify-content-md-end align-items-center gap-2">
-                    <span id="schedCountBadge" class="badge bg-surface text-main border px-3 py-2 fw-semibold rounded-pill">
-                        <i class="bi bi-calendar-check text-orange me-1"></i> <span id="visibleScheduleCount">20</span> Batches Available
-                    </span>
-                    <button id="resetSchedFiltersBtn" class="btn btn-link btn-sm text-decoration-none text-muted p-0 ms-2" style="display: none;">
-                        <i class="bi bi-arrow-counterclockwise text-orange me-1"></i> Reset Filters
-                    </button>
-                </div>
-            </div>
 
-            <!-- Row 2: Four Filter Dropdowns (4 cols on Desktop, 2x2 grid on Tablet & Mobile) -->
-            <div class="row g-2 mb-3">
-                <div class="col-lg-3 col-sm-6 col-6">
-                    <select id="schedCourseFilter" class="form-select form-select-sm">
-                        <option value="all">Course: All Programs</option>
-                        <option value="spoken">Spoken English</option>
-                        <option value="french">French Language</option>
-                        <option value="german">German Language</option>
-                        <option value="spanish">Spanish Language</option>
-                        <option value="japanese">Japanese Language</option>
-                        <option value="ielts">IELTS Prep</option>
-                        <option value="public">Public Speaking</option>
-                        <option value="business">Business English</option>
-                        <option value="corporate">Corporate Training</option>
-                        <option value="kids">Kids Program</option>
-                    </select>
+                <!-- Row 2: Four Filter Dropdowns (4 cols on Desktop, 2x2 grid on Tablet & Mobile) -->
+                <div class="row g-2 mb-3">
+                    <div class="col-lg-3 col-sm-6 col-6">
+                        <select id="schedCourseFilter" class="form-select form-select-sm">
+                            <option value="all">Course: All Programs</option>
+                            <option value="spoken">Spoken English</option>
+                            <option value="french">French Language</option>
+                            <option value="german">German Language</option>
+                            <option value="spanish">Spanish Language</option>
+                            <option value="japanese">Japanese Language</option>
+                            <option value="ielts">IELTS Prep</option>
+                            <option value="public">Public Speaking</option>
+                            <option value="business">Business English</option>
+                            <option value="corporate">Corporate Training</option>
+                            <option value="kids">Kids Program</option>
+                        </select>
+                    </div>
+                    <div class="col-lg-3 col-sm-6 col-6">
+                        <select id="schedModeFilter" class="form-select form-select-sm">
+                            <option value="all">Mode: All Modes</option>
+                            <option value="online">Live Online</option>
+                            <option value="offline">In-Person Campus</option>
+                        </select>
+                    </div>
+                    <div class="col-lg-3 col-sm-6 col-6">
+                        <select id="schedAgeFilter" class="form-select form-select-sm">
+                            <option value="all">Age Group: All Ages</option>
+                            <option value="adults">Adults & Pros</option>
+                            <option value="kids">Kids & Teens</option>
+                        </select>
+                    </div>
+                    <div class="col-lg-3 col-sm-6 col-6">
+                        <select id="schedTimingFilter" class="form-select form-select-sm">
+                            <option value="all">Time Slot: All Times</option>
+                            <option value="morning">Morning (8 AM - 12 PM)</option>
+                            <option value="afternoon">Afternoon (1 PM - 4 PM)</option>
+                            <option value="evening">Evening (5 PM - 9 PM)</option>
+                            <option value="weekend">Weekend Special</option>
+                        </select>
+                    </div>
                 </div>
-                <div class="col-lg-3 col-sm-6 col-6">
-                    <select id="schedModeFilter" class="form-select form-select-sm">
-                        <option value="all">Mode: All Modes</option>
-                        <option value="online">Live Online</option>
-                        <option value="offline">In-Person Campus</option>
-                    </select>
-                </div>
-                <div class="col-lg-3 col-sm-6 col-6">
-                    <select id="schedAgeFilter" class="form-select form-select-sm">
-                        <option value="all">Age Group: All Ages</option>
-                        <option value="adults">Adults & Pros</option>
-                        <option value="kids">Kids & Teens</option>
-                    </select>
-                </div>
-                <div class="col-lg-3 col-sm-6 col-6">
-                    <select id="schedTimingFilter" class="form-select form-select-sm">
-                        <option value="all">Time Slot: All Times</option>
-                        <option value="morning">Morning (8 AM - 12 PM)</option>
-                        <option value="afternoon">Afternoon (1 PM - 4 PM)</option>
-                        <option value="evening">Evening (5 PM - 9 PM)</option>
-                        <option value="weekend">Weekend Special</option>
-                    </select>
-                </div>
-            </div>
 
-            <!-- Row 3: Quick Filter Chips (Mobile & Tablet Friendly) -->
-            <div class="schedule-filter-chips">
-                <button type="button" class="filter-chip-btn active" data-course-filter="all"><i class="bi bi-grid-fill me-1"></i> All Programs (20)</button>
-                <button type="button" class="filter-chip-btn" data-course-filter="spoken"><i class="bi bi-chat-dots me-1"></i> Spoken English (2)</button>
-                <button type="button" class="filter-chip-btn" data-course-filter="french"><i class="bi bi-translate me-1"></i> French (2)</button>
-                <button type="button" class="filter-chip-btn" data-course-filter="german"><i class="bi bi-translate me-1"></i> German (2)</button>
-                <button type="button" class="filter-chip-btn" data-course-filter="spanish"><i class="bi bi-translate me-1"></i> Spanish (2)</button>
-                <button type="button" class="filter-chip-btn" data-course-filter="japanese"><i class="bi bi-translate me-1"></i> Japanese (2)</button>
-                <button type="button" class="filter-chip-btn" data-course-filter="ielts"><i class="bi bi-award me-1"></i> IELTS Prep (2)</button>
-                <button type="button" class="filter-chip-btn" data-course-filter="public"><i class="bi bi-mic me-1"></i> Public Speaking (2)</button>
-                <button type="button" class="filter-chip-btn" data-course-filter="business"><i class="bi bi-briefcase me-1"></i> Business English (2)</button>
-                <button type="button" class="filter-chip-btn" data-course-filter="corporate"><i class="bi bi-building me-1"></i> Corporate Training (2)</button>
-                <button type="button" class="filter-chip-btn" data-course-filter="kids"><i class="bi bi-stars me-1"></i> Kids Program (2)</button>
+                <!-- Row 3: Quick Filter Chips (Mobile & Tablet Friendly) -->
+                <div class="schedule-filter-chips">
+                    <button type="button" class="filter-chip-btn active" data-course-filter="all"><i class="bi bi-grid-fill me-1"></i> All Programs (20)</button>
+                    <button type="button" class="filter-chip-btn" data-course-filter="spoken"><i class="bi bi-chat-dots me-1"></i> Spoken English (2)</button>
+                    <button type="button" class="filter-chip-btn" data-course-filter="french"><i class="bi bi-translate me-1"></i> French (2)</button>
+                    <button type="button" class="filter-chip-btn" data-course-filter="german"><i class="bi bi-translate me-1"></i> German (2)</button>
+                    <button type="button" class="filter-chip-btn" data-course-filter="spanish"><i class="bi bi-translate me-1"></i> Spanish (2)</button>
+                    <button type="button" class="filter-chip-btn" data-course-filter="japanese"><i class="bi bi-translate me-1"></i> Japanese (2)</button>
+                    <button type="button" class="filter-chip-btn" data-course-filter="ielts"><i class="bi bi-award me-1"></i> IELTS Prep (2)</button>
+                    <button type="button" class="filter-chip-btn" data-course-filter="public"><i class="bi bi-mic me-1"></i> Public Speaking (2)</button>
+                    <button type="button" class="filter-chip-btn" data-course-filter="business"><i class="bi bi-briefcase me-1"></i> Business English (2)</button>
+                    <button type="button" class="filter-chip-btn" data-course-filter="corporate"><i class="bi bi-building me-1"></i> Corporate Training (2)</button>
+                    <button type="button" class="filter-chip-btn" data-course-filter="kids"><i class="bi bi-stars me-1"></i> Kids Program (2)</button>
+                </div>
             </div>
         </div>
-    </section>
 
-    <!-- SCHEDULE TABLE & CARDS SECTION -->
-    <section class="py-5">
+        <!-- SCHEDULE TABLE & CARDS SECTION -->
+        <section class="py-5">
         <div class="container py-3">
             <div id="noScheduleFound" class="alert alert-warning text-center" style="display: none;">
                 <i class="bi bi-info-circle me-2"></i> No upcoming batch matches your selected filter combination. 
@@ -1167,6 +1169,7 @@
             </div>
         </div>
     </section>
+    </div>
 
     <!-- BATCH FORMAT SPOTLIGHTS -->
     <section class="py-5 bg-surface border-top border-bottom">

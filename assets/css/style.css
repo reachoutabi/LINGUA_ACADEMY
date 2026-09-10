@@ -3119,3 +3119,24 @@ img.rounded-circle {
     display: none;
 }
 
+/* ==========================================================================
+   18. SCHEDULE TIMETABLE BOUNDED STICKY TOOLBAR
+   ========================================================================== */
+.schedule-timetable-wrapper {
+    position: relative;
+}
+
+.schedule-filter-section {
+    top: 65px;
+    background-color: var(--bg-alt) !important;
+    backdrop-filter: blur(10px);
+    transition: top var(--transition-fast);
+}
+
+@media (max-width: 991.98px) {
+    .schedule-filter-section {
+        top: 56px;
+    }
+}
+
+
