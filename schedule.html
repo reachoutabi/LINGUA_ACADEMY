@@ -115,8 +115,30 @@
     <!-- SCHEDULE FILTER TOOLBAR -->
     <section class="py-4 bg-alt border-bottom sticky-top" style="top: 70px; z-index: 1020;">
         <div class="container">
-            <div class="row g-2">
-                <div class="col-md-3 col-6">
+            <!-- Row 1: Search & Count Badge -->
+            <div class="row g-2 align-items-center mb-3">
+                <div class="col-lg-6 col-md-7">
+                    <div class="input-group input-group-sm">
+                        <span class="input-group-text bg-surface border-end-0 text-muted"><i class="bi bi-search"></i></span>
+                        <input type="text" id="schedSearchInput" class="form-control border-start-0 ps-0" placeholder="Search by course title, trainer, or language...">
+                        <button class="btn btn-outline-secondary border-start-0" type="button" id="clearSchedSearchBtn" title="Clear Search" style="display: none;">
+                            <i class="bi bi-x-circle-fill"></i>
+                        </button>
+                    </div>
+                </div>
+                <div class="col-lg-6 col-md-5 d-flex justify-content-md-end align-items-center gap-2">
+                    <span id="schedCountBadge" class="badge bg-surface text-main border px-3 py-2 fw-semibold rounded-pill">
+                        <i class="bi bi-calendar-check text-orange me-1"></i> <span id="visibleScheduleCount">20</span> Batches Available
+                    </span>
+                    <button id="resetSchedFiltersBtn" class="btn btn-link btn-sm text-decoration-none text-muted p-0 ms-2" style="display: none;">
+                        <i class="bi bi-arrow-counterclockwise text-orange me-1"></i> Reset Filters
+                    </button>
+                </div>
+            </div>
+
+            <!-- Row 2: Four Filter Dropdowns (4 cols on Desktop, 2x2 grid on Tablet & Mobile) -->
+            <div class="row g-2 mb-3">
+                <div class="col-lg-3 col-sm-6 col-6">
                     <select id="schedCourseFilter" class="form-select form-select-sm">
                         <option value="all">Course: All Programs</option>
                         <option value="spoken">Spoken English</option>
@@ -127,24 +149,25 @@
                         <option value="ielts">IELTS Prep</option>
                         <option value="public">Public Speaking</option>
                         <option value="business">Business English</option>
+                        <option value="corporate">Corporate Training</option>
                         <option value="kids">Kids Program</option>
                     </select>
                 </div>
-                <div class="col-md-3 col-6">
+                <div class="col-lg-3 col-sm-6 col-6">
                     <select id="schedModeFilter" class="form-select form-select-sm">
                         <option value="all">Mode: All Modes</option>
                         <option value="online">Live Online</option>
                         <option value="offline">In-Person Campus</option>
                     </select>
                 </div>
-                <div class="col-md-3 col-6">
+                <div class="col-lg-3 col-sm-6 col-6">
                     <select id="schedAgeFilter" class="form-select form-select-sm">
                         <option value="all">Age Group: All Ages</option>
                         <option value="adults">Adults & Pros</option>
                         <option value="kids">Kids & Teens</option>
                     </select>
                 </div>
-                <div class="col-md-3 col-6">
+                <div class="col-lg-3 col-sm-6 col-6">
                     <select id="schedTimingFilter" class="form-select form-select-sm">
                         <option value="all">Time Slot: All Times</option>
                         <option value="morning">Morning (8 AM - 12 PM)</option>
@@ -154,6 +177,21 @@
                     </select>
                 </div>
             </div>
+
+            <!-- Row 3: Quick Filter Chips (Mobile & Tablet Friendly) -->
+            <div class="schedule-filter-chips">
+                <button type="button" class="filter-chip-btn active" data-course-filter="all"><i class="bi bi-grid-fill me-1"></i> All Programs (20)</button>
+                <button type="button" class="filter-chip-btn" data-course-filter="spoken"><i class="bi bi-chat-dots me-1"></i> Spoken English (2)</button>
+                <button type="button" class="filter-chip-btn" data-course-filter="french"><i class="bi bi-translate me-1"></i> French (2)</button>
+                <button type="button" class="filter-chip-btn" data-course-filter="german"><i class="bi bi-translate me-1"></i> German (2)</button>
+                <button type="button" class="filter-chip-btn" data-course-filter="spanish"><i class="bi bi-translate me-1"></i> Spanish (2)</button>
+                <button type="button" class="filter-chip-btn" data-course-filter="japanese"><i class="bi bi-translate me-1"></i> Japanese (2)</button>
+                <button type="button" class="filter-chip-btn" data-course-filter="ielts"><i class="bi bi-award me-1"></i> IELTS Prep (2)</button>
+                <button type="button" class="filter-chip-btn" data-course-filter="public"><i class="bi bi-mic me-1"></i> Public Speaking (2)</button>
+                <button type="button" class="filter-chip-btn" data-course-filter="business"><i class="bi bi-briefcase me-1"></i> Business English (2)</button>
+                <button type="button" class="filter-chip-btn" data-course-filter="corporate"><i class="bi bi-building me-1"></i> Corporate Training (2)</button>
+                <button type="button" class="filter-chip-btn" data-course-filter="kids"><i class="bi bi-stars me-1"></i> Kids Program (2)</button>
+            </div>
         </div>
     </section>
 
@@ -161,11 +199,12 @@
     <section class="py-5">
         <div class="container py-3">
             <div id="noScheduleFound" class="alert alert-warning text-center" style="display: none;">
-                <i class="bi bi-info-circle me-2"></i> No upcoming batch matches your selected filter combination. Try clearing filters.
+                <i class="bi bi-info-circle me-2"></i> No upcoming batch matches your selected filter combination. 
+                <button class="btn btn-sm btn-outline-warning ms-2" onclick="document.getElementById('resetSchedFiltersBtn').click()">Show All Courses</button>
             </div>
 
             <!-- Desktop Table View -->
-            <div class="schedule-table-wrap d-none d-md-block">
+            <div class="schedule-table-wrap d-none d-lg-block">
                 <table class="table table-custom">
                     <thead>
                         <tr>
@@ -655,325 +694,475 @@
                                 <button class="btn btn-sm btn-primary-theme" data-bs-toggle="modal" data-bs-target="#enrollModal" data-course-name="Teens Debate & Eloquence (Weekend Campus)">Reserve Seat</button>
                             </td>
                         </tr>
+
+                        <!-- 10. Corporate Training Batches -->
+                        <tr class="schedule-row" data-course="corporate" data-mode="online" data-age="adults" data-timing="evening">
+                            <td>
+                                <strong class="d-block font-heading text-main mb-1">Corporate Accent Neutralization</strong>
+                                <span class="badge bg-secondary-subtle text-muted fw-normal">Executive B2B Track</span>
+                            </td>
+                            <td>
+                                <strong class="d-block">8:30 PM - 10:00 PM</strong>
+                                <span class="small text-muted">Tue & Thu</span>
+                            </td>
+                            <td><span class="fw-bold">Sep 08, 2026</span></td>
+                            <td><span class="badge bg-info-subtle text-info border border-info border-opacity-25"><i class="bi bi-laptop me-1"></i> Live Online</span></td>
+                            <td><span class="small fw-semibold">Marcus Sterling</span></td>
+                            <td style="min-width: 180px;">
+                                <div class="d-flex justify-content-between small">
+                                    <span class="text-danger fw-bold">2 Seats Left</span>
+                                    <span>6/8 Filled</span>
+                                </div>
+                                <div class="progress-seats">
+                                    <div class="progress-seats-bar" style="width: 75%;"></div>
+                                </div>
+                            </td>
+                            <td>
+                                <button class="btn btn-sm btn-primary-theme" data-bs-toggle="modal" data-bs-target="#enrollModal" data-course-name="Corporate Accent Neutralization (Online)">Reserve Seat</button>
+                            </td>
+                        </tr>
+
+                        <tr class="schedule-row" data-course="corporate" data-mode="offline" data-age="adults" data-timing="weekend">
+                            <td>
+                                <strong class="d-block font-heading text-main mb-1">Executive Presentation & Pitching</strong>
+                                <span class="badge bg-secondary-subtle text-muted fw-normal">Leadership Cohort</span>
+                            </td>
+                            <td>
+                                <strong class="d-block">1:00 PM - 4:00 PM</strong>
+                                <span class="small text-muted">Saturday Workshop</span>
+                            </td>
+                            <td><span class="fw-bold">Sep 15, 2026</span></td>
+                            <td><span class="badge bg-primary-subtle text-primary border border-primary border-opacity-25"><i class="bi bi-building me-1"></i> Downtown Campus</span></td>
+                            <td><span class="small fw-semibold">James Thornton</span></td>
+                            <td style="min-width: 180px;">
+                                <div class="d-flex justify-content-between small">
+                                    <span class="text-success fw-bold">4 Seats Left</span>
+                                    <span>6/10 Filled</span>
+                                </div>
+                                <div class="progress-seats">
+                                    <div class="progress-seats-bar" style="width: 60%;"></div>
+                                </div>
+                            </td>
+                            <td>
+                                <button class="btn btn-sm btn-primary-theme" data-bs-toggle="modal" data-bs-target="#enrollModal" data-course-name="Executive Presentation & Pitching (Weekend)">Reserve Seat</button>
+                            </td>
+                        </tr>
                     </tbody>
                 </table>
             </div>
 
-            <!-- Mobile Cards View (Active on 360px and all mobile screens) -->
-            <div class="d-block d-md-none">
-                <!-- 1. Spoken English Cards -->
-                <div class="mobile-schedule-card mb-3 p-3 bg-surface rounded-3 border" data-course="spoken english" data-mode="online" data-age="adults" data-timing="morning">
-                    <div class="d-flex justify-content-between align-items-start mb-2">
-                        <div>
-                            <h6 class="font-heading mb-1 text-main">Spoken English & Fluency</h6>
-                            <span class="badge bg-secondary-subtle text-muted fw-normal small">Beginner (A1/A2)</span>
+            <!-- Mobile & Tablet Cards View (Responsive 2-Col Grid on 768px Tablet, 1-Col on Mobile) -->
+            <div class="d-block d-lg-none">
+                <div class="row g-3">
+                    <!-- 1. Spoken English Cards -->
+                    <div class="col-12 col-sm-6 mobile-schedule-col">
+                        <div class="mobile-schedule-card p-3 bg-surface rounded-3 border" data-course="spoken english" data-mode="online" data-age="adults" data-timing="morning">
+                            <div class="d-flex justify-content-between align-items-start mb-2">
+                                <div>
+                                    <span class="badge-tag badge-orange mb-1">Spoken English</span>
+                                    <h6 class="font-heading mb-1 text-main">Spoken English & Fluency</h6>
+                                    <span class="badge bg-secondary-subtle text-muted fw-normal small">Beginner (A1/A2)</span>
+                                </div>
+                                <span class="badge bg-danger">3 Seats Left</span>
+                            </div>
+                            <div class="d-flex flex-wrap gap-2 small text-muted mb-2">
+                                <span class="badge bg-info-subtle text-info border border-info border-opacity-25"><i class="bi bi-laptop me-1"></i> Live Online</span>
+                                <span><i class="bi bi-calendar-event me-1"></i> Aug 24, 2026</span>
+                            </div>
+                            <p class="small text-muted mb-2"><i class="bi bi-clock me-1"></i> 8:30 AM - 10:00 AM (Mon, Wed, Fri)</p>
+                            <p class="small text-muted mb-3"><i class="bi bi-person me-1"></i> Trainer: Sarah Jenkins</p>
+                            <button class="btn btn-sm btn-primary-theme w-100 mt-auto" data-bs-toggle="modal" data-bs-target="#enrollModal" data-course-name="Spoken English (Morning Online)">Reserve Seat</button>
                         </div>
-                        <span class="badge bg-danger">3 Seats Left</span>
                     </div>
-                    <div class="d-flex flex-wrap gap-2 small text-muted mb-2">
-                        <span class="badge bg-info-subtle text-info border border-info border-opacity-25"><i class="bi bi-laptop me-1"></i> Live Online</span>
-                        <span><i class="bi bi-calendar-event me-1"></i> Aug 24, 2026</span>
-                    </div>
-                    <p class="small text-muted mb-2"><i class="bi bi-clock me-1"></i> 8:30 AM - 10:00 AM (Mon, Wed, Fri)</p>
-                    <p class="small text-muted mb-3"><i class="bi bi-person me-1"></i> Trainer: Sarah Jenkins</p>
-                    <button class="btn btn-sm btn-primary-theme w-100" data-bs-toggle="modal" data-bs-target="#enrollModal" data-course-name="Spoken English (Morning Online)">Reserve Seat</button>
-                </div>
 
-                <div class="mobile-schedule-card mb-3 p-3 bg-surface rounded-3 border" data-course="spoken english" data-mode="offline" data-age="adults" data-timing="evening">
-                    <div class="d-flex justify-content-between align-items-start mb-2">
-                        <div>
-                            <h6 class="font-heading mb-1 text-main">Spoken English & Fluency</h6>
-                            <span class="badge bg-secondary-subtle text-muted fw-normal small">Advanced (B2/C1)</span>
+                    <div class="col-12 col-sm-6 mobile-schedule-col">
+                        <div class="mobile-schedule-card p-3 bg-surface rounded-3 border" data-course="spoken english" data-mode="offline" data-age="adults" data-timing="evening">
+                            <div class="d-flex justify-content-between align-items-start mb-2">
+                                <div>
+                                    <span class="badge-tag badge-orange mb-1">Spoken English</span>
+                                    <h6 class="font-heading mb-1 text-main">Spoken English & Fluency</h6>
+                                    <span class="badge bg-secondary-subtle text-muted fw-normal small">Advanced (B2/C1)</span>
+                                </div>
+                                <span class="badge bg-success">4 Seats Left</span>
+                            </div>
+                            <div class="d-flex flex-wrap gap-2 small text-muted mb-2">
+                                <span class="badge bg-primary-subtle text-primary border border-primary border-opacity-25"><i class="bi bi-building me-1"></i> Downtown Campus</span>
+                                <span><i class="bi bi-calendar-event me-1"></i> Sep 02, 2026</span>
+                            </div>
+                            <p class="small text-muted mb-2"><i class="bi bi-clock me-1"></i> 7:00 PM - 8:30 PM (Tue, Thu, Sat)</p>
+                            <p class="small text-muted mb-3"><i class="bi bi-person me-1"></i> Trainer: Marcus Sterling</p>
+                            <button class="btn btn-sm btn-primary-theme w-100 mt-auto" data-bs-toggle="modal" data-bs-target="#enrollModal" data-course-name="Spoken English (Evening Campus)">Reserve Seat</button>
                         </div>
-                        <span class="badge bg-success">4 Seats Left</span>
                     </div>
-                    <div class="d-flex flex-wrap gap-2 small text-muted mb-2">
-                        <span class="badge bg-primary-subtle text-primary border border-primary border-opacity-25"><i class="bi bi-building me-1"></i> Downtown Campus</span>
-                        <span><i class="bi bi-calendar-event me-1"></i> Sep 02, 2026</span>
-                    </div>
-                    <p class="small text-muted mb-2"><i class="bi bi-clock me-1"></i> 7:00 PM - 8:30 PM (Tue, Thu, Sat)</p>
-                    <p class="small text-muted mb-3"><i class="bi bi-person me-1"></i> Trainer: Marcus Sterling</p>
-                    <button class="btn btn-sm btn-primary-theme w-100" data-bs-toggle="modal" data-bs-target="#enrollModal" data-course-name="Spoken English (Evening Campus)">Reserve Seat</button>
-                </div>
 
-                <!-- 2. French Cards -->
-                <div class="mobile-schedule-card mb-3 p-3 bg-surface rounded-3 border" data-course="french" data-mode="offline" data-age="adults" data-timing="evening">
-                    <div class="d-flex justify-content-between align-items-start mb-2">
-                        <div>
-                            <h6 class="font-heading mb-1 text-main">French Language DELF A1</h6>
-                            <span class="badge bg-secondary-subtle text-muted fw-normal small">Foundation Level</span>
+                    <!-- 2. French Cards -->
+                    <div class="col-12 col-sm-6 mobile-schedule-col">
+                        <div class="mobile-schedule-card p-3 bg-surface rounded-3 border" data-course="french" data-mode="offline" data-age="adults" data-timing="evening">
+                            <div class="d-flex justify-content-between align-items-start mb-2">
+                                <div>
+                                    <span class="badge-tag badge-blue mb-1">French DELF</span>
+                                    <h6 class="font-heading mb-1 text-main">French Language DELF A1</h6>
+                                    <span class="badge bg-secondary-subtle text-muted fw-normal small">Foundation Level</span>
+                                </div>
+                                <span class="badge bg-success">5 Seats Left</span>
+                            </div>
+                            <div class="d-flex flex-wrap gap-2 small text-muted mb-2">
+                                <span class="badge bg-primary-subtle text-primary border border-primary border-opacity-25"><i class="bi bi-building me-1"></i> Downtown Campus</span>
+                                <span><i class="bi bi-calendar-event me-1"></i> Aug 26, 2026</span>
+                            </div>
+                            <p class="small text-muted mb-2"><i class="bi bi-clock me-1"></i> 6:30 PM - 8:00 PM (Tue, Thu, Sat)</p>
+                            <p class="small text-muted mb-3"><i class="bi bi-person me-1"></i> Trainer: Dr. Antoine</p>
+                            <button class="btn btn-sm btn-primary-theme w-100 mt-auto" data-bs-toggle="modal" data-bs-target="#enrollModal" data-course-name="French Language A1 (Evening Campus)">Reserve Seat</button>
                         </div>
-                        <span class="badge bg-success">5 Seats Left</span>
                     </div>
-                    <div class="d-flex flex-wrap gap-2 small text-muted mb-2">
-                        <span class="badge bg-primary-subtle text-primary border border-primary border-opacity-25"><i class="bi bi-building me-1"></i> Downtown Campus</span>
-                        <span><i class="bi bi-calendar-event me-1"></i> Aug 26, 2026</span>
-                    </div>
-                    <p class="small text-muted mb-2"><i class="bi bi-clock me-1"></i> 6:30 PM - 8:00 PM (Tue, Thu, Sat)</p>
-                    <p class="small text-muted mb-3"><i class="bi bi-person me-1"></i> Trainer: Dr. Antoine</p>
-                    <button class="btn btn-sm btn-primary-theme w-100" data-bs-toggle="modal" data-bs-target="#enrollModal" data-course-name="French Language A1 (Evening Campus)">Reserve Seat</button>
-                </div>
 
-                <div class="mobile-schedule-card mb-3 p-3 bg-surface rounded-3 border" data-course="french" data-mode="online" data-age="adults" data-timing="weekend">
-                    <div class="d-flex justify-content-between align-items-start mb-2">
-                        <div>
-                            <h6 class="font-heading mb-1 text-main">French DELF B1 Intensive</h6>
-                            <span class="badge bg-secondary-subtle text-muted fw-normal small">Intermediate Fluency</span>
+                    <div class="col-12 col-sm-6 mobile-schedule-col">
+                        <div class="mobile-schedule-card p-3 bg-surface rounded-3 border" data-course="french" data-mode="online" data-age="adults" data-timing="weekend">
+                            <div class="d-flex justify-content-between align-items-start mb-2">
+                                <div>
+                                    <span class="badge-tag badge-blue mb-1">French DELF</span>
+                                    <h6 class="font-heading mb-1 text-main">French DELF B1 Intensive</h6>
+                                    <span class="badge bg-secondary-subtle text-muted fw-normal small">Intermediate Fluency</span>
+                                </div>
+                                <span class="badge bg-danger">2 Seats Left</span>
+                            </div>
+                            <div class="d-flex flex-wrap gap-2 small text-muted mb-2">
+                                <span class="badge bg-info-subtle text-info border border-info border-opacity-25"><i class="bi bi-laptop me-1"></i> Live Online</span>
+                                <span><i class="bi bi-calendar-event me-1"></i> Sep 06, 2026</span>
+                            </div>
+                            <p class="small text-muted mb-2"><i class="bi bi-clock me-1"></i> 10:00 AM - 1:00 PM (Sat & Sun)</p>
+                            <p class="small text-muted mb-3"><i class="bi bi-person me-1"></i> Trainer: Claire Dupont</p>
+                            <button class="btn btn-sm btn-primary-theme w-100 mt-auto" data-bs-toggle="modal" data-bs-target="#enrollModal" data-course-name="French DELF B1 (Weekend Online)">Reserve Seat</button>
                         </div>
-                        <span class="badge bg-danger">2 Seats Left</span>
                     </div>
-                    <div class="d-flex flex-wrap gap-2 small text-muted mb-2">
-                        <span class="badge bg-info-subtle text-info border border-info border-opacity-25"><i class="bi bi-laptop me-1"></i> Live Online</span>
-                        <span><i class="bi bi-calendar-event me-1"></i> Sep 06, 2026</span>
-                    </div>
-                    <p class="small text-muted mb-2"><i class="bi bi-clock me-1"></i> 10:00 AM - 1:00 PM (Sat & Sun)</p>
-                    <p class="small text-muted mb-3"><i class="bi bi-person me-1"></i> Trainer: Claire Dupont</p>
-                    <button class="btn btn-sm btn-primary-theme w-100" data-bs-toggle="modal" data-bs-target="#enrollModal" data-course-name="French DELF B1 (Weekend Online)">Reserve Seat</button>
-                </div>
 
-                <!-- 3. German Cards -->
-                <div class="mobile-schedule-card mb-3 p-3 bg-surface rounded-3 border" data-course="german" data-mode="offline" data-age="adults" data-timing="morning">
-                    <div class="d-flex justify-content-between align-items-start mb-2">
-                        <div>
-                            <h6 class="font-heading mb-1 text-main">German Goethe A2 Fast-Track</h6>
-                            <span class="badge bg-secondary-subtle text-muted fw-normal small">Intermediate Level</span>
+                    <!-- 3. German Cards -->
+                    <div class="col-12 col-sm-6 mobile-schedule-col">
+                        <div class="mobile-schedule-card p-3 bg-surface rounded-3 border" data-course="german" data-mode="offline" data-age="adults" data-timing="morning">
+                            <div class="d-flex justify-content-between align-items-start mb-2">
+                                <div>
+                                    <span class="badge-tag badge-teal mb-1">German Goethe</span>
+                                    <h6 class="font-heading mb-1 text-main">German Goethe A2 Fast-Track</h6>
+                                    <span class="badge bg-secondary-subtle text-muted fw-normal small">Intermediate Level</span>
+                                </div>
+                                <span class="badge bg-success">6 Seats Left</span>
+                            </div>
+                            <div class="d-flex flex-wrap gap-2 small text-muted mb-2">
+                                <span class="badge bg-primary-subtle text-primary border border-primary border-opacity-25"><i class="bi bi-building me-1"></i> City Campus</span>
+                                <span><i class="bi bi-calendar-event me-1"></i> Sep 04, 2026</span>
+                            </div>
+                            <p class="small text-muted mb-2"><i class="bi bi-clock me-1"></i> 9:00 AM - 11:30 AM (Mon, Wed, Fri)</p>
+                            <p class="small text-muted mb-3"><i class="bi bi-person me-1"></i> Trainer: Greta Weber</p>
+                            <button class="btn btn-sm btn-primary-theme w-100 mt-auto" data-bs-toggle="modal" data-bs-target="#enrollModal" data-course-name="German Goethe A2 (Morning Campus)">Reserve Seat</button>
                         </div>
-                        <span class="badge bg-success">6 Seats Left</span>
                     </div>
-                    <div class="d-flex flex-wrap gap-2 small text-muted mb-2">
-                        <span class="badge bg-primary-subtle text-primary border border-primary border-opacity-25"><i class="bi bi-building me-1"></i> City Campus</span>
-                        <span><i class="bi bi-calendar-event me-1"></i> Sep 04, 2026</span>
-                    </div>
-                    <p class="small text-muted mb-2"><i class="bi bi-clock me-1"></i> 9:00 AM - 11:30 AM (Mon, Wed, Fri)</p>
-                    <p class="small text-muted mb-3"><i class="bi bi-person me-1"></i> Trainer: Greta Weber</p>
-                    <button class="btn btn-sm btn-primary-theme w-100" data-bs-toggle="modal" data-bs-target="#enrollModal" data-course-name="German Goethe A2 (Morning Campus)">Reserve Seat</button>
-                </div>
 
-                <div class="mobile-schedule-card mb-3 p-3 bg-surface rounded-3 border" data-course="german" data-mode="online" data-age="adults" data-timing="evening">
-                    <div class="d-flex justify-content-between align-items-start mb-2">
-                        <div>
-                            <h6 class="font-heading mb-1 text-main">German Goethe B1 Mastery</h6>
-                            <span class="badge bg-secondary-subtle text-muted fw-normal small">Advanced Professional</span>
+                    <div class="col-12 col-sm-6 mobile-schedule-col">
+                        <div class="mobile-schedule-card p-3 bg-surface rounded-3 border" data-course="german" data-mode="online" data-age="adults" data-timing="evening">
+                            <div class="d-flex justify-content-between align-items-start mb-2">
+                                <div>
+                                    <span class="badge-tag badge-teal mb-1">German Goethe</span>
+                                    <h6 class="font-heading mb-1 text-main">German Goethe B1 Mastery</h6>
+                                    <span class="badge bg-secondary-subtle text-muted fw-normal small">Advanced Professional</span>
+                                </div>
+                                <span class="badge bg-danger">3 Seats Left</span>
+                            </div>
+                            <div class="d-flex flex-wrap gap-2 small text-muted mb-2">
+                                <span class="badge bg-info-subtle text-info border border-info border-opacity-25"><i class="bi bi-laptop me-1"></i> Live Online</span>
+                                <span><i class="bi bi-calendar-event me-1"></i> Sep 08, 2026</span>
+                            </div>
+                            <p class="small text-muted mb-2"><i class="bi bi-clock me-1"></i> 7:30 PM - 9:00 PM (Mon, Wed, Thu)</p>
+                            <p class="small text-muted mb-3"><i class="bi bi-person me-1"></i> Trainer: Hans Schmidt</p>
+                            <button class="btn btn-sm btn-primary-theme w-100 mt-auto" data-bs-toggle="modal" data-bs-target="#enrollModal" data-course-name="German Goethe B1 (Evening Online)">Reserve Seat</button>
                         </div>
-                        <span class="badge bg-danger">3 Seats Left</span>
                     </div>
-                    <div class="d-flex flex-wrap gap-2 small text-muted mb-2">
-                        <span class="badge bg-info-subtle text-info border border-info border-opacity-25"><i class="bi bi-laptop me-1"></i> Live Online</span>
-                        <span><i class="bi bi-calendar-event me-1"></i> Sep 08, 2026</span>
-                    </div>
-                    <p class="small text-muted mb-2"><i class="bi bi-clock me-1"></i> 7:30 PM - 9:00 PM (Mon, Wed, Thu)</p>
-                    <p class="small text-muted mb-3"><i class="bi bi-person me-1"></i> Trainer: Hans Schmidt</p>
-                    <button class="btn btn-sm btn-primary-theme w-100" data-bs-toggle="modal" data-bs-target="#enrollModal" data-course-name="German Goethe B1 (Evening Online)">Reserve Seat</button>
-                </div>
 
-                <!-- 4. Spanish Cards -->
-                <div class="mobile-schedule-card mb-3 p-3 bg-surface rounded-3 border" data-course="spanish" data-mode="online" data-age="adults" data-timing="morning">
-                    <div class="d-flex justify-content-between align-items-start mb-2">
-                        <div>
-                            <h6 class="font-heading mb-1 text-main">Spanish DELE A1 Conversational</h6>
-                            <span class="badge bg-secondary-subtle text-muted fw-normal small">Beginner Immersion</span>
+                    <!-- 4. Spanish Cards -->
+                    <div class="col-12 col-sm-6 mobile-schedule-col">
+                        <div class="mobile-schedule-card p-3 bg-surface rounded-3 border" data-course="spanish" data-mode="online" data-age="adults" data-timing="morning">
+                            <div class="d-flex justify-content-between align-items-start mb-2">
+                                <div>
+                                    <span class="badge-tag badge-orange mb-1">Spanish DELE</span>
+                                    <h6 class="font-heading mb-1 text-main">Spanish DELE A1 Conversational</h6>
+                                    <span class="badge bg-secondary-subtle text-muted fw-normal small">Beginner Immersion</span>
+                                </div>
+                                <span class="badge bg-success">4 Seats Left</span>
+                            </div>
+                            <div class="d-flex flex-wrap gap-2 small text-muted mb-2">
+                                <span class="badge bg-info-subtle text-info border border-info border-opacity-25"><i class="bi bi-laptop me-1"></i> Live Online</span>
+                                <span><i class="bi bi-calendar-event me-1"></i> Aug 28, 2026</span>
+                            </div>
+                            <p class="small text-muted mb-2"><i class="bi bi-clock me-1"></i> 7:30 AM - 9:00 AM (Tue, Thu, Sat)</p>
+                            <p class="small text-muted mb-3"><i class="bi bi-person me-1"></i> Trainer: Maria Garcia</p>
+                            <button class="btn btn-sm btn-primary-theme w-100 mt-auto" data-bs-toggle="modal" data-bs-target="#enrollModal" data-course-name="Spanish DELE A1 (Morning Online)">Reserve Seat</button>
                         </div>
-                        <span class="badge bg-success">4 Seats Left</span>
                     </div>
-                    <div class="d-flex flex-wrap gap-2 small text-muted mb-2">
-                        <span class="badge bg-info-subtle text-info border border-info border-opacity-25"><i class="bi bi-laptop me-1"></i> Live Online</span>
-                        <span><i class="bi bi-calendar-event me-1"></i> Aug 28, 2026</span>
-                    </div>
-                    <p class="small text-muted mb-2"><i class="bi bi-clock me-1"></i> 7:30 AM - 9:00 AM (Tue, Thu, Sat)</p>
-                    <p class="small text-muted mb-3"><i class="bi bi-person me-1"></i> Trainer: Maria Garcia</p>
-                    <button class="btn btn-sm btn-primary-theme w-100" data-bs-toggle="modal" data-bs-target="#enrollModal" data-course-name="Spanish DELE A1 (Morning Online)">Reserve Seat</button>
-                </div>
 
-                <div class="mobile-schedule-card mb-3 p-3 bg-surface rounded-3 border" data-course="spanish" data-mode="offline" data-age="adults" data-timing="weekend">
-                    <div class="d-flex justify-content-between align-items-start mb-2">
-                        <div>
-                            <h6 class="font-heading mb-1 text-main">Spanish DELE B1 Fluency Track</h6>
-                            <span class="badge bg-secondary-subtle text-muted fw-normal small">Intermediate Fluency</span>
+                    <div class="col-12 col-sm-6 mobile-schedule-col">
+                        <div class="mobile-schedule-card p-3 bg-surface rounded-3 border" data-course="spanish" data-mode="offline" data-age="adults" data-timing="weekend">
+                            <div class="d-flex justify-content-between align-items-start mb-2">
+                                <div>
+                                    <span class="badge-tag badge-orange mb-1">Spanish DELE</span>
+                                    <h6 class="font-heading mb-1 text-main">Spanish DELE B1 Fluency Track</h6>
+                                    <span class="badge bg-secondary-subtle text-muted fw-normal small">Intermediate Fluency</span>
+                                </div>
+                                <span class="badge bg-danger">3 Seats Left</span>
+                            </div>
+                            <div class="d-flex flex-wrap gap-2 small text-muted mb-2">
+                                <span class="badge bg-primary-subtle text-primary border border-primary border-opacity-25"><i class="bi bi-building me-1"></i> City Campus</span>
+                                <span><i class="bi bi-calendar-event me-1"></i> Sep 05, 2026</span>
+                            </div>
+                            <p class="small text-muted mb-2"><i class="bi bi-clock me-1"></i> 2:00 PM - 5:00 PM (Sat & Sun)</p>
+                            <p class="small text-muted mb-3"><i class="bi bi-person me-1"></i> Trainer: Carlos Rodriguez</p>
+                            <button class="btn btn-sm btn-primary-theme w-100 mt-auto" data-bs-toggle="modal" data-bs-target="#enrollModal" data-course-name="Spanish DELE B1 (Weekend Campus)">Reserve Seat</button>
                         </div>
-                        <span class="badge bg-danger">3 Seats Left</span>
                     </div>
-                    <div class="d-flex flex-wrap gap-2 small text-muted mb-2">
-                        <span class="badge bg-primary-subtle text-primary border border-primary border-opacity-25"><i class="bi bi-building me-1"></i> City Campus</span>
-                        <span><i class="bi bi-calendar-event me-1"></i> Sep 05, 2026</span>
-                    </div>
-                    <p class="small text-muted mb-2"><i class="bi bi-clock me-1"></i> 2:00 PM - 5:00 PM (Sat & Sun)</p>
-                    <p class="small text-muted mb-3"><i class="bi bi-person me-1"></i> Trainer: Carlos Rodriguez</p>
-                    <button class="btn btn-sm btn-primary-theme w-100" data-bs-toggle="modal" data-bs-target="#enrollModal" data-course-name="Spanish DELE B1 (Weekend Campus)">Reserve Seat</button>
-                </div>
 
-                <!-- 5. Japanese Cards -->
-                <div class="mobile-schedule-card mb-3 p-3 bg-surface rounded-3 border" data-course="japanese" data-mode="online" data-age="adults" data-timing="weekend">
-                    <div class="d-flex justify-content-between align-items-start mb-2">
-                        <div>
-                            <h6 class="font-heading mb-1 text-main">Japanese JLPT N5 Foundation</h6>
-                            <span class="badge bg-secondary-subtle text-muted fw-normal small">Beginner Script & Speech</span>
+                    <!-- 5. Japanese Cards -->
+                    <div class="col-12 col-sm-6 mobile-schedule-col">
+                        <div class="mobile-schedule-card p-3 bg-surface rounded-3 border" data-course="japanese" data-mode="online" data-age="adults" data-timing="weekend">
+                            <div class="d-flex justify-content-between align-items-start mb-2">
+                                <div>
+                                    <span class="badge-tag badge-purple mb-1">Japanese JLPT</span>
+                                    <h6 class="font-heading mb-1 text-main">Japanese JLPT N5 Foundation</h6>
+                                    <span class="badge bg-secondary-subtle text-muted fw-normal small">Beginner Script & Speech</span>
+                                </div>
+                                <span class="badge bg-danger">2 Seats Left</span>
+                            </div>
+                            <div class="d-flex flex-wrap gap-2 small text-muted mb-2">
+                                <span class="badge bg-info-subtle text-info border border-info border-opacity-25"><i class="bi bi-laptop me-1"></i> Live Online</span>
+                                <span><i class="bi bi-calendar-event me-1"></i> Aug 30, 2026</span>
+                            </div>
+                            <p class="small text-muted mb-2"><i class="bi bi-clock me-1"></i> 9:00 AM - 12:00 PM (Sat & Sun)</p>
+                            <p class="small text-muted mb-3"><i class="bi bi-person me-1"></i> Trainer: Kenji Tanaka</p>
+                            <button class="btn btn-sm btn-primary-theme w-100 mt-auto" data-bs-toggle="modal" data-bs-target="#enrollModal" data-course-name="Japanese JLPT N5 (Weekend Online)">Reserve Seat</button>
                         </div>
-                        <span class="badge bg-danger">2 Seats Left</span>
                     </div>
-                    <div class="d-flex flex-wrap gap-2 small text-muted mb-2">
-                        <span class="badge bg-info-subtle text-info border border-info border-opacity-25"><i class="bi bi-laptop me-1"></i> Live Online</span>
-                        <span><i class="bi bi-calendar-event me-1"></i> Aug 30, 2026</span>
-                    </div>
-                    <p class="small text-muted mb-2"><i class="bi bi-clock me-1"></i> 9:00 AM - 12:00 PM (Sat & Sun)</p>
-                    <p class="small text-muted mb-3"><i class="bi bi-person me-1"></i> Trainer: Kenji Tanaka</p>
-                    <button class="btn btn-sm btn-primary-theme w-100" data-bs-toggle="modal" data-bs-target="#enrollModal" data-course-name="Japanese JLPT N5 (Weekend Online)">Reserve Seat</button>
-                </div>
 
-                <div class="mobile-schedule-card mb-3 p-3 bg-surface rounded-3 border" data-course="japanese" data-mode="offline" data-age="adults" data-timing="evening">
-                    <div class="d-flex justify-content-between align-items-start mb-2">
-                        <div>
-                            <h6 class="font-heading mb-1 text-main">Japanese JLPT N4 Accelerator</h6>
-                            <span class="badge bg-secondary-subtle text-muted fw-normal small">Pre-Intermediate</span>
+                    <div class="col-12 col-sm-6 mobile-schedule-col">
+                        <div class="mobile-schedule-card p-3 bg-surface rounded-3 border" data-course="japanese" data-mode="offline" data-age="adults" data-timing="evening">
+                            <div class="d-flex justify-content-between align-items-start mb-2">
+                                <div>
+                                    <span class="badge-tag badge-purple mb-1">Japanese JLPT</span>
+                                    <h6 class="font-heading mb-1 text-main">Japanese JLPT N4 Accelerator</h6>
+                                    <span class="badge bg-secondary-subtle text-muted fw-normal small">Pre-Intermediate</span>
+                                </div>
+                                <span class="badge bg-success">5 Seats Left</span>
+                            </div>
+                            <div class="d-flex flex-wrap gap-2 small text-muted mb-2">
+                                <span class="badge bg-primary-subtle text-primary border border-primary border-opacity-25"><i class="bi bi-building me-1"></i> City Campus</span>
+                                <span><i class="bi bi-calendar-event me-1"></i> Sep 07, 2026</span>
+                            </div>
+                            <p class="small text-muted mb-2"><i class="bi bi-clock me-1"></i> 6:00 PM - 7:30 PM (Mon, Wed, Fri)</p>
+                            <p class="small text-muted mb-3"><i class="bi bi-person me-1"></i> Trainer: Kenji Tanaka</p>
+                            <button class="btn btn-sm btn-primary-theme w-100 mt-auto" data-bs-toggle="modal" data-bs-target="#enrollModal" data-course-name="Japanese JLPT N4 (Evening Campus)">Reserve Seat</button>
                         </div>
-                        <span class="badge bg-success">5 Seats Left</span>
                     </div>
-                    <div class="d-flex flex-wrap gap-2 small text-muted mb-2">
-                        <span class="badge bg-primary-subtle text-primary border border-primary border-opacity-25"><i class="bi bi-building me-1"></i> City Campus</span>
-                        <span><i class="bi bi-calendar-event me-1"></i> Sep 07, 2026</span>
-                    </div>
-                    <p class="small text-muted mb-2"><i class="bi bi-clock me-1"></i> 6:00 PM - 7:30 PM (Mon, Wed, Fri)</p>
-                    <p class="small text-muted mb-3"><i class="bi bi-person me-1"></i> Trainer: Kenji Tanaka</p>
-                    <button class="btn btn-sm btn-primary-theme w-100" data-bs-toggle="modal" data-bs-target="#enrollModal" data-course-name="Japanese JLPT N4 (Evening Campus)">Reserve Seat</button>
-                </div>
 
-                <!-- 6. IELTS Cards -->
-                <div class="mobile-schedule-card mb-3 p-3 bg-surface rounded-3 border" data-course="ielts" data-mode="online" data-age="adults" data-timing="weekend">
-                    <div class="d-flex justify-content-between align-items-start mb-2">
-                        <div>
-                            <h6 class="font-heading mb-1 text-main">IELTS Academic Masterclass</h6>
-                            <span class="badge bg-secondary-subtle text-muted fw-normal small">Target Band 8.0+</span>
+                    <!-- 6. IELTS Cards -->
+                    <div class="col-12 col-sm-6 mobile-schedule-col">
+                        <div class="mobile-schedule-card p-3 bg-surface rounded-3 border" data-course="ielts" data-mode="online" data-age="adults" data-timing="weekend">
+                            <div class="d-flex justify-content-between align-items-start mb-2">
+                                <div>
+                                    <span class="badge-tag badge-purple mb-1">IELTS Prep</span>
+                                    <h6 class="font-heading mb-1 text-main">IELTS Academic Masterclass</h6>
+                                    <span class="badge bg-secondary-subtle text-muted fw-normal small">Target Band 8.0+</span>
+                                </div>
+                                <span class="badge bg-danger">2 Seats Left</span>
+                            </div>
+                            <div class="d-flex flex-wrap gap-2 small text-muted mb-2">
+                                <span class="badge bg-info-subtle text-info border border-info border-opacity-25"><i class="bi bi-laptop me-1"></i> Live Online</span>
+                                <span><i class="bi bi-calendar-event me-1"></i> Sep 01, 2026</span>
+                            </div>
+                            <p class="small text-muted mb-2"><i class="bi bi-clock me-1"></i> 10:00 AM - 1:00 PM (Sat & Sun)</p>
+                            <p class="small text-muted mb-3"><i class="bi bi-person me-1"></i> Trainer: David Miller</p>
+                            <button class="btn btn-sm btn-primary-theme w-100 mt-auto" data-bs-toggle="modal" data-bs-target="#enrollModal" data-course-name="IELTS Academic Masterclass (Weekend)">Reserve Seat</button>
                         </div>
-                        <span class="badge bg-danger">2 Seats Left</span>
                     </div>
-                    <div class="d-flex flex-wrap gap-2 small text-muted mb-2">
-                        <span class="badge bg-info-subtle text-info border border-info border-opacity-25"><i class="bi bi-laptop me-1"></i> Live Online</span>
-                        <span><i class="bi bi-calendar-event me-1"></i> Sep 01, 2026</span>
-                    </div>
-                    <p class="small text-muted mb-2"><i class="bi bi-clock me-1"></i> 10:00 AM - 1:00 PM (Sat & Sun)</p>
-                    <p class="small text-muted mb-3"><i class="bi bi-person me-1"></i> Trainer: David Miller</p>
-                    <button class="btn btn-sm btn-primary-theme w-100" data-bs-toggle="modal" data-bs-target="#enrollModal" data-course-name="IELTS Academic Masterclass (Weekend)">Reserve Seat</button>
-                </div>
 
-                <div class="mobile-schedule-card mb-3 p-3 bg-surface rounded-3 border" data-course="ielts" data-mode="offline" data-age="adults" data-timing="evening">
-                    <div class="d-flex justify-content-between align-items-start mb-2">
-                        <div>
-                            <h6 class="font-heading mb-1 text-main">IELTS Rapid 30-Day Sprint</h6>
-                            <span class="badge bg-secondary-subtle text-muted fw-normal small">Target Band 7.5</span>
+                    <div class="col-12 col-sm-6 mobile-schedule-col">
+                        <div class="mobile-schedule-card p-3 bg-surface rounded-3 border" data-course="ielts" data-mode="offline" data-age="adults" data-timing="evening">
+                            <div class="d-flex justify-content-between align-items-start mb-2">
+                                <div>
+                                    <span class="badge-tag badge-purple mb-1">IELTS Prep</span>
+                                    <h6 class="font-heading mb-1 text-main">IELTS Rapid 30-Day Sprint</h6>
+                                    <span class="badge bg-secondary-subtle text-muted fw-normal small">Target Band 7.5</span>
+                                </div>
+                                <span class="badge bg-success">4 Seats Left</span>
+                            </div>
+                            <div class="d-flex flex-wrap gap-2 small text-muted mb-2">
+                                <span class="badge bg-primary-subtle text-primary border border-primary border-opacity-25"><i class="bi bi-building me-1"></i> City Campus</span>
+                                <span><i class="bi bi-calendar-event me-1"></i> Sep 07, 2026</span>
+                            </div>
+                            <p class="small text-muted mb-2"><i class="bi bi-clock me-1"></i> 7:00 PM - 9:00 PM (Mon-Thu)</p>
+                            <p class="small text-muted mb-3"><i class="bi bi-person me-1"></i> Trainer: David Miller</p>
+                            <button class="btn btn-sm btn-primary-theme w-100 mt-auto" data-bs-toggle="modal" data-bs-target="#enrollModal" data-course-name="IELTS Rapid Sprint (Evening Campus)">Reserve Seat</button>
                         </div>
-                        <span class="badge bg-success">4 Seats Left</span>
                     </div>
-                    <div class="d-flex flex-wrap gap-2 small text-muted mb-2">
-                        <span class="badge bg-primary-subtle text-primary border border-primary border-opacity-25"><i class="bi bi-building me-1"></i> City Campus</span>
-                        <span><i class="bi bi-calendar-event me-1"></i> Sep 07, 2026</span>
-                    </div>
-                    <p class="small text-muted mb-2"><i class="bi bi-clock me-1"></i> 7:00 PM - 9:00 PM (Mon-Thu)</p>
-                    <p class="small text-muted mb-3"><i class="bi bi-person me-1"></i> Trainer: David Miller</p>
-                    <button class="btn btn-sm btn-primary-theme w-100" data-bs-toggle="modal" data-bs-target="#enrollModal" data-course-name="IELTS Rapid Sprint (Evening Campus)">Reserve Seat</button>
-                </div>
 
-                <!-- 7. Public Speaking Cards -->
-                <div class="mobile-schedule-card mb-3 p-3 bg-surface rounded-3 border" data-course="public speaking" data-mode="online" data-age="adults" data-timing="weekend">
-                    <div class="d-flex justify-content-between align-items-start mb-2">
-                        <div>
-                            <h6 class="font-heading mb-1 text-main">Public Speaking & Stage Fluency</h6>
-                            <span class="badge bg-secondary-subtle text-muted fw-normal small">Executive Rhetoric</span>
+                    <!-- 7. Public Speaking Cards -->
+                    <div class="col-12 col-sm-6 mobile-schedule-col">
+                        <div class="mobile-schedule-card p-3 bg-surface rounded-3 border" data-course="public speaking" data-mode="online" data-age="adults" data-timing="weekend">
+                            <div class="d-flex justify-content-between align-items-start mb-2">
+                                <div>
+                                    <span class="badge-tag badge-orange mb-1">Public Speaking</span>
+                                    <h6 class="font-heading mb-1 text-main">Public Speaking & Stage Fluency</h6>
+                                    <span class="badge bg-secondary-subtle text-muted fw-normal small">Executive Rhetoric</span>
+                                </div>
+                                <span class="badge bg-danger">3 Seats Left</span>
+                            </div>
+                            <div class="d-flex flex-wrap gap-2 small text-muted mb-2">
+                                <span class="badge bg-info-subtle text-info border border-info border-opacity-25"><i class="bi bi-laptop me-1"></i> Live Online</span>
+                                <span><i class="bi bi-calendar-event me-1"></i> Sep 05, 2026</span>
+                            </div>
+                            <p class="small text-muted mb-2"><i class="bi bi-clock me-1"></i> 3:00 PM - 6:00 PM (Saturday Special)</p>
+                            <p class="small text-muted mb-3"><i class="bi bi-person me-1"></i> Trainer: Marcus Sterling</p>
+                            <button class="btn btn-sm btn-primary-theme w-100 mt-auto" data-bs-toggle="modal" data-bs-target="#enrollModal" data-course-name="Public Speaking & Stage Fluency (Weekend Online)">Reserve Seat</button>
                         </div>
-                        <span class="badge bg-danger">3 Seats Left</span>
                     </div>
-                    <div class="d-flex flex-wrap gap-2 small text-muted mb-2">
-                        <span class="badge bg-info-subtle text-info border border-info border-opacity-25"><i class="bi bi-laptop me-1"></i> Live Online</span>
-                        <span><i class="bi bi-calendar-event me-1"></i> Sep 05, 2026</span>
-                    </div>
-                    <p class="small text-muted mb-2"><i class="bi bi-clock me-1"></i> 3:00 PM - 6:00 PM (Saturday Special)</p>
-                    <p class="small text-muted mb-3"><i class="bi bi-person me-1"></i> Trainer: Marcus Sterling</p>
-                    <button class="btn btn-sm btn-primary-theme w-100" data-bs-toggle="modal" data-bs-target="#enrollModal" data-course-name="Public Speaking & Stage Fluency (Weekend Online)">Reserve Seat</button>
-                </div>
 
-                <div class="mobile-schedule-card mb-3 p-3 bg-surface rounded-3 border" data-course="public speaking" data-mode="offline" data-age="adults" data-timing="morning">
-                    <div class="d-flex justify-content-between align-items-start mb-2">
-                        <div>
-                            <h6 class="font-heading mb-1 text-main">Vocal Leadership & Presentation</h6>
-                            <span class="badge bg-secondary-subtle text-muted fw-normal small">Debate & Delivery</span>
+                    <div class="col-12 col-sm-6 mobile-schedule-col">
+                        <div class="mobile-schedule-card p-3 bg-surface rounded-3 border" data-course="public speaking" data-mode="offline" data-age="adults" data-timing="morning">
+                            <div class="d-flex justify-content-between align-items-start mb-2">
+                                <div>
+                                    <span class="badge-tag badge-orange mb-1">Public Speaking</span>
+                                    <h6 class="font-heading mb-1 text-main">Vocal Leadership & Presentation</h6>
+                                    <span class="badge bg-secondary-subtle text-muted fw-normal small">Debate & Delivery</span>
+                                </div>
+                                <span class="badge bg-success">4 Seats Left</span>
+                            </div>
+                            <div class="d-flex flex-wrap gap-2 small text-muted mb-2">
+                                <span class="badge bg-primary-subtle text-primary border border-primary border-opacity-25"><i class="bi bi-building me-1"></i> Downtown Campus</span>
+                                <span><i class="bi bi-calendar-event me-1"></i> Sep 08, 2026</span>
+                            </div>
+                            <p class="small text-muted mb-2"><i class="bi bi-clock me-1"></i> 10:00 AM - 12:00 PM (Tue & Thu)</p>
+                            <p class="small text-muted mb-3"><i class="bi bi-person me-1"></i> Trainer: Elena Rostova</p>
+                            <button class="btn btn-sm btn-primary-theme w-100 mt-auto" data-bs-toggle="modal" data-bs-target="#enrollModal" data-course-name="Vocal Leadership (Morning Campus)">Reserve Seat</button>
                         </div>
-                        <span class="badge bg-success">4 Seats Left</span>
                     </div>
-                    <div class="d-flex flex-wrap gap-2 small text-muted mb-2">
-                        <span class="badge bg-primary-subtle text-primary border border-primary border-opacity-25"><i class="bi bi-building me-1"></i> Downtown Campus</span>
-                        <span><i class="bi bi-calendar-event me-1"></i> Sep 08, 2026</span>
-                    </div>
-                    <p class="small text-muted mb-2"><i class="bi bi-clock me-1"></i> 10:00 AM - 12:00 PM (Tue & Thu)</p>
-                    <p class="small text-muted mb-3"><i class="bi bi-person me-1"></i> Trainer: Elena Rostova</p>
-                    <button class="btn btn-sm btn-primary-theme w-100" data-bs-toggle="modal" data-bs-target="#enrollModal" data-course-name="Vocal Leadership (Morning Campus)">Reserve Seat</button>
-                </div>
 
-                <!-- 8. Business English Cards -->
-                <div class="mobile-schedule-card mb-3 p-3 bg-surface rounded-3 border" data-course="business english" data-mode="online" data-age="adults" data-timing="evening">
-                    <div class="d-flex justify-content-between align-items-start mb-2">
-                        <div>
-                            <h6 class="font-heading mb-1 text-main">Business English & Negotiation</h6>
-                            <span class="badge bg-secondary-subtle text-muted fw-normal small">Executive Level</span>
+                    <!-- 8. Business English Cards -->
+                    <div class="col-12 col-sm-6 mobile-schedule-col">
+                        <div class="mobile-schedule-card p-3 bg-surface rounded-3 border" data-course="business english" data-mode="online" data-age="adults" data-timing="evening">
+                            <div class="d-flex justify-content-between align-items-start mb-2">
+                                <div>
+                                    <span class="badge-tag badge-teal mb-1">Business English</span>
+                                    <h6 class="font-heading mb-1 text-main">Business English & Negotiation</h6>
+                                    <span class="badge bg-secondary-subtle text-muted fw-normal small">Executive Level</span>
+                                </div>
+                                <span class="badge bg-success">4 Seats Left</span>
+                            </div>
+                            <div class="d-flex flex-wrap gap-2 small text-muted mb-2">
+                                <span class="badge bg-info-subtle text-info border border-info border-opacity-25"><i class="bi bi-laptop me-1"></i> Live Online</span>
+                                <span><i class="bi bi-calendar-event me-1"></i> Sep 01, 2026</span>
+                            </div>
+                            <p class="small text-muted mb-2"><i class="bi bi-clock me-1"></i> 8:00 PM - 9:30 PM (Mon, Wed, Fri)</p>
+                            <p class="small text-muted mb-3"><i class="bi bi-person me-1"></i> Trainer: James Thornton</p>
+                            <button class="btn btn-sm btn-primary-theme w-100 mt-auto" data-bs-toggle="modal" data-bs-target="#enrollModal" data-course-name="Business English (Evening Online)">Reserve Seat</button>
                         </div>
-                        <span class="badge bg-success">4 Seats Left</span>
                     </div>
-                    <div class="d-flex flex-wrap gap-2 small text-muted mb-2">
-                        <span class="badge bg-info-subtle text-info border border-info border-opacity-25"><i class="bi bi-laptop me-1"></i> Live Online</span>
-                        <span><i class="bi bi-calendar-event me-1"></i> Sep 01, 2026</span>
-                    </div>
-                    <p class="small text-muted mb-2"><i class="bi bi-clock me-1"></i> 8:00 PM - 9:30 PM (Mon, Wed, Fri)</p>
-                    <p class="small text-muted mb-3"><i class="bi bi-person me-1"></i> Trainer: James Thornton</p>
-                    <button class="btn btn-sm btn-primary-theme w-100" data-bs-toggle="modal" data-bs-target="#enrollModal" data-course-name="Business English (Evening Online)">Reserve Seat</button>
-                </div>
 
-                <div class="mobile-schedule-card mb-3 p-3 bg-surface rounded-3 border" data-course="business english" data-mode="offline" data-age="adults" data-timing="weekend">
-                    <div class="d-flex justify-content-between align-items-start mb-2">
-                        <div>
-                            <h6 class="font-heading mb-1 text-main">Corporate Presentation Mastery</h6>
-                            <span class="badge bg-secondary-subtle text-muted fw-normal small">C-Suite & Lead Track</span>
+                    <div class="col-12 col-sm-6 mobile-schedule-col">
+                        <div class="mobile-schedule-card p-3 bg-surface rounded-3 border" data-course="business english" data-mode="offline" data-age="adults" data-timing="weekend">
+                            <div class="d-flex justify-content-between align-items-start mb-2">
+                                <div>
+                                    <span class="badge-tag badge-teal mb-1">Business English</span>
+                                    <h6 class="font-heading mb-1 text-main">Corporate Presentation Mastery</h6>
+                                    <span class="badge bg-secondary-subtle text-muted fw-normal small">C-Suite & Lead Track</span>
+                                </div>
+                                <span class="badge bg-danger">2 Seats Left</span>
+                            </div>
+                            <div class="d-flex flex-wrap gap-2 small text-muted mb-2">
+                                <span class="badge bg-primary-subtle text-primary border border-primary border-opacity-25"><i class="bi bi-building me-1"></i> City Campus</span>
+                                <span><i class="bi bi-calendar-event me-1"></i> Sep 06, 2026</span>
+                            </div>
+                            <p class="small text-muted mb-2"><i class="bi bi-clock me-1"></i> 11:00 AM - 2:00 PM (Sunday Intensive)</p>
+                            <p class="small text-muted mb-3"><i class="bi bi-person me-1"></i> Trainer: James Thornton</p>
+                            <button class="btn btn-sm btn-primary-theme w-100 mt-auto" data-bs-toggle="modal" data-bs-target="#enrollModal" data-course-name="Corporate Presentation (Weekend Campus)">Reserve Seat</button>
                         </div>
-                        <span class="badge bg-danger">2 Seats Left</span>
                     </div>
-                    <div class="d-flex flex-wrap gap-2 small text-muted mb-2">
-                        <span class="badge bg-primary-subtle text-primary border border-primary border-opacity-25"><i class="bi bi-building me-1"></i> City Campus</span>
-                        <span><i class="bi bi-calendar-event me-1"></i> Sep 06, 2026</span>
-                    </div>
-                    <p class="small text-muted mb-2"><i class="bi bi-clock me-1"></i> 11:00 AM - 2:00 PM (Sunday Intensive)</p>
-                    <p class="small text-muted mb-3"><i class="bi bi-person me-1"></i> Trainer: James Thornton</p>
-                    <button class="btn btn-sm btn-primary-theme w-100" data-bs-toggle="modal" data-bs-target="#enrollModal" data-course-name="Corporate Presentation (Weekend Campus)">Reserve Seat</button>
-                </div>
 
-                <!-- 9. Kids Fluency Cards -->
-                <div class="mobile-schedule-card mb-3 p-3 bg-surface rounded-3 border" data-course="kids" data-mode="online" data-age="kids" data-timing="afternoon">
-                    <div class="d-flex justify-content-between align-items-start mb-2">
-                        <div>
-                            <h6 class="font-heading mb-1 text-main">Kids' Confidence & Speech</h6>
-                            <span class="badge bg-secondary-subtle text-muted fw-normal small">Ages 7 - 12 (Junior)</span>
+                    <!-- 9. Kids Fluency Cards -->
+                    <div class="col-12 col-sm-6 mobile-schedule-col">
+                        <div class="mobile-schedule-card p-3 bg-surface rounded-3 border" data-course="kids" data-mode="online" data-age="kids" data-timing="afternoon">
+                            <div class="d-flex justify-content-between align-items-start mb-2">
+                                <div>
+                                    <span class="badge-tag badge-teal mb-1">Kids Program</span>
+                                    <h6 class="font-heading mb-1 text-main">Kids' Confidence & Speech</h6>
+                                    <span class="badge bg-secondary-subtle text-muted fw-normal small">Ages 7 - 12 (Junior)</span>
+                                </div>
+                                <span class="badge bg-danger">1 Seat Left</span>
+                            </div>
+                            <div class="d-flex flex-wrap gap-2 small text-muted mb-2">
+                                <span class="badge bg-info-subtle text-info border border-info border-opacity-25"><i class="bi bi-laptop me-1"></i> Live Online</span>
+                                <span><i class="bi bi-calendar-event me-1"></i> Sep 05, 2026</span>
+                            </div>
+                            <p class="small text-muted mb-2"><i class="bi bi-clock me-1"></i> 4:00 PM - 5:30 PM (Tue & Thu)</p>
+                            <p class="small text-muted mb-3"><i class="bi bi-person me-1"></i> Trainer: Maria Garcia</p>
+                            <button class="btn btn-sm btn-primary-theme w-100 mt-auto" data-bs-toggle="modal" data-bs-target="#enrollModal" data-course-name="Kids Confidence & Speech (Afternoon Online)">Reserve Seat</button>
                         </div>
-                        <span class="badge bg-danger">1 Seat Left</span>
                     </div>
-                    <div class="d-flex flex-wrap gap-2 small text-muted mb-2">
-                        <span class="badge bg-info-subtle text-info border border-info border-opacity-25"><i class="bi bi-laptop me-1"></i> Live Online</span>
-                        <span><i class="bi bi-calendar-event me-1"></i> Sep 05, 2026</span>
-                    </div>
-                    <p class="small text-muted mb-2"><i class="bi bi-clock me-1"></i> 4:00 PM - 5:30 PM (Tue & Thu)</p>
-                    <p class="small text-muted mb-3"><i class="bi bi-person me-1"></i> Trainer: Maria Garcia</p>
-                    <button class="btn btn-sm btn-primary-theme w-100" data-bs-toggle="modal" data-bs-target="#enrollModal" data-course-name="Kids Confidence & Speech (Afternoon Online)">Reserve Seat</button>
-                </div>
 
-                <div class="mobile-schedule-card mb-3 p-3 bg-surface rounded-3 border" data-course="kids" data-mode="offline" data-age="kids" data-timing="morning">
-                    <div class="d-flex justify-content-between align-items-start mb-2">
-                        <div>
-                            <h6 class="font-heading mb-1 text-main">Teens' Debate & Eloquence</h6>
-                            <span class="badge bg-secondary-subtle text-muted fw-normal small">Ages 11 - 15 (Senior)</span>
+                    <div class="col-12 col-sm-6 mobile-schedule-col">
+                        <div class="mobile-schedule-card p-3 bg-surface rounded-3 border" data-course="kids" data-mode="offline" data-age="kids" data-timing="morning">
+                            <div class="d-flex justify-content-between align-items-start mb-2">
+                                <div>
+                                    <span class="badge-tag badge-teal mb-1">Kids Program</span>
+                                    <h6 class="font-heading mb-1 text-main">Teens' Debate & Eloquence</h6>
+                                    <span class="badge bg-secondary-subtle text-muted fw-normal small">Ages 11 - 15 (Senior)</span>
+                                </div>
+                                <span class="badge bg-success">3 Seats Left</span>
+                            </div>
+                            <div class="d-flex flex-wrap gap-2 small text-muted mb-2">
+                                <span class="badge bg-primary-subtle text-primary border border-primary border-opacity-25"><i class="bi bi-building me-1"></i> Downtown Campus</span>
+                                <span><i class="bi bi-calendar-event me-1"></i> Sep 12, 2026</span>
+                            </div>
+                            <p class="small text-muted mb-2"><i class="bi bi-clock me-1"></i> 10:00 AM - 12:00 PM (Sat & Sun)</p>
+                            <p class="small text-muted mb-3"><i class="bi bi-person me-1"></i> Trainer: Sarah Jenkins</p>
+                            <button class="btn btn-sm btn-primary-theme w-100 mt-auto" data-bs-toggle="modal" data-bs-target="#enrollModal" data-course-name="Teens Debate & Eloquence (Weekend Campus)">Reserve Seat</button>
                         </div>
-                        <span class="badge bg-success">3 Seats Left</span>
                     </div>
-                    <div class="d-flex flex-wrap gap-2 small text-muted mb-2">
-                        <span class="badge bg-primary-subtle text-primary border border-primary border-opacity-25"><i class="bi bi-building me-1"></i> Downtown Campus</span>
-                        <span><i class="bi bi-calendar-event me-1"></i> Sep 12, 2026</span>
+
+                    <!-- 10. Corporate Training Cards -->
+                    <div class="col-12 col-sm-6 mobile-schedule-col">
+                        <div class="mobile-schedule-card p-3 bg-surface rounded-3 border" data-course="corporate" data-mode="online" data-age="adults" data-timing="evening">
+                            <div class="d-flex justify-content-between align-items-start mb-2">
+                                <div>
+                                    <span class="badge-tag badge-blue mb-1">Corporate Training</span>
+                                    <h6 class="font-heading mb-1 text-main">Corporate Accent Neutralization</h6>
+                                    <span class="badge bg-secondary-subtle text-muted fw-normal small">Executive B2B Track</span>
+                                </div>
+                                <span class="badge bg-danger">2 Seats Left</span>
+                            </div>
+                            <div class="d-flex flex-wrap gap-2 small text-muted mb-2">
+                                <span class="badge bg-info-subtle text-info border border-info border-opacity-25"><i class="bi bi-laptop me-1"></i> Live Online</span>
+                                <span><i class="bi bi-calendar-event me-1"></i> Sep 08, 2026</span>
+                            </div>
+                            <p class="small text-muted mb-2"><i class="bi bi-clock me-1"></i> 8:30 PM - 10:00 PM (Tue & Thu)</p>
+                            <p class="small text-muted mb-3"><i class="bi bi-person me-1"></i> Trainer: Marcus Sterling</p>
+                            <button class="btn btn-sm btn-primary-theme w-100 mt-auto" data-bs-toggle="modal" data-bs-target="#enrollModal" data-course-name="Corporate Accent Neutralization (Online)">Reserve Seat</button>
+                        </div>
                     </div>
-                    <p class="small text-muted mb-2"><i class="bi bi-clock me-1"></i> 10:00 AM - 12:00 PM (Sat & Sun)</p>
-                    <p class="small text-muted mb-3"><i class="bi bi-person me-1"></i> Trainer: Sarah Jenkins</p>
-                    <button class="btn btn-sm btn-primary-theme w-100" data-bs-toggle="modal" data-bs-target="#enrollModal" data-course-name="Teens Debate & Eloquence (Weekend Campus)">Reserve Seat</button>
+
+                    <div class="col-12 col-sm-6 mobile-schedule-col">
+                        <div class="mobile-schedule-card p-3 bg-surface rounded-3 border" data-course="corporate" data-mode="offline" data-age="adults" data-timing="weekend">
+                            <div class="d-flex justify-content-between align-items-start mb-2">
+                                <div>
+                                    <span class="badge-tag badge-blue mb-1">Corporate Training</span>
+                                    <h6 class="font-heading mb-1 text-main">Executive Presentation & Pitching</h6>
+                                    <span class="badge bg-secondary-subtle text-muted fw-normal small">Leadership Cohort</span>
+                                </div>
+                                <span class="badge bg-success">4 Seats Left</span>
+                            </div>
+                            <div class="d-flex flex-wrap gap-2 small text-muted mb-2">
+                                <span class="badge bg-primary-subtle text-primary border border-primary border-opacity-25"><i class="bi bi-building me-1"></i> Downtown Campus</span>
+                                <span><i class="bi bi-calendar-event me-1"></i> Sep 15, 2026</span>
+                            </div>
+                            <p class="small text-muted mb-2"><i class="bi bi-clock me-1"></i> 1:00 PM - 4:00 PM (Saturday Workshop)</p>
+                            <p class="small text-muted mb-3"><i class="bi bi-person me-1"></i> Trainer: James Thornton</p>
+                            <button class="btn btn-sm btn-primary-theme w-100 mt-auto" data-bs-toggle="modal" data-bs-target="#enrollModal" data-course-name="Executive Presentation & Pitching (Weekend)">Reserve Seat</button>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>

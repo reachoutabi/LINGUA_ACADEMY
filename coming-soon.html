@@ -24,19 +24,19 @@
     <link href="assets/css/style.css" rel="stylesheet">
     <link href="assets/css/animations.css" rel="stylesheet">
 </head>
-<body class="bg-dark text-white min-vh-100 d-flex flex-column justify-content-between">
+<body class="bg-alt min-vh-100 d-flex flex-column justify-content-between">
 
     <!-- NAVBAR SIMPLE -->
-    <nav class="navbar navbar-dark">
+    <nav class="navbar navbar-main">
         <div class="container-fluid px-3 px-xl-5">
             <a class="navbar-brand navbar-brand-logo" href="index.html">
                 <div class="brand-icon-wrap"><i class="bi bi-chat-quote-fill"></i></div>
-                <span class="text-white">Lingua<span class="text-orange">Academy</span></span>
+                <span>Lingua<span class="text-orange">Academy</span></span>
             </a>
             <div class="navbar-actions">
-                <button class="btn nav-action-btn theme-toggle-btn text-white" title="Toggle Light/Dark Theme" aria-label="Toggle theme"><i class="bi bi-moon-stars-fill"></i></button>
-                <button class="btn nav-action-btn rtl-toggle-btn text-white" title="Toggle RTL Layout" aria-label="Toggle text direction"><i class="bi bi-arrow-left-right"></i> <span>RTL</span></button>
-                <a href="index.html" class="btn btn-sm btn-outline-light"><i class="bi bi-house me-1"></i> Website</a>
+                <button class="btn nav-action-btn theme-toggle-btn" title="Toggle Light/Dark Theme" aria-label="Toggle theme"><i class="bi bi-moon-stars-fill"></i></button>
+                <button class="btn nav-action-btn rtl-toggle-btn" title="Toggle RTL Layout" aria-label="Toggle text direction"><i class="bi bi-arrow-left-right"></i> <span>RTL</span></button>
+                <a href="index.html" class="btn btn-outline-theme btn-sm"><i class="bi bi-house me-1"></i> Website</a>
             </div>
         </div>
     </nav>
@@ -45,8 +45,8 @@
     <div class="container py-5 text-center my-auto">
         <div class="max-w-800 mx-auto">
             <span class="badge-tag badge-orange mb-3"><i class="bi bi-rocket-takeoff-fill me-1"></i> Next Academic Term</span>
-            <h1 class="display-4 font-heading text-white mb-3">New Fall Batches Launching Soon</h1>
-            <p class="lead text-light opacity-75 mb-5">We are upgrading our interactive digital language labs and preparing new native-led batches for English, French, German, Spanish, and Japanese.</p>
+            <h1 class="display-4 font-heading mb-3">New Fall Batches Launching Soon</h1>
+            <p class="lead text-muted mb-5">We are upgrading our interactive digital language labs and preparing new native-led batches for English, French, German, Spanish, and Japanese.</p>
 
             <!-- LIVE COUNTDOWN BOXES -->
             <div class="row g-3 justify-content-center mb-5 max-w-600 mx-auto">
@@ -78,7 +78,7 @@
 
             <!-- Early Access Subscription Form -->
             <div class="max-w-500 mx-auto">
-                <p class="small text-light opacity-75 mb-3">Get notified first & claim a <strong>20% Early-Bird Discount Token</strong></p>
+                <p class="small text-muted mb-3">Get notified first & claim a <strong>20% Early-Bird Discount Token</strong></p>
                 <form id="csSubscribeForm" onsubmit="event.preventDefault(); LinguaApp.showToast('You are registered for early-bird batch updates!', 'Subscription Saved'); this.reset();" class="d-flex gap-2">
                     <input type="email" class="form-control form-control-lg" placeholder="Enter your email address" required>
                     <button type="submit" class="btn btn-primary-theme btn-lg text-nowrap">Get VIP Access</button>
@@ -88,13 +88,13 @@
     </div>
 
     <!-- FOOTER SIMPLE -->
-    <footer class="py-4 text-center small text-light opacity-75 border-top border-secondary">
+    <footer class="py-4 text-center small text-muted bg-surface border-top">
         <div class="container d-flex flex-column flex-md-row justify-content-between align-items-center gap-2">
             <span>&copy; 2026 Lingua Academy. All rights reserved.</span>
             <div class="d-flex gap-3">
-                <a href="index.html" class="text-light text-decoration-none opacity-75">Home</a>
-                <a href="courses.html" class="text-light text-decoration-none opacity-75">Courses</a>
-                <a href="contact.html" class="text-light text-decoration-none opacity-75">Contact Admissions</a>
+                <a href="index.html" class="text-muted text-decoration-none">Home</a>
+                <a href="courses.html" class="text-muted text-decoration-none">Courses</a>
+                <a href="contact.html" class="text-muted text-decoration-none">Contact Admissions</a>
             </div>
         </div>
     </footer>

@@ -146,6 +146,27 @@
 
                 <!-- Articles Grid Container -->
                 <div class="col-lg-8">
+                    <!-- Mobile & Tablet Top Search and Category Quick-Filter (On 360px & 768px, Search Articles is on top of the articles grid) -->
+                    <div class="card p-3 p-sm-4 bg-surface border rounded-4 mb-4 d-block d-lg-none shadow-sm blog-top-search-card">
+                        <div class="d-flex align-items-center justify-content-between mb-2">
+                            <h5 class="font-heading mb-0 fs-6 fw-bold"><i class="bi bi-search text-orange me-2"></i>Search Articles</h5>
+                            <span class="badge bg-orange-subtle text-orange" id="mobileBlogCountBadge">12 Articles</span>
+                        </div>
+                        <div class="input-group mb-3">
+                            <input type="text" class="form-control blog-search-input" id="blogTopSearchInput" placeholder="Search articles by title, topic, or keyword...">
+                            <button class="btn btn-primary-theme" type="button" aria-label="Search"><i class="bi bi-search"></i></button>
+                        </div>
+                        <!-- Horizontal Scrollable Category Chips -->
+                        <div class="blog-category-chips d-flex gap-2 overflow-x-auto pb-1" id="mobileCategoryChips">
+                            <button class="btn btn-sm filter-chip-btn active" onclick="filterBlogByCategory('all', this)"><i class="bi bi-grid-fill me-1"></i>All</button>
+                            <button class="btn btn-sm filter-chip-btn" onclick="filterBlogByCategory('Language Tips', this)"><i class="bi bi-translate me-1"></i>Language Tips</button>
+                            <button class="btn btn-sm filter-chip-btn" onclick="filterBlogByCategory('IELTS & Exam Prep', this)"><i class="bi bi-award me-1"></i>IELTS Prep</button>
+                            <button class="btn btn-sm filter-chip-btn" onclick="filterBlogByCategory('Public Speaking', this)"><i class="bi bi-mic me-1"></i>Public Speaking</button>
+                            <button class="btn btn-sm filter-chip-btn" onclick="filterBlogByCategory('Corporate Communication', this)"><i class="bi bi-building me-1"></i>Corporate</button>
+                            <button class="btn btn-sm filter-chip-btn" onclick="filterBlogByCategory('Kids Communication', this)"><i class="bi bi-stars me-1"></i>Kids</button>
+                        </div>
+                    </div>
+
                     <!-- Page 1 Articles -->
                     <div class="row g-4 blog-page-container" id="blogPage1">
                         <!-- Article 1 -->
@@ -398,16 +419,16 @@
                 <!-- Sidebar -->
                 <div class="col-lg-4">
                     <!-- Search Widget -->
-                    <div class="card p-4 bg-surface border rounded-4 mb-4">
+                    <div class="card p-4 bg-surface border rounded-4 mb-4 d-none d-lg-block">
                         <h5 class="font-heading mb-3">Search Articles</h5>
                         <div class="input-group">
-                            <input type="text" class="form-control" placeholder="Search blog...">
-                            <button class="btn btn-primary-theme"><i class="bi bi-search"></i></button>
+                            <input type="text" class="form-control blog-search-input" id="blogSidebarSearchInput" placeholder="Search blog...">
+                            <button class="btn btn-primary-theme" aria-label="Search"><i class="bi bi-search"></i></button>
                         </div>
                     </div>
 
-                    <!-- Categories Widget -->
-                    <div class="card p-4 bg-surface border rounded-4 mb-4">
+                    <!-- Categories Widget (Desktop Sidebar) -->
+                    <div class="card p-4 bg-surface border rounded-4 mb-4 d-none d-lg-block">
                         <h5 class="font-heading mb-3">Categories</h5>
                         <ul class="list-unstyled mb-0" id="blogCategoryList">
                             <li class="d-flex justify-content-between py-2 border-bottom"><a href="javascript:void(0)" onclick="filterBlogByCategory('all')" class="text-main fw-semibold text-orange"><i class="bi bi-grid me-2"></i> All Categories</a> <span class="badge bg-secondary-subtle text-muted">12</span></li>
@@ -656,11 +677,21 @@
             }
         }
 
-        function filterBlogByCategory(category) {
+        function filterBlogByCategory(category, btnElement = null) {
             const allCards = document.querySelectorAll('.blog-article-card');
             const allPages = document.querySelectorAll('.blog-page-container');
             const pagination = document.getElementById('blogPagination');
             const featuredSection = document.getElementById('featuredArticleSpotlight');
+            const countBadges = document.querySelectorAll('#heroBlogCountBadge, #mobileBlogCountBadge');
+
+            // Update active state on chips if present
+            if (btnElement) {
+                const allChips = document.querySelectorAll('.blog-category-chips .filter-chip-btn');
+                allChips.forEach(chip => chip.classList.remove('active'));
+                btnElement.classList.add('active');
+            }
+
+            let visibleCount = 0;
 
             if (category === 'all') {
                 // Show pagination and reset to page 1 with featured spotlight
@@ -668,6 +699,7 @@
                 if (featuredSection) featuredSection.classList.remove('d-none');
                 goToBlogPage(1);
                 allCards.forEach(card => card.classList.remove('d-none'));
+                visibleCount = allCards.length;
             } else {
                 // In category filter mode, hide featured spotlight to show relevant filtered articles cleanly
                 if (featuredSection) featuredSection.classList.add('d-none');
@@ -677,23 +709,40 @@
                 allCards.forEach(card => {
                     if (card.getAttribute('data-category') === category) {
                         card.classList.remove('d-none');
+                        visibleCount++;
                     } else {
                         card.classList.add('d-none');
                     }
                 });
 
                 const section = document.getElementById('blogListingSection');
-                if (section) section.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                if (section && window.innerWidth < 992) {
+                    section.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                }
             }
+
+            countBadges.forEach(badge => {
+                badge.innerText = `${visibleCount} Article${visibleCount === 1 ? '' : 's'}`;
+            });
         }
 
-        // Live Search Filter
+        // Live Search Filter (Synchronized across all search inputs)
         document.addEventListener('DOMContentLoaded', () => {
-            const searchInput = document.querySelector('input[placeholder="Search blog..."]');
+            const searchInputs = document.querySelectorAll('.blog-search-input');
             const featuredSection = document.getElementById('featuredArticleSpotlight');
-            if (searchInput) {
-                searchInput.addEventListener('input', (e) => {
+            const countBadges = document.querySelectorAll('#heroBlogCountBadge, #mobileBlogCountBadge');
+
+            searchInputs.forEach(input => {
+                input.addEventListener('input', (e) => {
                     const query = e.target.value.toLowerCase().trim();
+
+                    // Sync other search inputs
+                    searchInputs.forEach(otherInput => {
+                        if (otherInput !== input) {
+                            otherInput.value = e.target.value;
+                        }
+                    });
+
                     const allCards = document.querySelectorAll('.blog-article-card');
                     const allPages = document.querySelectorAll('.blog-page-container');
                     const pagination = document.getElementById('blogPagination');
@@ -707,18 +756,24 @@
                     allPages.forEach(p => p.classList.remove('d-none'));
                     if (pagination) pagination.classList.add('d-none');
 
+                    let matchCount = 0;
                     allCards.forEach(card => {
                         const title = card.querySelector('h5')?.innerText.toLowerCase() || '';
                         const desc = card.querySelector('p')?.innerText.toLowerCase() || '';
                         const tag = card.getAttribute('data-category')?.toLowerCase() || '';
                         if (title.includes(query) || desc.includes(query) || tag.includes(query)) {
                             card.classList.remove('d-none');
+                            matchCount++;
                         } else {
                             card.classList.add('d-none');
                         }
                     });
+
+                    countBadges.forEach(badge => {
+                        badge.innerText = `${matchCount} Result${matchCount === 1 ? '' : 's'}`;
+                    });
                 });
-            }
+            });
         });
     </script>
 </body>
