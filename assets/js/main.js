@@ -328,6 +328,12 @@ window.LinguaApp = {
                         </ul>
                     </div>
                 `;
+            } else {
+                container.innerHTML = `
+                    <a href="login.html" class="btn btn-primary-theme btn-sm text-nowrap">
+                        <i class="bi bi-person-lock me-1"></i> Log In
+                    </a>
+                `;
             }
         });
     },
