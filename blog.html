@@ -106,6 +106,31 @@
         </div>
     </section>
 
+    <!-- MOBILE & TABLET TOP SEARCH (On 360px & 768px, Search Articles is at the top of the page) -->
+    <section class="py-4 bg-surface border-bottom d-block d-lg-none" id="mobileTopSearchSection">
+        <div class="container">
+            <div class="card p-3 p-sm-4 bg-surface border rounded-4 shadow-sm blog-top-search-card">
+                <div class="d-flex align-items-center justify-content-between mb-2">
+                    <h5 class="font-heading mb-0 fs-6 fw-bold"><i class="bi bi-search text-orange me-2"></i>Search Articles</h5>
+                    <span class="badge bg-orange-subtle text-orange" id="mobileBlogCountBadge">12 Articles</span>
+                </div>
+                <div class="input-group mb-3">
+                    <input type="text" class="form-control blog-search-input" id="blogTopSearchInput" placeholder="Search articles by title, topic, or keyword...">
+                    <button class="btn btn-primary-theme" type="button" aria-label="Search"><i class="bi bi-search"></i></button>
+                </div>
+                <!-- Horizontal Scrollable Category Chips -->
+                <div class="blog-category-chips d-flex gap-2 overflow-x-auto pb-1" id="mobileCategoryChips">
+                    <button class="btn btn-sm filter-chip-btn active" onclick="filterBlogByCategory('all', this)"><i class="bi bi-grid-fill me-1"></i>All</button>
+                    <button class="btn btn-sm filter-chip-btn" onclick="filterBlogByCategory('Language Tips', this)"><i class="bi bi-translate me-1"></i>Language Tips</button>
+                    <button class="btn btn-sm filter-chip-btn" onclick="filterBlogByCategory('IELTS & Exam Prep', this)"><i class="bi bi-award me-1"></i>IELTS Prep</button>
+                    <button class="btn btn-sm filter-chip-btn" onclick="filterBlogByCategory('Public Speaking', this)"><i class="bi bi-mic me-1"></i>Public Speaking</button>
+                    <button class="btn btn-sm filter-chip-btn" onclick="filterBlogByCategory('Corporate Communication', this)"><i class="bi bi-building me-1"></i>Corporate</button>
+                    <button class="btn btn-sm filter-chip-btn" onclick="filterBlogByCategory('Kids Communication', this)"><i class="bi bi-stars me-1"></i>Kids</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <!-- FEATURED ARTICLE SPOTLIGHT -->
     <section class="py-5 bg-alt border-bottom" id="featuredArticleSpotlight">
         <div class="container py-2">
@@ -140,26 +165,6 @@
 
                 <!-- Articles Grid Container -->
                 <div class="col-lg-8">
-                    <!-- Mobile & Tablet Top Search and Category Quick-Filter (On 360px & 768px, Search Articles is on top of the articles grid) -->
-                    <div class="card p-3 p-sm-4 bg-surface border rounded-4 mb-4 d-block d-lg-none shadow-sm blog-top-search-card">
-                        <div class="d-flex align-items-center justify-content-between mb-2">
-                            <h5 class="font-heading mb-0 fs-6 fw-bold"><i class="bi bi-search text-orange me-2"></i>Search Articles</h5>
-                            <span class="badge bg-orange-subtle text-orange" id="mobileBlogCountBadge">12 Articles</span>
-                        </div>
-                        <div class="input-group mb-3">
-                            <input type="text" class="form-control blog-search-input" id="blogTopSearchInput" placeholder="Search articles by title, topic, or keyword...">
-                            <button class="btn btn-primary-theme" type="button" aria-label="Search"><i class="bi bi-search"></i></button>
-                        </div>
-                        <!-- Horizontal Scrollable Category Chips -->
-                        <div class="blog-category-chips d-flex gap-2 overflow-x-auto pb-1" id="mobileCategoryChips">
-                            <button class="btn btn-sm filter-chip-btn active" onclick="filterBlogByCategory('all', this)"><i class="bi bi-grid-fill me-1"></i>All</button>
-                            <button class="btn btn-sm filter-chip-btn" onclick="filterBlogByCategory('Language Tips', this)"><i class="bi bi-translate me-1"></i>Language Tips</button>
-                            <button class="btn btn-sm filter-chip-btn" onclick="filterBlogByCategory('IELTS & Exam Prep', this)"><i class="bi bi-award me-1"></i>IELTS Prep</button>
-                            <button class="btn btn-sm filter-chip-btn" onclick="filterBlogByCategory('Public Speaking', this)"><i class="bi bi-mic me-1"></i>Public Speaking</button>
-                            <button class="btn btn-sm filter-chip-btn" onclick="filterBlogByCategory('Corporate Communication', this)"><i class="bi bi-building me-1"></i>Corporate</button>
-                            <button class="btn btn-sm filter-chip-btn" onclick="filterBlogByCategory('Kids Communication', this)"><i class="bi bi-stars me-1"></i>Kids</button>
-                        </div>
-                    </div>
 
                     <!-- Page 1 Articles -->
                     <div class="row g-4 blog-page-container" id="blogPage1">
